@@ -12,7 +12,6 @@ ENTITY DIG_IN IS
     CS          : IN    STD_LOGIC;
 	 IO_WRITE    : IN    STD_LOGIC;
     DI          : IN    STD_LOGIC_VECTOR(15 DOWNTO 0);
-	 BTNS			 : IN		STD_LOGIC_VECTOR(2 DOWNTO 0);
     IO_DATA     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END DIG_IN;
@@ -35,7 +34,7 @@ ARCHITECTURE a OF DIG_IN IS
     PROCESS
     BEGIN
       WAIT UNTIL RISING_EDGE(CS);
-      B_DI <= BTNS & DI(12 DOWNTO 0); -- sample the input on the rising edge of CS
+      B_DI <= DI; -- sample the input on the rising edge of CS
     END PROCESS;
 
 END a;
