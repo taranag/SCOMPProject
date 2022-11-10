@@ -35,7 +35,7 @@ BEGIN
            
   WITH hex_d SELECT
     segments <= "1000000" WHEN "0000",
-                "1111001" WHEN "0001",
+                "1000010" WHEN "0001",
                 "0100100" WHEN "0010",
                 "0110000" WHEN "0011",
                 "0011001" WHEN "0100",

@@ -4489,7 +4489,7 @@ tx_byte[7] <= tx_byte[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 comm_en <= comm_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9
+|SCOMP_System|HEX_DISPV2_6:inst9
 segments[0] <= HEX_DISP:inst1.segments[0]
 segments[1] <= HEX_DISP:inst1.segments[1]
 segments[2] <= HEX_DISP:inst1.segments[2]
@@ -4525,21 +4525,24 @@ segments[31] <= HEX_DISP:inst5.segments[3]
 segments[32] <= HEX_DISP:inst5.segments[4]
 segments[33] <= HEX_DISP:inst5.segments[5]
 segments[34] <= HEX_DISP:inst5.segments[6]
-segments[35] <= HEX_DISP:inst6.segments[0]
-segments[36] <= HEX_DISP:inst6.segments[1]
-segments[37] <= HEX_DISP:inst6.segments[2]
-segments[38] <= HEX_DISP:inst6.segments[3]
-segments[39] <= HEX_DISP:inst6.segments[4]
-segments[40] <= HEX_DISP:inst6.segments[5]
-segments[41] <= HEX_DISP:inst6.segments[6]
-CS0 => inst7.IN0
-IO_WRITE => inst7.IN1
-IO_WRITE => inst8.IN1
+segments[35] <= HEX_DISP2:inst6.segments[0]
+segments[36] <= HEX_DISP2:inst6.segments[1]
+segments[37] <= HEX_DISP2:inst6.segments[2]
+segments[38] <= HEX_DISP2:inst6.segments[3]
+segments[39] <= HEX_DISP2:inst6.segments[4]
+segments[40] <= HEX_DISP2:inst6.segments[5]
+segments[41] <= HEX_DISP2:inst6.segments[6]
+CS0 => HEX_DISP:inst1.cs
+CS0 => HEX_DISP:inst2.cs
+CS0 => HEX_DISP:inst4.cs
+CS0 => HEX_DISP:inst5.cs
+CS0 => HEX_DISP2:inst6.cs
+CS0 => HEX_DISP:inst3.cs
 resetn => HEX_DISP:inst1.resetn
 resetn => HEX_DISP:inst2.resetn
 resetn => HEX_DISP:inst4.resetn
 resetn => HEX_DISP:inst5.resetn
-resetn => HEX_DISP:inst6.resetn
+resetn => HEX_DISP2:inst6.resetn
 resetn => HEX_DISP:inst3.resetn
 hex_val0[0] => HEX_DISP:inst1.hex_val[0]
 hex_val0[1] => HEX_DISP:inst1.hex_val[1]
@@ -4557,18 +4560,17 @@ hex_val0[12] => HEX_DISP:inst4.hex_val[0]
 hex_val0[13] => HEX_DISP:inst4.hex_val[1]
 hex_val0[14] => HEX_DISP:inst4.hex_val[2]
 hex_val0[15] => HEX_DISP:inst4.hex_val[3]
-CS1 => inst8.IN0
-hex_val1[0] => HEX_DISP:inst5.hex_val[0]
-hex_val1[1] => HEX_DISP:inst5.hex_val[1]
-hex_val1[2] => HEX_DISP:inst5.hex_val[2]
-hex_val1[3] => HEX_DISP:inst5.hex_val[3]
-hex_val1[4] => HEX_DISP:inst6.hex_val[0]
-hex_val1[5] => HEX_DISP:inst6.hex_val[1]
-hex_val1[6] => HEX_DISP:inst6.hex_val[2]
-hex_val1[7] => HEX_DISP:inst6.hex_val[3]
+hex_val0[16] => HEX_DISP:inst5.hex_val[0]
+hex_val0[17] => HEX_DISP:inst5.hex_val[1]
+hex_val0[18] => HEX_DISP:inst5.hex_val[2]
+hex_val0[19] => HEX_DISP:inst5.hex_val[3]
+hex_val0[20] => HEX_DISP2:inst6.hex_val[0]
+hex_val0[21] => HEX_DISP2:inst6.hex_val[1]
+hex_val0[22] => HEX_DISP2:inst6.hex_val[2]
+hex_val0[23] => HEX_DISP2:inst6.hex_val[3]
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP:inst1
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA
@@ -4598,7 +4600,7 @@ segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP:inst2
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA
@@ -4628,7 +4630,7 @@ segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP:inst4
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA
@@ -4658,7 +4660,7 @@ segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP:inst5
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA
@@ -4688,7 +4690,7 @@ segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP2:inst6
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA
@@ -4718,7 +4720,7 @@ segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3
+|SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP:inst3
 hex_val[0] => hex_d[0].DATAA
 hex_val[0] => latched_hex[0].DATAIN
 hex_val[1] => hex_d[1].DATAA

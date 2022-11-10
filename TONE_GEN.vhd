@@ -130,7 +130,15 @@ BEGIN
 			switchdata <= CMD(6 DOWNTO 0);
 			octavedata <= CMD(9 DOWNTO 7);
 			
+			HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
+			
+	
+			
+			
+			
+			
 			if (switchdata(6) = '1') then
+				HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				else
@@ -139,10 +147,12 @@ BEGIN
 			end if;
 			
 			if (switchdata(5) = '1') then
+				HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 			end if;
 			
 			if (switchdata(4) = '1') then
+				HEX_DATa(23 DOWNTO 20) <= "1100";
 			
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
@@ -152,6 +162,7 @@ BEGIN
 			end if;
 			
 			if (switchdata(3) = '1') then
+				HEX_DATa(23 DOWNTO 20) <= "1101";
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				else
@@ -160,10 +171,12 @@ BEGIN
 			end if;
 			
 			if (switchdata(2) = '1') then
+				HEX_DATa(23 DOWNTO 20) <= "1110";
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
 			if (switchdata(1) = '1') then
+				HEX_DATa(23 DOWNTO 20) <= "1111";
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				else
@@ -171,7 +184,7 @@ BEGIN
 				end if;
 			end if;
 			if (switchdata(0) = '1') then
-			
+				HEX_DATa(23 DOWNTO 20) <= "0001";
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
@@ -179,7 +192,7 @@ BEGIN
 				tuning_word <= "0000000000000000";
 			end if;
 		
-			HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
+			
 			
 		END IF;
 	END PROCESS;
