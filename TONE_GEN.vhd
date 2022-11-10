@@ -34,7 +34,8 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL switchdata		 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	SIGNAL baseOctave		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-	signal tw_int : integer;
+	signal tw_int 			 : integer;
+	
 	SIGNAL baseA			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL baseB			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL baseC			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
@@ -42,6 +43,11 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL baseE			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL baseF			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL baseG			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	
+	SIGNAL baseAsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	
 BEGIN
 
@@ -54,6 +60,11 @@ BEGIN
 	baseE <= "00000001110001";
 	baseF <= "00000001110111";
 	baseG <= "00000010000110";
+	
+	baseAsharp <= "000001010000";
+	baseCsharp <= "000001011111";
+	baseDsharp <= "000001101010";
+	baseFsharp <= "000001111110";
 
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
@@ -113,67 +124,44 @@ BEGIN
 			octavedata <= CMD(9 DOWNTO 7);
 			
 			if (switchdata(6) = '1') then
---				tuning_word <= "000100101100";
---				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(tuning_word), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
---				if (octavedata(0) = '1') then
---					
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				if(CMD(15) = '1') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA + baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				end if;
 			end if;
+			
 			if (switchdata(5) = '1') then
---				tuning_word <= "000101010001";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 			end if;
+			
 			if (switchdata(4) = '1') then
---				tuning_word <= "000101100101";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
+			
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
+			
 			if (switchdata(3) = '1') then
---				tuning_word <= "000110010001";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
+			
 			if (switchdata(2) = '1') then
---				tuning_word <= "000111000010";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
 			if (switchdata(1) = '1') then
---				tuning_word <= "000111011101";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
 			if (switchdata(0) = '1') then
 			
---				tuning_word <= "001000010111";
---				if (octavedata(0) = '1') then
---					tuning_word <= tuning_word(10 downto 0) & "0";
---				end if;
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
 			end if;
 			if (switchdata = "000000") then
 				tuning_word <= "00000000000000";
 			end if;
-			
---			tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(tuning_word), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
---			
+
 			
 		END IF;
 	END PROCESS;
