@@ -230,6 +230,18 @@
 				{
 					"name" : "SW[9]",
 					"strict" : false
+				},
+				{
+					"name" : "BT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BT[2]",
+					"strict" : false
 				}
 			]
 		}
