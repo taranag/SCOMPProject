@@ -22,7 +22,8 @@ ENTITY TONE_GEN IS
 		SAMPLE_CLK : IN  STD_LOGIC;
 		RESETN     : IN  STD_LOGIC;
 		L_DATA     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		R_DATA     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+		R_DATA     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		HEX_DATA	  : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
 	);
 END TONE_GEN;
 
@@ -47,6 +48,7 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	
 	
 BEGIN
 	baseA <= "0000010010110001";
@@ -95,6 +97,7 @@ BEGIN
 	R_DATA(12 DOWNTO 5) <= sounddata;
 	R_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	
+	
 	-- process to perform DDS
 	PROCESS(RESETN, SAMPLE_CLK) BEGIN
 		IF RESETN = '0' THEN
@@ -121,6 +124,7 @@ BEGIN
 			tuning_word <= "0000000000000000";
 			switchdata <= "0000000";
 			octavedata <= "000";
+			HEX_DATA <= "000000000000000000000010";
 		ELSIF RISING_EDGE(CS) THEN
 --			tuning_word <= CMD(9 DOWNTO 0);
 			switchdata <= CMD(6 DOWNTO 0);
@@ -174,7 +178,8 @@ BEGIN
 			if (switchdata = "000000") then
 				tuning_word <= "0000000000000000";
 			end if;
-
+		
+			HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
 			
 		END IF;
 	END PROCESS;

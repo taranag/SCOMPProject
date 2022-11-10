@@ -6,15 +6,15 @@ USE IEEE.STD_LOGIC_1164.all;
 --  2) when free held high, constantly displays input (free-run)
 --  3) data is latched on rising edge of CS
 
-ENTITY HEX_DISP IS
+ENTITY HEX_DISP2 IS
   PORT( hex_val  : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         cs       : IN STD_LOGIC := '0';
         free     : IN STD_LOGIC := '0';
         resetn   : IN STD_LOGIC := '1';
         segments : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
-END HEX_DISP;
+END HEX_DISP2;
 
-ARCHITECTURE a OF HEX_DISP IS
+ARCHITECTURE a OF HEX_DISP2 IS
   SIGNAL latched_hex : STD_LOGIC_VECTOR(3 DOWNTO 0);
   SIGNAL hex_d       : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
