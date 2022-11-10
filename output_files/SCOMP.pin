@@ -121,8 +121,8 @@ VCCPD3A                      : AA10      : power  :                   : 3.3V    
 GND                          : AA11      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AA12      :        :                   :         : 3A        :                
 RESERVED_INPUT               : AA13      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AA14      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AA15      :        :                   :         : 3B        :                
+BT[1]                        : AA14      : input  : 3.3-V LVTTL       :         : 3B        : Y              
+BT[2]                        : AA15      : input  : 3.3-V LVTTL       :         : 3B        : Y              
 RESERVED_INPUT               : AA16      :        :                   :         : 4A        :                
 VCCIO4A                      : AA17      : power  :                   : 3.3V    : 4A        :                
 HEX2[2]                      : AA18      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -380,7 +380,7 @@ RESERVED_INPUT               : AJ29      :        :                   :         
 GND                          : AJ30      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AK2       :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK3       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AK4       :        :                   :         : 3B        :                
+BT[0]                        : AK4       : input  : 3.3-V LVTTL       :         : 3B        : Y              
 GND                          : AK5       : gnd    :                   :         :           :                
 RESERVED_INPUT               : AK6       :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK7       :        :                   :         : 3B        :                

@@ -61,10 +61,10 @@ BEGIN
 	baseF <= "00000001110111";
 	baseG <= "00000010000110";
 	
-	baseAsharp <= "000001010000";
-	baseCsharp <= "000001011111";
-	baseDsharp <= "000001101010";
-	baseFsharp <= "000001111110";
+	baseAsharp <= "00000001010000";
+	baseCsharp <= "00000001011111";
+	baseDsharp <= "00000001101010";
+	baseFsharp <= "00000001111110";
 
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
@@ -125,8 +125,8 @@ BEGIN
 			
 			if (switchdata(6) = '1') then
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				if(CMD(15) = '1') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA + baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				if(CMD(15) = '0') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				end if;
 			end if;
 			
@@ -137,12 +137,16 @@ BEGIN
 			if (switchdata(4) = '1') then
 			
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-
+				if(CMD(15) = '0') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				end if;
 			end if;
 			
 			if (switchdata(3) = '1') then
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-
+				if(CMD(15) = '0') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				end if;
 			end if;
 			
 			if (switchdata(2) = '1') then
@@ -151,7 +155,9 @@ BEGIN
 			end if;
 			if (switchdata(1) = '1') then
 				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-
+				if(CMD(15) = '0') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				end if;
 			end if;
 			if (switchdata(0) = '1') then
 			

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Thu Nov 10 14:26:59 2022
+Thu Nov 10 14:55:59 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -73,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 10 14:26:59 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 10 14:55:59 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
@@ -250,14 +250,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                               ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 406                                                                                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 460                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Combinational ALUT usage for logic          ; 550                                                                                                                 ;
-;     -- 7 input functions                    ; 8                                                                                                                   ;
-;     -- 6 input functions                    ; 124                                                                                                                 ;
-;     -- 5 input functions                    ; 171                                                                                                                 ;
-;     -- 4 input functions                    ; 90                                                                                                                  ;
-;     -- <=3 input functions                  ; 157                                                                                                                 ;
+; Combinational ALUT usage for logic          ; 627                                                                                                                 ;
+;     -- 7 input functions                    ; 13                                                                                                                  ;
+;     -- 6 input functions                    ; 151                                                                                                                 ;
+;     -- 5 input functions                    ; 184                                                                                                                 ;
+;     -- 4 input functions                    ; 103                                                                                                                 ;
+;     -- <=3 input functions                  ; 176                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
 ; Dedicated logic registers                   ; 371                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
@@ -272,8 +272,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                     ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|cascade_wire[0] ;
 ; Maximum fan-out                             ; 217                                                                                                                 ;
-; Total fan-out                               ; 4157                                                                                                                ;
-; Average fan-out                             ; 3.85                                                                                                                ;
+; Total fan-out                               ; 4521                                                                                                                ;
+; Average fan-out                             ; 3.91                                                                                                                ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
@@ -282,7 +282,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name              ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |SCOMP_System                                    ; 550 (27)            ; 371 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
+; |SCOMP_System                                    ; 627 (29)            ; 371 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
 ;    |DAC_INTERFACE:inst35|                        ; 10 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35                                                                                                                ; DAC_INTERFACE            ; work         ;
 ;       |lpm_shiftreg:serialize|                   ; 10 (10)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35|lpm_shiftreg:serialize                                                                                         ; lpm_shiftreg             ; work         ;
 ;    |DIG_IN:inst7|                                ; 0 (0)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                                                                        ; DIG_IN                   ; work         ;
@@ -305,7 +305,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |lpm_clshift:shifter|                      ; 41 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                      ; lpm_clshift              ; work         ;
 ;          |lpm_clshift_fuc:auto_generated|        ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                       ; lpm_clshift_fuc          ; work         ;
 ;    |TIMER:inst4|                                 ; 33 (33)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                         ; TIMER                    ; work         ;
-;    |TONE_GEN:inst6|                              ; 73 (73)             ; 40 (40)                   ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
+;    |TONE_GEN:inst6|                              ; 148 (148)           ; 40 (40)                   ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
 ;       |altsyncram:SOUND_LUT|                     ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT                                                                                                 ; altsyncram               ; work         ;
 ;          |altsyncram_5h04:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated                                                                  ; altsyncram_5h04          ; work         ;
 ;    |clk_div:inst5|                               ; 27 (27)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                                                                                       ; clk_div                  ; work         ;
@@ -525,18 +525,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][0]                            ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[8][10]                           ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[1] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[2]        ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[0] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[3]                                     ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[2]                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[3]        ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[6] ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[8]                                     ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[9]                                     ;
 ; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[4] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[1]        ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|count             ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[14]                                          ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[15]                                          ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
@@ -1140,20 +1140,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD                     ; 22                    ;
 ;     plain                   ; 26                    ;
 ; arriav_io_obuf              ; 2                     ;
-; arriav_lcell_comb           ; 556                   ;
+; arriav_lcell_comb           ; 633                   ;
 ;     arith                   ; 79                    ;
 ;         1 data inputs       ; 48                    ;
 ;         2 data inputs       ; 15                    ;
 ;         5 data inputs       ; 16                    ;
-;     extend                  ; 8                     ;
-;         7 data inputs       ; 8                     ;
-;     normal                  ; 469                   ;
+;     extend                  ; 13                    ;
+;         7 data inputs       ; 13                    ;
+;     normal                  ; 541                   ;
 ;         1 data inputs       ; 12                    ;
-;         2 data inputs       ; 36                    ;
-;         3 data inputs       ; 52                    ;
-;         4 data inputs       ; 90                    ;
-;         5 data inputs       ; 155                   ;
-;         6 data inputs       ; 124                   ;
+;         2 data inputs       ; 43                    ;
+;         3 data inputs       ; 64                    ;
+;         4 data inputs       ; 103                   ;
+;         5 data inputs       ; 168                   ;
+;         6 data inputs       ; 151                   ;
 ; boundary_port               ; 63                    ;
 ; cyclonev_fractional_pll     ; 1                     ;
 ; cyclonev_pll_output_counter ; 3                     ;
@@ -1161,8 +1161,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cyclonev_pll_refclk_select  ; 1                     ;
 ; stratixv_ram_block          ; 24                    ;
 ;                             ;                       ;
-; Max LUT depth               ; 4.50                  ;
-; Average LUT depth           ; 2.21                  ;
+; Max LUT depth               ; 6.00                  ;
+; Average LUT depth           ; 2.42                  ;
 +-----------------------------+-----------------------+
 
 
@@ -1171,7 +1171,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1181,7 +1181,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Nov 10 14:26:34 2022
+    Info: Processing started: Thu Nov 10 14:55:42 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tone_gen.vhd
@@ -1242,9 +1242,9 @@ Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:seria
     Info (12134): Parameter "LPM_TYPE" = "LPM_SHIFTREG"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TONE_GEN" for hierarchy "TONE_GEN:inst6"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 59
-Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 59
-Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 59
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 70
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 70
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 70
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1646,22 +1646,22 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|cntsel_temp[0]" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 425
         Warning (14320): Synthesized away node "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|gnd" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 427
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 32
     Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 107
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 118
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] will power up to High File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 63
@@ -1669,16 +1669,16 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 12 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 850 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 928 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 44 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 757 logic cells
+    Info (21061): Implemented 835 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
     Info: Peak virtual memory: 4886 megabytes
-    Info: Processing ended: Thu Nov 10 14:26:59 2022
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Processing ended: Thu Nov 10 14:55:59 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:31
 
 
