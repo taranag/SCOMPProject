@@ -28,43 +28,39 @@ END TONE_GEN;
 
 ARCHITECTURE gen OF TONE_GEN IS 
 
-	SIGNAL phase_register : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL tuning_word    : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL phase_register : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL tuning_word    : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL sounddata      : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL switchdata		 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	SIGNAL baseOctave		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
-	signal tw_int 			 : integer;
 	
-	SIGNAL baseA			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseB			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseC			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseD			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseE			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseF			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseG			 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL baseA			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseB			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseC			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseD			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseE			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseF			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseG			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	
-	SIGNAL baseAsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL baseAsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	
 BEGIN
-
---	tw_int <= to_integer(unsigned(switches));
---	tuning_word <= std_logic_vector(to_unsigned(98 * (2*tw_int) * (2*16) / 48000 , 12));
-	baseA <= "00000001001011";
-	baseB <= "00000001010100";
-	baseC <= "00000001011001";
-	baseD <= "00000001100100";
-	baseE <= "00000001110001";
-	baseF <= "00000001110111";
-	baseG <= "00000010000110";
+	baseA <= "0000010010110001";
+	baseB <= "0000010101000101";
+	baseC <= "0000010110010101";
+	baseD <= "0000011001000100";
+	baseE <= "0000011100001000";
+	baseF <= "0000011101110011";
+	baseG <= "0000100001011101";
 	
-	baseAsharp <= "00000001010000";
-	baseCsharp <= "00000001011111";
-	baseDsharp <= "00000001101010";
-	baseFsharp <= "00000001111110";
+	baseAsharp <= "0000010011111001";
+	baseCsharp <= "0000010111101010";
+	baseDsharp <= "0000011010100011";
+	baseFsharp <= "0000011111100101";
 
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
@@ -84,7 +80,7 @@ BEGIN
 	PORT MAP (
 		clock0 => NOT(SAMPLE_CLK),
 		-- In this design, one bit of the phase register is a fractional bit
-		address_a => phase_register(15 downto 8),
+		address_a => phase_register(19 downto 12),
 		q_a => sounddata -- output is amplitude
 	);
 	
@@ -102,13 +98,19 @@ BEGIN
 	-- process to perform DDS
 	PROCESS(RESETN, SAMPLE_CLK) BEGIN
 		IF RESETN = '0' THEN
-			phase_register <= "0000000000000000";
+			phase_register <= "00000000000000000000";
 		ELSIF RISING_EDGE(SAMPLE_CLK) THEN
-			IF tuning_word = "00000000000000" THEN  -- if command is 0, return to 0 output.
-				phase_register <= "0000000000000000";
+			IF tuning_word = "0000000000000000" THEN  -- if command is 0, return to 0 output.
+				phase_register <= "00000000000000000000";
 			ELSE
 				-- Increment the phase register by the tuning word.
-				phase_register <= phase_register + ("00" & tuning_word);
+				phase_register <= phase_register + ("0000" & tuning_word);
+--				IF CMD(14) = '0' THEN
+--					phase_register <= phase_register + 1;
+--				END IF;
+--				IF CMD(13) = '0' THEN
+--					phase_register <= phase_register - 1;
+--				END IF;
 			END IF;
 		END IF;
 	END PROCESS;
@@ -116,17 +118,19 @@ BEGIN
 	-- process to latch command data from SCOMP
 	PROCESS(RESETN, CS) BEGIN
 		IF RESETN = '0' THEN
-			tuning_word <= "00000000000000";
+			tuning_word <= "0000000000000000";
 			switchdata <= "0000000";
+			octavedata <= "000";
 		ELSIF RISING_EDGE(CS) THEN
 --			tuning_word <= CMD(9 DOWNTO 0);
 			switchdata <= CMD(6 DOWNTO 0);
 			octavedata <= CMD(9 DOWNTO 7);
 			
 			if (switchdata(6) = '1') then
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				else
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				end if;
 			end if;
 			
@@ -136,16 +140,18 @@ BEGIN
 			
 			if (switchdata(4) = '1') then
 			
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				else
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				end if;
 			end if;
 			
 			if (switchdata(3) = '1') then
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				else
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				end if;
 			end if;
 			
@@ -154,9 +160,10 @@ BEGIN
 
 			end if;
 			if (switchdata(1) = '1') then
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				if(CMD(15) = '0') then
 					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				else
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				end if;
 			end if;
 			if (switchdata(0) = '1') then
@@ -165,7 +172,7 @@ BEGIN
 
 			end if;
 			if (switchdata = "000000") then
-				tuning_word <= "00000000000000";
+				tuning_word <= "0000000000000000";
 			end if;
 
 			
