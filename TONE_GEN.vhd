@@ -104,7 +104,7 @@ BEGIN
 			phase_register <= "00000000000000000000";
 		ELSIF RISING_EDGE(SAMPLE_CLK) THEN
 			IF tuning_word = "0000000000000000" THEN  -- if command is 0, return to 0 output.
-				phase_register <= phase_register - "00000000000000000001";
+				phase_register <= "00000000000000000000";
 			ELSE
 				-- Increment the phase register by the tuning word.
 				phase_register <= phase_register + ("0000" & tuning_word);
