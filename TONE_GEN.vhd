@@ -71,7 +71,7 @@ BEGIN
 		width_a => 8,
 		widthad_a => 8,
 		numwords_a => 256,
-		init_file => "SOUND_SQUARE.mif",
+		init_file => "SOUND_TRIANGLE.mif",
 		intended_device_family => "Cyclone II",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		operation_mode => "ROM",
