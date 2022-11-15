@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Mon Nov 14 19:57:02 2022
+Tue Nov 15 13:39:45 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -25,7 +25,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  17. General Register Statistics
  18. Inverted Register Statistics
  19. Multiplexer Restructuring Statistics (Restructuring Performed)
- 20. Source assignments for TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_nq04:auto_generated
+ 20. Source assignments for TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated
  21. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ki24:auto_generated
  22. Source assignments for PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
  23. Source assignments for PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_pll_dps_lcell_comb:lcell_cntsel_int_0
@@ -73,16 +73,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 14 19:57:02 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 15 13:39:45 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 369                                         ;
+; Total registers                 ; 372                                         ;
 ; Total pins                      ; 63                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 40,960                                      ;
+; Total block memory bits         ; 34,816                                      ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -233,8 +233,8 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                  ;          ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                  ;          ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                ;          ;
-; db/altsyncram_nq04.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/altsyncram_nq04.tdf       ;          ;
-; SOUN_SQUARE10.mif                ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SOUN_SQUARE10.mif            ;          ;
+; db/altsyncram_5h04.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/altsyncram_5h04.tdf       ;          ;
+; sound_sine.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/sound_sine.mif               ;          ;
 ; db/altsyncram_ki24.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/altsyncram_ki24.tdf       ;          ;
 ; beeptest.mif                     ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/beeptest.mif                 ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf             ;          ;
@@ -251,20 +251,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                               ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 496                                                                                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 498                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Combinational ALUT usage for logic          ; 675                                                                                                                 ;
-;     -- 7 input functions                    ; 16                                                                                                                  ;
-;     -- 6 input functions                    ; 173                                                                                                                 ;
-;     -- 5 input functions                    ; 166                                                                                                                 ;
-;     -- 4 input functions                    ; 71                                                                                                                  ;
-;     -- <=3 input functions                  ; 249                                                                                                                 ;
+; Combinational ALUT usage for logic          ; 682                                                                                                                 ;
+;     -- 7 input functions                    ; 11                                                                                                                  ;
+;     -- 6 input functions                    ; 174                                                                                                                 ;
+;     -- 5 input functions                    ; 172                                                                                                                 ;
+;     -- 4 input functions                    ; 62                                                                                                                  ;
+;     -- <=3 input functions                  ; 263                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Dedicated logic registers                   ; 369                                                                                                                 ;
+; Dedicated logic registers                   ; 372                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
 ; I/O pins                                    ; 63                                                                                                                  ;
 ; Total MLAB memory bits                      ; 0                                                                                                                   ;
-; Total block memory bits                     ; 40960                                                                                                               ;
+; Total block memory bits                     ; 34816                                                                                                               ;
 ;                                             ;                                                                                                                     ;
 ; Total DSP Blocks                            ; 0                                                                                                                   ;
 ;                                             ;                                                                                                                     ;
@@ -273,8 +273,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                     ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|cascade_wire[0] ;
 ; Maximum fan-out                             ; 217                                                                                                                 ;
-; Total fan-out                               ; 4633                                                                                                                ;
-; Average fan-out                             ; 3.85                                                                                                                ;
+; Total fan-out                               ; 4637                                                                                                                ;
+; Average fan-out                             ; 3.83                                                                                                                ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
@@ -283,7 +283,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name              ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |SCOMP_System                                    ; 675 (17)            ; 369 (0)                   ; 40960             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
+; |SCOMP_System                                    ; 682 (17)            ; 372 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
 ;    |DAC_INTERFACE:inst35|                        ; 10 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35                                                                                                                ; DAC_INTERFACE            ; work         ;
 ;       |lpm_shiftreg:serialize|                   ; 10 (10)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35|lpm_shiftreg:serialize                                                                                         ; lpm_shiftreg             ; work         ;
 ;    |DIG_IN:inst7|                                ; 0 (0)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                                                                        ; DIG_IN                   ; work         ;
@@ -296,15 +296,15 @@ https://fpgasoftware.intel.com/eula.
 ;          |altera_pll:altera_pll_i|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i                                                                  ; altera_pll               ; work         ;
 ;             |altera_cyclonev_pll:cyclonev_pll|   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll                                 ; altera_cyclonev_pll      ; work         ;
 ;                |altera_cyclonev_pll_base:fpll_0| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0 ; altera_cyclonev_pll_base ; work         ;
-;    |SCOMP:inst|                                  ; 299 (254)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                          ; SCOMP                    ; work         ;
+;    |SCOMP:inst|                                  ; 300 (255)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                          ; SCOMP                    ; work         ;
 ;       |altsyncram:altsyncram_component|          ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                                                                          ; altsyncram               ; work         ;
 ;          |altsyncram_ki24:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ki24:auto_generated                                                           ; altsyncram_ki24          ; work         ;
 ;       |lpm_clshift:shifter|                      ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                      ; lpm_clshift              ; work         ;
 ;          |lpm_clshift_fuc:auto_generated|        ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                       ; lpm_clshift_fuc          ; work         ;
 ;    |TIMER:inst4|                                 ; 33 (33)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                         ; TIMER                    ; work         ;
-;    |TONE_GEN:inst6|                              ; 206 (206)           ; 54 (54)                   ; 8192              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
-;       |altsyncram:SOUND_LUT|                     ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT                                                                                                 ; altsyncram               ; work         ;
-;          |altsyncram_nq04:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_nq04:auto_generated                                                                  ; altsyncram_nq04          ; work         ;
+;    |TONE_GEN:inst6|                              ; 212 (212)           ; 57 (57)                   ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
+;       |altsyncram:SOUND_LUT|                     ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT                                                                                                 ; altsyncram               ; work         ;
+;          |altsyncram_5h04:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated                                                                  ; altsyncram_5h04          ; work         ;
 ;    |clk_div:inst5|                               ; 27 (27)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                                                                                       ; clk_div                  ; work         ;
 ;    |oneshot_i2c:inst12|                          ; 63 (0)              ; 46 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|oneshot_i2c:inst12                                                                                                                  ; oneshot_i2c              ; work         ;
 ;       |i2c_master:inst|                          ; 38 (38)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst                                                                                                  ; i2c_master               ; work         ;
@@ -313,14 +313,14 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                  ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-------------------+
-; Name                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF               ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-------------------+
-; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ki24:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; BeepTest.mif      ;
-; TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_nq04:auto_generated|ALTSYNCRAM        ; AUTO ; ROM         ; 1024         ; 8            ; --           ; --           ; 8192  ; SOUN_SQUARE10.mif ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                               ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
+; Name                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF            ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
+; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ki24:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; BeepTest.mif   ;
+; TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated|ALTSYNCRAM        ; AUTO ; ROM         ; 256          ; 8            ; --           ; --           ; 2048  ; SOUND_SINE.mif ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -456,6 +456,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0..3]                                                                                 ; Stuck at GND due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|addr_rw[1,3,6,7]                                                                                 ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[0] ;
 ; oneshot_i2c:inst12|i2c_master:inst|addr_rw[4,5]                                                                                     ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[2] ;
+; TONE_GEN:inst6|tuning_word[19]                                                                                                      ; Stuck at GND due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|addr_rw[2]                                                                                       ; Stuck at VCC due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]                                                                                       ; Stuck at GND due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|count[2]                                                                                         ; Stuck at GND due to stuck port data_in                    ;
@@ -473,7 +474,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; oneshot_i2c:inst12|i2c_master:inst|state.rd                                                                                         ; Stuck at GND due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|state.mstr_ack                                                                                   ; Stuck at GND due to stuck port data_in                    ;
 ; oneshot_i2c:inst12|i2c_master:inst|state.restart                                                                                    ; Stuck at GND due to stuck port data_in                    ;
-; Total Number of Removed Registers = 59                                                                                              ;                                                           ;
+; Total Number of Removed Registers = 60                                                                                              ;                                                           ;
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 
@@ -528,10 +529,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 369   ;
+; Total registers                              ; 372   ;
 ; Number of registers using Synchronous Clear  ; 53    ;
 ; Number of registers using Synchronous Load   ; 123   ;
-; Number of registers using Asynchronous Clear ; 131   ;
+; Number of registers using Asynchronous Clear ; 134   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 173   ;
 ; Number of registers using Preset             ; 0     ;
@@ -560,25 +561,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][4]                            ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[5][5]                            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|HEX_DATA[21]                          ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[1] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[2]        ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[6] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                    ;
-; 12:1               ; 13 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[2]                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[0]        ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[5] ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[3]                                     ;
+; 12:1               ; 13 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[8]                                     ;
 ; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[3] ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[13]                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[1]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[14]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[0]        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|count             ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[8]                                           ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[3]                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------+
-; Source assignments for TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_nq04:auto_generated ;
+; Source assignments for TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------+
 ; Assignment                      ; Value              ; From ; To                          ;
 +---------------------------------+--------------------+------+-----------------------------+
@@ -706,8 +707,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped              ;
 ; OPERATION_MODE                     ; ROM                  ; Untyped              ;
 ; WIDTH_A                            ; 8                    ; Signed Integer       ;
-; WIDTHAD_A                          ; 10                   ; Signed Integer       ;
-; NUMWORDS_A                         ; 1024                 ; Signed Integer       ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer       ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer       ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped              ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped              ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped              ;
@@ -736,7 +737,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped              ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped              ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped              ;
-; INIT_FILE                          ; SOUN_SQUARE10.mif    ; Untyped              ;
+; INIT_FILE                          ; SOUND_SINE.mif       ; Untyped              ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped              ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer       ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped              ;
@@ -749,7 +750,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped              ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer       ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped              ;
-; CBXI_PARAMETER                     ; altsyncram_nq04      ; Untyped              ;
+; CBXI_PARAMETER                     ; altsyncram_5h04      ; Untyped              ;
 +------------------------------------+----------------------+----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1138,7 +1139,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance                           ; TONE_GEN:inst6|altsyncram:SOUND_LUT        ;
 ;     -- OPERATION_MODE                     ; ROM                                        ;
 ;     -- WIDTH_A                            ; 8                                          ;
-;     -- NUMWORDS_A                         ; 1024                                       ;
+;     -- NUMWORDS_A                         ; 256                                        ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
 ;     -- WIDTH_B                            ; 1                                          ;
 ;     -- NUMWORDS_B                         ; 0                                          ;
@@ -1165,8 +1166,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------------+-----------------------+
 ; Type                        ; Count                 ;
 +-----------------------------+-----------------------+
-; arriav_ff                   ; 369                   ;
-;     CLR                     ; 105                   ;
+; arriav_ff                   ; 372                   ;
+;     CLR                     ; 108                   ;
 ;     CLR SCLR                ; 21                    ;
 ;     CLR SCLR SLD            ; 1                     ;
 ;     CLR SLD                 ; 1                     ;
@@ -1178,20 +1179,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD                     ; 22                    ;
 ;     plain                   ; 26                    ;
 ; arriav_io_obuf              ; 2                     ;
-; arriav_lcell_comb           ; 679                   ;
+; arriav_lcell_comb           ; 686                   ;
 ;     arith                   ; 98                    ;
-;         1 data inputs       ; 49                    ;
-;         2 data inputs       ; 49                    ;
-;     extend                  ; 16                    ;
-;         7 data inputs       ; 16                    ;
-;     normal                  ; 549                   ;
+;         1 data inputs       ; 46                    ;
+;         2 data inputs       ; 52                    ;
+;     extend                  ; 11                    ;
+;         7 data inputs       ; 11                    ;
+;     normal                  ; 561                   ;
 ;         0 data inputs       ; 2                     ;
 ;         1 data inputs       ; 9                     ;
-;         2 data inputs       ; 54                    ;
-;         3 data inputs       ; 74                    ;
-;         4 data inputs       ; 71                    ;
-;         5 data inputs       ; 166                   ;
-;         6 data inputs       ; 173                   ;
+;         2 data inputs       ; 53                    ;
+;         3 data inputs       ; 89                    ;
+;         4 data inputs       ; 62                    ;
+;         5 data inputs       ; 172                   ;
+;         6 data inputs       ; 174                   ;
 ;     shared                  ; 16                    ;
 ;         2 data inputs       ; 16                    ;
 ; boundary_port               ; 63                    ;
@@ -1201,8 +1202,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cyclonev_pll_refclk_select  ; 1                     ;
 ; stratixv_ram_block          ; 24                    ;
 ;                             ;                       ;
-; Max LUT depth               ; 6.00                  ;
-; Average LUT depth           ; 2.58                  ;
+; Max LUT depth               ; 7.00                  ;
+; Average LUT depth           ; 2.65                  ;
 +-----------------------------+-----------------------+
 
 
@@ -1211,7 +1212,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -1221,7 +1222,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Nov 14 19:56:42 2022
+    Info: Processing started: Tue Nov 15 13:39:18 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tone_gen.vhd
@@ -1287,9 +1288,9 @@ Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:seria
     Info (12134): Parameter "LPM_TYPE" = "LPM_SHIFTREG"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TONE_GEN" for hierarchy "TONE_GEN:inst6"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 68
-Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 68
-Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 68
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 73
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 73
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 73
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1310,10 +1311,10 @@ Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" wi
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "SOUN_SQUARE10.mif"
+    Info (12134): Parameter "init_file" = "SOUND_SINE.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "numwords_a" = "256"
     Info (12134): Parameter "numwords_b" = "0"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
@@ -1333,17 +1334,16 @@ Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" wi
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "width_eccstatus" = "3"
-    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "widthad_b" = "1"
     Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
     Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nq04.tdf
-    Info (12023): Found entity 1: altsyncram_nq04 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/altsyncram_nq04.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_nq04" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_nq04:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113018): Width of data items in "SOUN_SQUARE10.mif" is greater than the memory width. Truncating data items to fit in memory. File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SOUN_SQUARE10.mif Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5h04.tdf
+    Info (12023): Found entity 1: altsyncram_5h04 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/altsyncram_5h04.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_5h04" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 61
@@ -1699,16 +1699,16 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
     Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
     Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 117
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 122
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[6]" is stuck at VCC
     Warning (13410): Pin "HEX1[5]" is stuck at GND
@@ -1745,16 +1745,16 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 12 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 959 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 966 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 44 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 866 logic cells
+    Info (21061): Implemented 873 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 4889 megabytes
-    Info: Processing ended: Mon Nov 14 19:57:02 2022
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:35
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info: Peak virtual memory: 4885 megabytes
+    Info: Processing ended: Tue Nov 15 13:39:45 2022
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:40
 
 

@@ -30,53 +30,53 @@ END TONE_GEN;
 ARCHITECTURE gen OF TONE_GEN IS 
 
 	SIGNAL phase_register : STD_LOGIC_VECTOR(19 DOWNTO 0);
-	SIGNAL tuning_word    : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL tuning_word    : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	SIGNAL sounddata      : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL switchdata		 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	SIGNAL baseOctave		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	
-	SIGNAL baseA			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseB			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseC			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseD			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseE			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseF			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseG			 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseA			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseB			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseC			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseD			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseE			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseF			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseG			 : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	
-	SIGNAL baseAsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL baseGsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseAsharp		 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(19 DOWNTO 0);
+	SIGNAL baseGsharp		 : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	
 	
 	
 BEGIN
 
 	-- Bases for Notes
-	baseA <= "0000010010110001";
-	baseB <= "0000010101000101";
-	baseC <= "0000010110010101";
-	baseD <= "0000011001000100";
-	baseE <= "0000011100001000";
-	baseF <= "0000011101110011";
-	baseG <= "0000100001011101";
+	baseA <= "00000000010010110001";
+	baseB <= "00000000010101000101";
+	baseC <= "00000000010110010101";
+	baseD <= "00000000011001000100";
+	baseE <= "00000000011100001000";
+	baseF <= "00000000011101110011";
+	baseG <= "00000000100001011101";
 	
-	baseAsharp <= "0000010011111001";
-	baseCsharp <= "0000010111101010";
-	baseDsharp <= "0000011010100011";
-	baseFsharp <= "0000011111100101";
-	baseGsharp <= "0000100011011100";
+	baseAsharp <= "00000000010011111001";
+	baseCsharp <= "00000000010111101010";
+	baseDsharp <= "00000000011010100011";
+	baseFsharp <= "00000000011111100101";
+	baseGsharp <= "00000000100011011100";
 
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
 	GENERIC MAP (
 		lpm_type => "altsyncram",
 		width_a => 8,
-		widthad_a => 10,
-		numwords_a => 1024,
-		init_file => "SOUND_TRIANGLE10.mif",
+		widthad_a => 8,
+		numwords_a => 256,
+		init_file => "SOUND_SINE.mif",
 		intended_device_family => "Cyclone II",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		operation_mode => "ROM",
@@ -87,7 +87,7 @@ BEGIN
 	PORT MAP (
 		clock0 => NOT(SAMPLE_CLK),
 		-- In this design, one bit of the phase register is a fractional bit
-		address_a => phase_register(19 downto 10),
+		address_a => phase_register(19 downto 12),
 		q_a => sounddata -- output is amplitude
 	);
 	
@@ -108,11 +108,11 @@ BEGIN
 		IF RESETN = '0' THEN
 			phase_register <= "00000000000000000000";
 		ELSIF RISING_EDGE(SAMPLE_CLK) THEN
-			IF tuning_word = "0000000000000000" THEN  -- if command is 0, return to 0 output.
+			IF tuning_word = "00000000000000000000" THEN  -- if command is 0, return to 0 output.
 				phase_register <= "00000000000000000000";
 			ELSE
 				-- Increment the phase register by the tuning word.
-				phase_register <= phase_register + ("0000" & tuning_word);
+				phase_register <= phase_register + tuning_word;
 			END IF;
 		END IF;
 	END PROCESS;
@@ -120,7 +120,7 @@ BEGIN
 	-- process to latch command data from SCOMP
 	PROCESS(RESETN, CS) BEGIN
 		IF RESETN = '0' THEN
-			tuning_word <= "0000000000000000";
+			tuning_word <= "00000000000000000000";
 			switchdata <= "0000000";
 			octavedata <= "000";
 			HEX_DATA <= "000000000000000000000010";
@@ -191,7 +191,7 @@ BEGIN
 				end if;
 			end if;
 			if (switchdata = "000000") then
-				tuning_word <= "0000000000000000";
+				tuning_word <= "00000000000000000000";
 			end if;
 		
 			
