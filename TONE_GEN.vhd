@@ -48,9 +48,13 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL baseCsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL baseDsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL baseFsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL baseGsharp		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	
 	
 	
 BEGIN
+
+	-- Bases for Notes
 	baseA <= "0000010010110001";
 	baseB <= "0000010101000101";
 	baseC <= "0000010110010101";
@@ -63,15 +67,16 @@ BEGIN
 	baseCsharp <= "0000010111101010";
 	baseDsharp <= "0000011010100011";
 	baseFsharp <= "0000011111100101";
+	baseGsharp <= "0000100011011100";
 
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
 	GENERIC MAP (
 		lpm_type => "altsyncram",
 		width_a => 8,
-		widthad_a => 8,
-		numwords_a => 256,
-		init_file => "SOUND_TRIANGLE.mif",
+		widthad_a => 10,
+		numwords_a => 1024,
+		init_file => "SOUND_TRIANGLE10.mif",
 		intended_device_family => "Cyclone II",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		operation_mode => "ROM",
@@ -82,7 +87,7 @@ BEGIN
 	PORT MAP (
 		clock0 => NOT(SAMPLE_CLK),
 		-- In this design, one bit of the phase register is a fractional bit
-		address_a => phase_register(19 downto 12),
+		address_a => phase_register(19 downto 10),
 		q_a => sounddata -- output is amplitude
 	);
 	
@@ -179,8 +184,11 @@ BEGIN
 			end if;
 			if (switchdata(0) = '1') then
 				HEX_DATa(23 DOWNTO 20) <= "0001";
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-
+				if(CMD(15) = '0') then
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				else
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				end if;
 			end if;
 			if (switchdata = "000000") then
 				tuning_word <= "0000000000000000";
