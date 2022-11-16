@@ -126,82 +126,152 @@ BEGIN
 			octavedata <= "000";
 			HEX_DATA <= "000000000000000000000010";
 		ELSIF RISING_EDGE(CS) THEN
---			tuning_word <= CMD(9 DOWNTO 0);
-			octavedata <= CMD(9 DOWNTO 7);
-			switchdata <= CMD(6 DOWNTO 0);
-			
-			
-			HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
 		
-			
-			if (switchdata(6) = '1') then
-			
-				HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
-				if(CMD(15) = '0') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				else
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				end if;
+			if (CMD(10) = '1') then
+	--			tuning_word <= CMD(9 DOWNTO 0);
+				octavedata <= CMD(7 DOWNTO 5) - "010" + ("00" & CMD(4));
+				switchdata <= "00" & CMD(8) & CMD(3 DOWNTO 0);
 				
 				
-			elsif (switchdata(5) = '1') then
-			
-				HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+				HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
 				
-				
-			elsif (switchdata(4) = '1') then
-			
-				HEX_DATa(23 DOWNTO 20) <= "1100";
-			
-				if(CMD(15) = '0') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				else
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				end if;
-				
-				
-			elsif (switchdata(3) = '1') then
-			
-				HEX_DATa(23 DOWNTO 20) <= "1101";
-				if(CMD(15) = '0') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				else
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				end if;
-				
-				
-			elsif (switchdata(2) = '1') then
-			
-				HEX_DATa(23 DOWNTO 20) <= "1110";
-				tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				
+				case switchdata(4 downto 0) is -- opcode is top 5 bits of instruction
+					when "00000" =>       -- no operation (nop)
+						tuning_word <= "00000000000000000000";
+						
+					when "00001" =>       -- A
+						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata+"010"))));
+						
+					when "10001" =>		-- A sharp
+						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata+"010"))));
+						
+					when "00010" =>       -- B
+						HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when "00011" =>       -- C
+						HEX_DATa(23 DOWNTO 20) <= "1100";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 
-			elsif (switchdata(1) = '1') then
-			
-				HEX_DATa(23 DOWNTO 20) <= "1111";
-				if(CMD(15) = '0') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				else
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				end if;
+					when "10011" =>       -- C sharp
+						HEX_DATa(23 DOWNTO 20) <= "1100";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when "00100" =>       -- D
+						HEX_DATa(23 DOWNTO 20) <= "1101";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+									
+					when "10100" =>       -- D sharp
+						HEX_DATa(23 DOWNTO 20) <= "1101";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+							
+					when "00101" =>       -- E
+						HEX_DATa(23 DOWNTO 20) <= "1110";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
 				
-				
-			elsif (switchdata(0) = '1') then
-			
-				HEX_DATa(23 DOWNTO 20) <= "0001";
-				if(CMD(15) = '0') then
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				else
-					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
-				end if;
-				
+						
+					when "00110" =>       -- F
+						HEX_DATa(23 DOWNTO 20) <= "1111";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when "10110" =>       -- F sharp
+						HEX_DATa(23 DOWNTO 20) <= "1111";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when "00111" =>       -- G
+						HEX_DATa(23 DOWNTO 20) <= "0001";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when "10111" =>       -- G sharp
+						HEX_DATa(23 DOWNTO 20) <= "0001";
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						
+					when others =>
+						tuning_word <= "00000000000000000000";   -- invalid opcodes default to nop
+				end case;
 				
 			else
+				octavedata <= CMD(9 DOWNTO 7);
+				switchdata <= CMD(6 DOWNTO 0);
+				
+				
+				HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
 			
-				tuning_word <= "00000000000000000000";
 				
+				if (switchdata(6) = '1') then
 				
+					HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
+					if(CMD(15) = '0') then
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					else
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					end if;
+					
+					
+				elsif (switchdata(5) = '1') then
+				
+					HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					
+					
+				elsif (switchdata(4) = '1') then
+				
+					HEX_DATa(23 DOWNTO 20) <= "1100";
+				
+					if(CMD(15) = '0') then
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					else
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					end if;
+					
+					
+				elsif (switchdata(3) = '1') then
+				
+					HEX_DATa(23 DOWNTO 20) <= "1101";
+					if(CMD(15) = '0') then
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					else
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					end if;
+					
+					
+				elsif (switchdata(2) = '1') then
+				
+					HEX_DATa(23 DOWNTO 20) <= "1110";
+					tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					
+
+				elsif (switchdata(1) = '1') then
+				
+					HEX_DATa(23 DOWNTO 20) <= "1111";
+					if(CMD(15) = '0') then
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					else
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					end if;
+					
+					
+				elsif (switchdata(0) = '1') then
+				
+					HEX_DATa(23 DOWNTO 20) <= "0001";
+					if(CMD(15) = '0') then
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					else
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+					end if;
+					
+					
+				else
+				
+					tuning_word <= "00000000000000000000";
+					
+					
+				end if;
+				
+			
+			
 			end if;
 		
 			

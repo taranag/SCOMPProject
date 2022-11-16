@@ -1,0 +1,142 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 087D;  --     LOAD	E4
+           001 : 9840;  --     OUT    Beep
+           002 : 804F;  -- 	CALL	PlayDelayNote
+           003 : 087C;  -- 	LOAD	D4
+           004 : 9840;  --     OUT    Beep
+           005 : 804F;  -- 	CALL	PlayDelayNote
+           006 : 087B;  -- 	LOAD	C4
+           007 : 9840;  --     OUT    Beep
+           008 : 804F;  -- 	CALL	PlayDelayNote
+           009 : 087C;  -- 	LOAD	D4
+           00A : 9840;  --     OUT    Beep
+           00B : 804F;  -- 	CALL	PlayDelayNote
+           00C : 087D;  -- 	LOAD	E4
+           00D : 9840;  --     OUT    Beep
+           00E : 804F;  -- 	CALL	PlayDelayNote
+           00F : 087D;  -- 	LOAD	E4
+           010 : 9840;  --     OUT    Beep
+           011 : 804F;  -- 	CALL	PlayDelayNote
+           012 : 087D;  -- 	LOAD	E4
+           013 : 9840;  --     OUT    Beep
+           014 : 805C;  -- 	CALL	PlayDelayDoubleNote
+           015 : 087C;  -- 	LOAD	D4
+           016 : 9840;  --     OUT    Beep
+           017 : 804F;  -- 	CALL	PlayDelayNote
+           018 : 087C;  -- 	LOAD	D4
+           019 : 9840;  --     OUT    Beep
+           01A : 804F;  -- 	CALL	PlayDelayNote
+           01B : 087C;  -- 	LOAD	D4
+           01C : 9840;  --     OUT    Beep
+           01D : 805C;  -- 	CALL	PlayDelayDoubleNote
+           01E : 087D;  -- 	LOAD	E4
+           01F : 9840;  --     OUT    Beep
+           020 : 804F;  -- 	CALL	PlayDelayNote
+           021 : 087F;  -- 	LOAD	G4
+           022 : 9840;  --     OUT    Beep
+           023 : 804F;  -- 	CALL	PlayDelayNote
+           024 : 087F;  -- 	LOAD	G4
+           025 : 9840;  --     OUT    Beep
+           026 : 805C;  -- 	CALL	PlayDelayDoubleNote
+           027 : 087D;  -- 	LOAD	E4
+           028 : 9840;  --     OUT    Beep
+           029 : 804F;  -- 	CALL	PlayDelayNote
+           02A : 087C;  -- 	LOAD	D4
+           02B : 9840;  --     OUT    Beep
+           02C : 804F;  -- 	CALL	PlayDelayNote
+           02D : 087B;  -- 	LOAD	C4
+           02E : 9840;  --     OUT    Beep
+           02F : 804F;  -- 	CALL	PlayDelayNote
+           030 : 087C;  -- 	LOAD	D4
+           031 : 9840;  --     OUT    Beep
+           032 : 804F;  -- 	CALL	PlayDelayNote
+           033 : 087D;  -- 	LOAD	E4
+           034 : 9840;  --     OUT    Beep
+           035 : 804F;  -- 	CALL	PlayDelayNote
+           036 : 087D;  -- 	LOAD	E4
+           037 : 9840;  --     OUT    Beep
+           038 : 804F;  -- 	CALL	PlayDelayNote
+           039 : 087D;  -- 	LOAD	E4
+           03A : 9840;  --     OUT    Beep
+           03B : 804F;  -- 	CALL	PlayDelayNote
+           03C : 087D;  -- 	LOAD	E4
+           03D : 9840;  --     OUT    Beep	
+           03E : 804F;  -- 	CALL	PlayDelayNote
+           03F : 087C;  -- 	LOAD	D4
+           040 : 9840;  --     OUT    Beep	
+           041 : 804F;  -- 	CALL	PlayDelayNote
+           042 : 087C;  -- 	LOAD	D4
+           043 : 9840;  --     OUT    Beep	
+           044 : 804F;  -- 	CALL	PlayDelayNote
+           045 : 087D;  -- 	LOAD	E4
+           046 : 9840;  --     OUT    Beep	
+           047 : 804F;  -- 	CALL	PlayDelayNote
+           048 : 087C;  -- 	LOAD	D4
+           049 : 9840;  --     OUT    Beep	
+           04A : 804F;  -- 	CALL	PlayDelayNote
+           04B : 087B;  -- 	LOAD	C4
+           04C : 9840;  --     OUT    Beep	
+           04D : 8069;  -- 	CALL	PlayDelayQuadNote
+           04E : 2800;  -- 	JUMP   0
+           04F : 9840;  --     OUT    Beep	
+           050 : 9802;  -- 	OUT    Timer
+           051 : 9002;  -- 	IN     Timer
+           052 : 6FFB;  -- 	ADDI   -5
+           053 : 3051;  -- 	JNEG   WaitingLoopNote
+           054 : 0880;  --     LOAD   Zero
+           055 : 9840;  --     OUT    Beep
+           056 : 9802;  -- 	OUT    Timer
+           057 : 9840;  --     OUT    Beep
+           058 : 9002;  -- 	IN     Timer
+           059 : 6FFE;  -- 	ADDI   -2
+           05A : 3058;  -- 	JNEG   WaitingLoopStop
+           05B : 8800;  -- 	RETURN
+           05C : 9840;  -- 	OUT    Beep
+           05D : 9802;  -- 	OUT    Timer
+           05E : 9002;  -- 	IN     Timer
+           05F : 6FF6;  -- 	ADDI   -10
+           060 : 305E;  -- 	JNEG   WaitingLoopDoubleNote
+           061 : 0880;  --     LOAD   Zero
+           062 : 9840;  --     OUT    Beep
+           063 : 9802;  -- 	OUT    Timer
+           064 : 9840;  --     OUT    Beep
+           065 : 9002;  -- 	IN     Timer
+           066 : 6FFE;  -- 	ADDI   -2
+           067 : 3065;  -- 	JNEG   WaitingLoopDoubleStop
+           068 : 8800;  -- 	RETURN
+           069 : 9840;  -- 	OUT    Beep
+           06A : 9802;  -- 	OUT    Timer
+           06B : 9002;  -- 	IN     Timer
+           06C : 6FEC;  -- 	ADDI   -20
+           06D : 306B;  -- 	JNEG   WaitingLoopQuadNote
+           06E : 0880;  --     LOAD   Zero
+           06F : 9840;  --     OUT    Beep
+           070 : 9802;  -- 	OUT    Timer
+           071 : 9840;  --     OUT    Beep
+           072 : 9002;  -- 	IN     Timer
+           073 : 6FFE;  -- 	ADDI   -2
+           074 : 3072;  -- 	JNEG   WaitingLoopQuadStop
+           075 : 8800;  -- 	RETURN
+           076 : 9802;  -- 	OUT    Timer
+           077 : 9002;  -- 	IN     Timer
+           078 : 6FFE;  -- 	ADDI   -2
+           079 : 3077;  -- 	JNEG   WaitingLoopDelayStop
+           07A : 8800;  -- 	RETURN
+           07B : 0110;  -- C4:         DW &B0100010000
+           07C : 0108;  -- D4:         DW &B0100001000
+           07D : 0104;  -- E4:         DW &B0100000100
+           07E : 0102;  -- F4:         DW &B0100000010
+           07F : 0101;  -- G4:         DW &B0100000001
+           080 : 0000;  -- Zero:       DW &B0000000000
+  END;
