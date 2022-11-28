@@ -140,7 +140,7 @@ BEGIN
 		
 			
 		
-			if (CMD(10) = '1') then
+			if (CMD(10) = '1' AND CMD(14) = '0') then
 	--			tuning_word <= CMD(9 DOWNTO 0);
 --				octavedata <= CMD(7 DOWNTO 5) - "010" + ("00" & CMD(4));
 				temp <= CMD(7 DOWNTO 4) - "0010";

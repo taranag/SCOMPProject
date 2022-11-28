@@ -1,0 +1,74 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 083B;  -- 	LOAD    E4
+           001 : 9840;  --     OUT     Beep
+           002 : 8034;  --     Call    Delay
+           003 : 083A;  --     LOAD    D4
+           004 : 9840;  --     OUT     Beep
+           005 : 8034;  --     Call    Delay
+           006 : 0839;  --     LOAD    C4
+           007 : 9840;  --     OUT     Beep
+           008 : 8034;  --     Call    Delay
+           009 : 083B;  --     LOAD    E4
+           00A : 9840;  --     OUT     Beep
+           00B : 8034;  --     Call    Delay
+           00C : 083A;  --     LOAD    D4
+           00D : 9840;  --     OUT     Beep
+           00E : 8034;  --     Call    Delay
+           00F : 0839;  --     LOAD    C4
+           010 : 9840;  --     OUT     Beep
+           011 : 8034;  --     Call    Delay
+           012 : 0839;  --     LOAD    C4
+           013 : 9840;  --     OUT     Beep
+           014 : 8034;  --     Call    Delay
+           015 : 0839;  --     LOAD    C4
+           016 : 9840;  --     OUT     Beep
+           017 : 8034;  --     Call    Delay
+           018 : 0839;  --     LOAD    C4
+           019 : 9840;  --     OUT     Beep
+           01A : 8034;  --     Call    Delay
+           01B : 0839;  --     LOAD    C4
+           01C : 9840;  --     OUT     Beep
+           01D : 8034;  --     Call    Delay
+           01E : 083A;  --     LOAD    D4
+           01F : 9840;  --     OUT     Beep
+           020 : 8034;  --     Call    Delay
+           021 : 083A;  --     LOAD    D4
+           022 : 9840;  --     OUT     Beep
+           023 : 8034;  --     Call    Delay
+           024 : 083A;  --     LOAD    D4
+           025 : 9840;  --     OUT     Beep
+           026 : 8034;  --     Call    Delay
+           027 : 083A;  --     LOAD    D4
+           028 : 9840;  --     OUT     Beep
+           029 : 8034;  --     Call    Delay
+           02A : 083B;  --     LOAD    E4
+           02B : 9840;  --     OUT     Beep
+           02C : 8034;  --     Call    Delay
+           02D : 083A;  --     LOAD    D4
+           02E : 9840;  --     OUT     Beep
+           02F : 8034;  --     Call    Delay
+           030 : 0839;  --     LOAD    C4
+           031 : 9840;  --     OUT     Beep
+           032 : 8034;  --     Call    Delay
+           033 : 2800;  --     JUMP 0
+           034 : 9802;  -- 	OUT    Timer
+           035 : 9002;  -- 	IN     Timer
+           036 : 6FFB;  -- 	ADDI   -5
+           037 : 3035;  -- 	JNEG   WaitingLoop
+           038 : 8800;  -- 	RETURN
+           039 : 0443;  -- C4:		   DW &H0443
+           03A : 0444;  -- D4:		   DW &H0444
+           03B : 0445;  -- E4:		   DW &H0445
+           03C : 0447;  -- G4:		   DW &H0447
+  END;

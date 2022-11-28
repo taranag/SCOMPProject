@@ -5,107 +5,107 @@
 ORG 0
 
     LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	C4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayDoubleNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayDoubleNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	G4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	G4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayDoubleNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	C4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	E4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	D4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayNote
 
 	LOAD	C4
-    OUT    Beep	
+	OUT    Beep
 	CALL	PlayDelayQuadNote
 
 	; Do it again
@@ -116,16 +116,14 @@ ORG 0
 
 
 PlayDelayNote:
-    OUT    Beep	
 	OUT    Timer
 WaitingLoopNote:
 	IN     Timer
 	ADDI   -5
 	JNEG   WaitingLoopNote
     LOAD   Zero
-    OUT    Beep
+	OUT    Beep
 	OUT    Timer
-    OUT    Beep
 WaitingLoopStop:
 	IN     Timer
 	ADDI   -2
@@ -133,16 +131,14 @@ WaitingLoopStop:
 	RETURN
 
 PlayDelayDoubleNote:
-	OUT    Beep
 	OUT    Timer
 WaitingLoopDoubleNote:
 	IN     Timer
 	ADDI   -10
 	JNEG   WaitingLoopDoubleNote
     LOAD   Zero
-    OUT    Beep
+	OUT    Beep
 	OUT    Timer
-    OUT    Beep
 WaitingLoopDoubleStop:
 	IN     Timer
 	ADDI   -2
@@ -150,16 +146,14 @@ WaitingLoopDoubleStop:
 	RETURN
 
 PlayDelayQuadNote:
-	OUT    Beep
 	OUT    Timer
 WaitingLoopQuadNote:
 	IN     Timer
 	ADDI   -20
 	JNEG   WaitingLoopQuadNote
     LOAD   Zero
-    OUT    Beep
+	OUT    Beep
 	OUT    Timer
-    OUT    Beep
 WaitingLoopQuadStop:
 	IN     Timer
 	ADDI   -2
@@ -182,10 +176,20 @@ Hex0:      EQU 004
 Hex1:      EQU 005
 Beep:      EQU &H40
 
-C4:         DW &B0100010000
-D4:         DW &B0100001000
-E4:         DW &B0100000100
-F4:         DW &B0100000010
-G4:         DW &B0100000001
-Zero:       DW &B0000000000
+C4:		   DW &H0443
+D4:		   DW &H0444
+E4:		   DW &H0445
+G4:		   DW &H0447
+Zero:      DW 0
 	
+
+
+
+
+
+Freq: DW 325
+DirectEnable: 	DW 8192
+
+Load Freq
+AND DirectEnable
+OUT BEEP

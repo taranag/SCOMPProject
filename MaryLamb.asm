@@ -29,21 +29,25 @@ ORG 0
 	OUT		Beep
 	CALL	Delay
 
-	; LOAD 	Zero
-	; OUT		Beep
+	LOAD 	Zero
+	OUT		Beep
 	CALL	Delay
 	
 	LOAD 	E4
 	OUT		Beep
 	CALL	DelaySame
 
-	; LOAD 	Zero
-	; OUT		Beep
+	LOAD 	Zero
+	OUT		Beep
 	CALL	Delay
 
-	; LOAD 	E4
-	; OUT		Beep
-	; CALL	DelaySame
+	LOAD 	E4
+	OUT		Beep
+	CALL	DelaySame
+
+	LOAD 	Zero
+	OUT		Beep
+	CALL	Delay
 
 	LOAD 	E4
 	OUT		Beep

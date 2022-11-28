@@ -138,7 +138,6 @@ set_location_assignment PIN_AE19 -to HEX5[4]
 set_location_assignment PIN_AF19 -to HEX5[5]
 set_location_assignment PIN_AB21 -to HEX5[6]
 
-set_global_assignment -name ADVANCED_PHYSICAL_OPTIMIZATION OFF
 set_location_assignment PIN_AF30 -to AUD_BCLK
 set_location_assignment PIN_AF29 -to AUD_DACDAT
 set_location_assignment PIN_AG30 -to AUD_DACLR
@@ -160,8 +159,6 @@ set_global_assignment -name BDF_FILE SCOMP_System.bdf
 set_global_assignment -name BDF_FILE HEX_DISP_6.bdf
 set_global_assignment -name QIP_FILE PLL_main.qip
 set_global_assignment -name SIP_FILE PLL_main.sip
-set_global_assignment -name FINAL_PLACEMENT_OPTIMIZATION NEVER
-set_global_assignment -name FITTER_EFFORT "FAST FIT"
 set_global_assignment -name SMART_RECOMPILE ON
 set_location_assignment PIN_AK4 -to BT[0]
 set_location_assignment PIN_AA14 -to BT[1]

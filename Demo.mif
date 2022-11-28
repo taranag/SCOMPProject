@@ -1,0 +1,120 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 9041;  --     IN ALLIO
+           001 : 486A;  --     AND Button3
+           002 : 3000;  --     jneg 0
+           003 : 8056;  --     CALL    Delay
+           004 : 0867;  -- 	LOAD    E4
+           005 : 9840;  --     OUT     Beep
+           006 : 8056;  --     Call    Delay
+           007 : 0866;  --     LOAD    D4
+           008 : 9840;  --     OUT     Beep
+           009 : 8056;  --     Call    Delay
+           00A : 0865;  --     LOAD    C4
+           00B : 9840;  --     OUT     Beep
+           00C : 8056;  --     Call    Delay
+           00D : 0867;  --     LOAD    E4
+           00E : 9840;  --     OUT     Beep
+           00F : 8056;  --     Call    Delay
+           010 : 0866;  --     LOAD    D4
+           011 : 9840;  --     OUT     Beep
+           012 : 8056;  --     Call    Delay
+           013 : 0865;  --     LOAD    C4
+           014 : 9840;  --     OUT     Beep
+           015 : 8056;  --     Call    Delay
+           016 : 0865;  --     LOAD    C4
+           017 : 9840;  --     OUT     Beep
+           018 : 8056;  --     Call    Delay
+           019 : 0869;  --     LOAD    Zero
+           01A : 9840;  --     OUT     Beep
+           01B : 8060;  --     Call    ZeroDelay
+           01C : 0865;  --     LOAD    C4
+           01D : 9840;  --     OUT     Beep
+           01E : 8056;  --     Call    Delay
+           01F : 0869;  --     LOAD    Zero
+           020 : 9840;  --     OUT     Beep
+           021 : 8060;  --     Call    ZeroDelay
+           022 : 0865;  --     LOAD    C4
+           023 : 9840;  --     OUT     Beep
+           024 : 8056;  --     Call    Delay
+           025 : 0869;  --     LOAD    Zero
+           026 : 9840;  --     OUT     Beep
+           027 : 8060;  --     Call    ZeroDelay
+           028 : 0865;  --     LOAD    C4
+           029 : 9840;  --     OUT     Beep
+           02A : 8056;  --     Call    Delay
+           02B : 0866;  --     LOAD    D4
+           02C : 9840;  --     OUT     Beep
+           02D : 8056;  --     Call    Delay
+           02E : 0869;  --     LOAD    Zero
+           02F : 9840;  --     OUT     Beep
+           030 : 8060;  --     Call    ZeroDelay
+           031 : 0866;  --     LOAD    D4
+           032 : 9840;  --     OUT     Beep
+           033 : 8056;  --     Call    Delay
+           034 : 0869;  --     LOAD    Zero
+           035 : 9840;  --     OUT     Beep
+           036 : 8060;  --     Call    ZeroDelay
+           037 : 0866;  --     LOAD    D4
+           038 : 9840;  --     OUT     Beep
+           039 : 8056;  --     Call    Delay
+           03A : 0869;  --     LOAD    Zero
+           03B : 9840;  --     OUT     Beep
+           03C : 8060;  --     Call    ZeroDelay
+           03D : 0866;  --     LOAD    D4
+           03E : 9840;  --     OUT     Beep
+           03F : 8056;  --     Call    Delay
+           040 : 0869;  --     LOAD    Zero
+           041 : 9840;  --     OUT     Beep
+           042 : 8060;  --     Call    ZeroDelay
+           043 : 0866;  --     LOAD    D4
+           044 : 9840;  --     OUT     Beep
+           045 : 8056;  --     Call    Delay
+           046 : 0867;  --     LOAD    E4
+           047 : 9840;  --     OUT     Beep
+           048 : 8056;  --     Call    Delay
+           049 : 0866;  --     LOAD    D4
+           04A : 9840;  --     OUT     Beep
+           04B : 8056;  --     Call    Delay
+           04C : 0865;  --     LOAD    C4
+           04D : 9840;  --     OUT     Beep
+           04E : 8056;  --     Call    Delay
+           04F : 0869;  --     LOAD    Zero
+           050 : 9840;  --     OUT     Beep
+           051 : 8056;  --     Call    Delay
+           052 : 9041;  --     IN     ALLIO    
+           053 : 9840;  -- 	OUT    Beep
+           054 : 805B;  -- 	CALL   Delay2
+           055 : 2852;  --     JUMP   BeepTest
+           056 : 9802;  -- 	OUT    Timer
+           057 : 9002;  -- 	IN     Timer
+           058 : 6FFB;  -- 	ADDI   -5
+           059 : 3057;  -- 	JNEG   WaitingLoop
+           05A : 8800;  -- 	RETURN
+           05B : 9802;  -- 	OUT    Timer
+           05C : 9002;  -- 	IN     Timer
+           05D : 6FFE;  -- 	ADDI   -2
+           05E : 305C;  -- 	JNEG   WaitingLoop2
+           05F : 8800;  -- 	RETURN
+           060 : 9802;  -- 	OUT    Timer
+           061 : 9002;  -- 	IN     Timer
+           062 : 6FFF;  -- 	ADDI   -1
+           063 : 3061;  -- 	JNEG   ZeroWaitingLoop
+           064 : 8800;  -- 	RETURN
+           065 : 0443;  -- C4:		   DW &H0443
+           066 : 0444;  -- D4:		   DW &H0444
+           067 : 0445;  -- E4:		   DW &H0445
+           068 : 0400;  -- G4:		   DW &H0400
+           069 : 0000;  -- Zero:      DW 0
+           06A : 8000;  -- Button3:   DW &H8000
+  END;

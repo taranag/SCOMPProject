@@ -29,4 +29,4 @@ Timer:     EQU 002
 Hex0:      EQU 004
 Hex1:      EQU 005
 Beep:      EQU &H40
-ALLIO:      EQU &H41
+ALLIO:     EQU &H41
