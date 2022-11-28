@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Nov 16 14:49:44 2022
+Tue Nov 22 15:02:48 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -42,11 +42,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  34. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
  35. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
  36. Parameter Settings for User Entity Instance: oneshot_i2c:inst12|i2c_master:inst
- 37. lpm_shiftreg Parameter Settings by Entity Instance
- 38. altsyncram Parameter Settings by Entity Instance
- 39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Elapsed Time Per Partition
- 41. Analysis & Synthesis Messages
+ 37. Parameter Settings for Inferred Entity Instance: TONE_GEN:inst6|lpm_divide:Div0
+ 38. lpm_shiftreg Parameter Settings by Entity Instance
+ 39. altsyncram Parameter Settings by Entity Instance
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -73,13 +74,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 16 14:49:44 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 22 15:02:48 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 372                                         ;
+; Total registers                 ; 376                                         ;
 ; Total pins                      ; 63                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 34,816                                      ;
@@ -243,6 +244,12 @@ https://fpgasoftware.intel.com/eula.
 ; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                ;          ;
 ; altera_pll_dps_lcell_comb.v      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll_dps_lcell_comb.v ;          ;
 ; altera_cyclonev_pll.v            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v       ;          ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;          ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/abs_divider.inc             ;          ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;          ;
+; db/lpm_divide_mbm.tdf            ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/lpm_divide_mbm.tdf        ;          ;
+; db/sign_div_unsign_slh.tdf       ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/sign_div_unsign_slh.tdf   ;          ;
+; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/alt_u_div_uve.tdf         ;          ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+----------+
 
 
@@ -251,16 +258,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                               ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 571                                                                                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 759                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Combinational ALUT usage for logic          ; 760                                                                                                                 ;
-;     -- 7 input functions                    ; 14                                                                                                                  ;
-;     -- 6 input functions                    ; 240                                                                                                                 ;
-;     -- 5 input functions                    ; 177                                                                                                                 ;
-;     -- 4 input functions                    ; 76                                                                                                                  ;
-;     -- <=3 input functions                  ; 253                                                                                                                 ;
+; Combinational ALUT usage for logic          ; 1171                                                                                                                ;
+;     -- 7 input functions                    ; 17                                                                                                                  ;
+;     -- 6 input functions                    ; 202                                                                                                                 ;
+;     -- 5 input functions                    ; 224                                                                                                                 ;
+;     -- 4 input functions                    ; 214                                                                                                                 ;
+;     -- <=3 input functions                  ; 514                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Dedicated logic registers                   ; 372                                                                                                                 ;
+; Dedicated logic registers                   ; 376                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
 ; I/O pins                                    ; 63                                                                                                                  ;
 ; Total MLAB memory bits                      ; 0                                                                                                                   ;
@@ -273,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                     ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|cascade_wire[0] ;
 ; Maximum fan-out                             ; 217                                                                                                                 ;
-; Total fan-out                               ; 5099                                                                                                                ;
-; Average fan-out                             ; 3.95                                                                                                                ;
+; Total fan-out                               ; 6321                                                                                                                ;
+; Average fan-out                             ; 3.71                                                                                                                ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
@@ -283,7 +290,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name              ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |SCOMP_System                                    ; 760 (25)            ; 372 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
+; |SCOMP_System                                    ; 1171 (30)           ; 376 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
 ;    |DAC_INTERFACE:inst35|                        ; 10 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35                                                                                                                ; DAC_INTERFACE            ; work         ;
 ;       |lpm_shiftreg:serialize|                   ; 10 (10)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35|lpm_shiftreg:serialize                                                                                         ; lpm_shiftreg             ; work         ;
 ;    |DIG_IN:inst7|                                ; 0 (0)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                                                                        ; DIG_IN                   ; work         ;
@@ -296,15 +303,19 @@ https://fpgasoftware.intel.com/eula.
 ;          |altera_pll:altera_pll_i|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i                                                                  ; altera_pll               ; work         ;
 ;             |altera_cyclonev_pll:cyclonev_pll|   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll                                 ; altera_cyclonev_pll      ; work         ;
 ;                |altera_cyclonev_pll_base:fpll_0| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0 ; altera_cyclonev_pll_base ; work         ;
-;    |SCOMP:inst|                                  ; 297 (254)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                          ; SCOMP                    ; work         ;
+;    |SCOMP:inst|                                  ; 303 (263)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                          ; SCOMP                    ; work         ;
 ;       |altsyncram:altsyncram_component|          ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                                                                          ; altsyncram               ; work         ;
 ;          |altsyncram_ki24:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ki24:auto_generated                                                           ; altsyncram_ki24          ; work         ;
-;       |lpm_clshift:shifter|                      ; 43 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                      ; lpm_clshift              ; work         ;
-;          |lpm_clshift_fuc:auto_generated|        ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                       ; lpm_clshift_fuc          ; work         ;
-;    |TIMER:inst4|                                 ; 34 (34)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                         ; TIMER                    ; work         ;
-;    |TONE_GEN:inst6|                              ; 284 (284)           ; 57 (57)                   ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
+;       |lpm_clshift:shifter|                      ; 40 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                      ; lpm_clshift              ; work         ;
+;          |lpm_clshift_fuc:auto_generated|        ; 40 (40)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                       ; lpm_clshift_fuc          ; work         ;
+;    |TIMER:inst4|                                 ; 33 (33)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                         ; TIMER                    ; work         ;
+;    |TONE_GEN:inst6|                              ; 685 (241)           ; 61 (61)                   ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6                                                                                                                      ; TONE_GEN                 ; work         ;
 ;       |altsyncram:SOUND_LUT|                     ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT                                                                                                 ; altsyncram               ; work         ;
 ;          |altsyncram_5h04:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated                                                                  ; altsyncram_5h04          ; work         ;
+;       |lpm_divide:Div0|                          ; 444 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|lpm_divide:Div0                                                                                                      ; lpm_divide               ; work         ;
+;          |lpm_divide_mbm:auto_generated|         ; 444 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|lpm_divide:Div0|lpm_divide_mbm:auto_generated                                                                        ; lpm_divide_mbm           ; work         ;
+;             |sign_div_unsign_slh:divider|        ; 444 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|lpm_divide:Div0|lpm_divide_mbm:auto_generated|sign_div_unsign_slh:divider                                            ; sign_div_unsign_slh      ; work         ;
+;                |alt_u_div_uve:divider|           ; 444 (444)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TONE_GEN:inst6|lpm_divide:Div0|lpm_divide_mbm:auto_generated|sign_div_unsign_slh:divider|alt_u_div_uve:divider                      ; alt_u_div_uve            ; work         ;
 ;    |clk_div:inst5|                               ; 27 (27)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                                                                                       ; clk_div                  ; work         ;
 ;    |oneshot_i2c:inst12|                          ; 63 (0)              ; 46 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|oneshot_i2c:inst12                                                                                                                  ; oneshot_i2c              ; work         ;
 ;       |i2c_master:inst|                          ; 38 (38)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst                                                                                                  ; i2c_master               ; work         ;
@@ -421,61 +432,62 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------------+------------------------+
+; TIMER:inst4|IO_COUNT[14]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[10]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[7]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
-; TIMER:inst4|IO_COUNT[4]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
-; TIMER:inst4|IO_COUNT[5]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[6]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
+; TIMER:inst4|IO_COUNT[5]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[0]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[1]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[2]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
+; TIMER:inst4|IO_COUNT[4]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[8]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[3]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[9]                             ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[15]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
-; TIMER:inst4|IO_COUNT[11]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
-; TIMER:inst4|IO_COUNT[12]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; TIMER:inst4|IO_COUNT[13]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
-; TIMER:inst4|IO_COUNT[14]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
+; TIMER:inst4|IO_COUNT[12]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
+; TIMER:inst4|IO_COUNT[11]                            ; IO_DECODER:inst3|TIMER_EN ; yes                    ;
 ; Number of user-specified and inferred latches = 16  ;                           ;                        ;
 +-----------------------------------------------------+---------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                              ;
-+-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-; Register name                                                                                                                       ; Reason for Removal                                        ;
-+-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-; oneshot_i2c:inst12|i2c_master:inst|scl_clk                                                                                          ; Stuck at GND due to stuck port data_in                    ;
-; DIG_IN:inst7|B_DI[10..12]                                                                                                           ; Stuck at GND due to stuck port data_in                    ;
-; TONE_GEN:inst6|HEX_DATA[4..19]                                                                                                      ; Stuck at GND due to stuck port data_in                    ;
-; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[0..3]                                                                                 ; Stuck at GND due to stuck port data_in                    ;
-; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[0..3]                                                                                 ; Stuck at GND due to stuck port data_in                    ;
-; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[0..3]                                                                                 ; Stuck at GND due to stuck port data_in                    ;
-; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0..3]                                                                                 ; Stuck at GND due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|addr_rw[1,3,6,7]                                                                                 ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[0] ;
-; oneshot_i2c:inst12|i2c_master:inst|addr_rw[4,5]                                                                                     ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[2] ;
-; TONE_GEN:inst6|tuning_word[19]                                                                                                      ; Stuck at GND due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|addr_rw[2]                                                                                       ; Stuck at VCC due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]                                                                                       ; Stuck at GND due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|count[2]                                                                                         ; Stuck at GND due to stuck port data_in                    ;
-; SCOMP:inst|state.ex_nop                                                                                                             ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~2                ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~3                ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~4                ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~5                ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_HIGH  ; Stuck at GND due to stuck port clock                      ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_1 ; Stuck at GND due to stuck port clock                      ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_0 ; Lost fanout                                               ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_2 ; Stuck at GND due to stuck port clock                      ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_3 ; Stuck at GND due to stuck port clock                      ;
-; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_4 ; Stuck at GND due to stuck port clock                      ;
-; oneshot_i2c:inst12|i2c_master:inst|state.rd                                                                                         ; Stuck at GND due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|state.mstr_ack                                                                                   ; Stuck at GND due to stuck port data_in                    ;
-; oneshot_i2c:inst12|i2c_master:inst|state.restart                                                                                    ; Stuck at GND due to stuck port data_in                    ;
-; Total Number of Removed Registers = 60                                                                                              ;                                                           ;
-+-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                                                                                                       ; Reason for Removal                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; oneshot_i2c:inst12|i2c_master:inst|scl_clk                                                                                          ; Stuck at GND due to stuck port data_in                       ;
+; DIG_IN:inst7|B_DI[10..12]                                                                                                           ; Stuck at GND due to stuck port data_in                       ;
+; TONE_GEN:inst6|HEX_DATA[4..18]                                                                                                      ; Merged with TONE_GEN:inst6|HEX_DATA[19]                      ;
+; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[1..3]                                                                                 ; Merged with HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0] ;
+; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[0..3]                                                                                 ; Merged with HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0] ;
+; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[0..3]                                                                                 ; Merged with HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0] ;
+; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[0..3]                                                                                 ; Merged with HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0] ;
+; oneshot_i2c:inst12|i2c_master:inst|addr_rw[1,3,6,7]                                                                                 ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]    ;
+; oneshot_i2c:inst12|i2c_master:inst|addr_rw[4,5]                                                                                     ; Merged with oneshot_i2c:inst12|i2c_master:inst|addr_rw[2]    ;
+; TONE_GEN:inst6|HEX_DATA[19]                                                                                                         ; Stuck at GND due to stuck port data_in                       ;
+; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0]                                                                                    ; Stuck at GND due to stuck port data_in                       ;
+; oneshot_i2c:inst12|i2c_master:inst|addr_rw[2]                                                                                       ; Stuck at VCC due to stuck port data_in                       ;
+; oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]                                                                                       ; Stuck at GND due to stuck port data_in                       ;
+; oneshot_i2c:inst12|i2c_master:inst|count[2]                                                                                         ; Stuck at GND due to stuck port data_in                       ;
+; SCOMP:inst|state.ex_nop                                                                                                             ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~2                ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~3                ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~4                ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~5                ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_HIGH  ; Stuck at GND due to stuck port clock                         ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_1 ; Stuck at GND due to stuck port clock                         ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_0 ; Lost fanout                                                  ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_2 ; Stuck at GND due to stuck port clock                         ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_3 ; Stuck at GND due to stuck port clock                         ;
+; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_4 ; Stuck at GND due to stuck port clock                         ;
+; oneshot_i2c:inst12|i2c_master:inst|state.rd                                                                                         ; Stuck at GND due to stuck port data_in                       ;
+; oneshot_i2c:inst12|i2c_master:inst|state.mstr_ack                                                                                   ; Stuck at GND due to stuck port data_in                       ;
+; oneshot_i2c:inst12|i2c_master:inst|state.restart                                                                                    ; Stuck at GND due to stuck port data_in                       ;
+; Total Number of Removed Registers = 59                                                                                              ;                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -487,39 +499,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;                                                                                                                                     ; due to stuck port clock   ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_2, ;
 ;                                                                                                                                     ;                           ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_3, ;
 ;                                                                                                                                     ;                           ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_4  ;
-; DIG_IN:inst7|B_DI[10]                                                                                                               ; Stuck at GND              ; TONE_GEN:inst6|tuning_word[19]                                                                                                       ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[19]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[3]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[18]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[2]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[17]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[1]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[16]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst5|latched_hex[0]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[15]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[3]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[14]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[2]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[13]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[1]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[12]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst4|latched_hex[0]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[11]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[3]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[10]                                                                                                         ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[2]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[9]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[1]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[8]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst3|latched_hex[0]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[7]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[3]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[6]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[2]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[5]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[1]                                                                                     ;
-;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
-; TONE_GEN:inst6|HEX_DATA[4]                                                                                                          ; Stuck at GND              ; HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0]                                                                                     ;
+; DIG_IN:inst7|B_DI[10]                                                                                                               ; Stuck at GND              ; TONE_GEN:inst6|HEX_DATA[19], HEX_DISPV2_6:inst9|HEX_DISP:inst2|latched_hex[0]                                                        ;
 ;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
 ; oneshot_i2c:inst12|i2c_master:inst|state.mstr_ack                                                                                   ; Stuck at GND              ; oneshot_i2c:inst12|i2c_master:inst|state.restart                                                                                     ;
 ;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                      ;
@@ -531,12 +511,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 372   ;
+; Total registers                              ; 376   ;
 ; Number of registers using Synchronous Clear  ; 51    ;
 ; Number of registers using Synchronous Load   ; 121   ;
-; Number of registers using Asynchronous Clear ; 134   ;
+; Number of registers using Asynchronous Clear ; 135   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 173   ;
+; Number of registers using Clock Enable       ; 188   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -546,11 +526,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------+---------+
 ; Inverted Register                                    ; Fan out ;
 +------------------------------------------------------+---------+
-; TONE_GEN:inst6|HEX_DATA[1]                           ; 1       ;
+; TONE_GEN:inst6|HEX_DATA[1]                           ; 2       ;
 ; oneshot_i2c:inst12|i2c_master:inst|sda_int           ; 2       ;
-; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[2]        ; 10      ;
-; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[1]        ; 11      ;
-; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[0]        ; 11      ;
+; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[2]        ; 7       ;
+; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[1]        ; 8       ;
+; oneshot_i2c:inst12|i2c_master:inst|bit_cnt[0]        ; 8       ;
 ; oneshot_i2c:inst12|i2c_master:inst|busy              ; 12      ;
 ; oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] ; 12      ;
 ; oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] ; 15      ;
@@ -563,20 +543,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][8]                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|HEX_DATA[22]                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|octavedata[0]                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|switchdata[5]                         ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][1]                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|HEX_DATA[22]                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[2] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|addr_rw[0]        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[0]        ;
 ; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[0] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[2]                                     ;
-; 12:1               ; 13 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[11]                                    ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[9]                                     ;
+; 12:1               ; 14 bits   ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[1]                                     ;
 ; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[4] ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[14]                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[0]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|count             ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[4]                                           ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[6]                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
@@ -1120,6 +1101,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: TONE_GEN:inst6|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                               ;
+; LPM_WIDTHD             ; 9              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_mbm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------+
 ; lpm_shiftreg Parameter Settings by Entity Instance                       ;
 +----------------------------+---------------------------------------------+
@@ -1168,31 +1172,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------------+-----------------------+
 ; Type                        ; Count                 ;
 +-----------------------------+-----------------------+
-; arriav_ff                   ; 372                   ;
-;     CLR                     ; 111                   ;
+; arriav_ff                   ; 376                   ;
+;     CLR                     ; 100                   ;
 ;     CLR SCLR                ; 20                    ;
-;     ENA                     ; 60                    ;
-;     ENA CLR                 ; 3                     ;
+;     ENA                     ; 63                    ;
+;     ENA CLR                 ; 15                    ;
 ;     ENA SCLR                ; 11                    ;
 ;     ENA SLD                 ; 99                    ;
 ;     SCLR                    ; 20                    ;
 ;     SLD                     ; 22                    ;
 ;     plain                   ; 26                    ;
 ; arriav_io_obuf              ; 2                     ;
-; arriav_lcell_comb           ; 764                   ;
-;     arith                   ; 98                    ;
-;         1 data inputs       ; 46                    ;
-;         2 data inputs       ; 52                    ;
-;     extend                  ; 14                    ;
-;         7 data inputs       ; 14                    ;
-;     normal                  ; 636                   ;
+; arriav_lcell_comb           ; 1175                  ;
+;     arith                   ; 337                   ;
+;         0 data inputs       ; 41                    ;
+;         1 data inputs       ; 125                   ;
+;         2 data inputs       ; 59                    ;
+;         3 data inputs       ; 33                    ;
+;         4 data inputs       ; 79                    ;
+;     extend                  ; 17                    ;
+;         7 data inputs       ; 17                    ;
+;     normal                  ; 805                   ;
 ;         0 data inputs       ; 2                     ;
-;         1 data inputs       ; 9                     ;
-;         2 data inputs       ; 55                    ;
-;         3 data inputs       ; 77                    ;
-;         4 data inputs       ; 76                    ;
-;         5 data inputs       ; 177                   ;
-;         6 data inputs       ; 240                   ;
+;         1 data inputs       ; 10                    ;
+;         2 data inputs       ; 146                   ;
+;         3 data inputs       ; 86                    ;
+;         4 data inputs       ; 135                   ;
+;         5 data inputs       ; 224                   ;
+;         6 data inputs       ; 202                   ;
 ;     shared                  ; 16                    ;
 ;         2 data inputs       ; 16                    ;
 ; boundary_port               ; 63                    ;
@@ -1202,8 +1209,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cyclonev_pll_refclk_select  ; 1                     ;
 ; stratixv_ram_block          ; 24                    ;
 ;                             ;                       ;
-; Max LUT depth               ; 6.00                  ;
-; Average LUT depth           ; 2.70                  ;
+; Max LUT depth               ; 63.70                 ;
+; Average LUT depth           ; 23.38                 ;
 +-----------------------------+-----------------------+
 
 
@@ -1212,7 +1219,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
@@ -1222,7 +1229,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Nov 16 14:49:22 2022
+    Info: Processing started: Tue Nov 22 15:02:20 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tone_gen.vhd
@@ -1288,9 +1295,9 @@ Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:seria
     Info (12134): Parameter "LPM_TYPE" = "LPM_SHIFTREG"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TONE_GEN" for hierarchy "TONE_GEN:inst6"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 74
-Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 74
-Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 74
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 84
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 84
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 84
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1694,21 +1701,35 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|gnd" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 427
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 35
-    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 38
     Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
     Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 38
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 37
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 37
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 123
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 123
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 123
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 123
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 43
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "TONE_GEN:inst6|Div0" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 81
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|lpm_divide:Div0" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 81
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|lpm_divide:Div0" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/TONE_GEN.vhd Line: 81
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mbm.tdf
+    Info (12023): Found entity 1: lpm_divide_mbm File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/lpm_divide_mbm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_slh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_slh File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/sign_div_unsign_slh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uve.tdf
+    Info (12023): Found entity 1: alt_u_div_uve File: D:/Users/Taran Agnihotri/Desktop/ECE2031/SCOMPProject/db/alt_u_div_uve.tdf Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[6]" is stuck at VCC
     Warning (13410): Pin "HEX1[5]" is stuck at GND
@@ -1745,16 +1766,16 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 12 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1041 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1455 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 44 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 948 logic cells
+    Info (21061): Implemented 1362 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4893 megabytes
-    Info: Processing ended: Wed Nov 16 14:49:44 2022
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 4909 megabytes
+    Info: Processing ended: Tue Nov 22 15:02:48 2022
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:40
 
 

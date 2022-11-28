@@ -1,0 +1,32 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 9000;  -- 	IN     Switches
+           001 : 9840;  -- 	OUT    Beep
+           002 : 800B;  -- 	CALL   Delay
+           003 : 9000;  -- 	IN Switches
+           004 : 4810;  -- 	AND DirectButton
+           005 : 4000;  -- 	jzero Beeper
+           006 : 2807;  -- 	jump DirectFreq
+           007 : 0812;  -- 	Load freq
+           008 : 9840;  -- 	OUT Beep
+           009 : 800B;  -- 	CALL Delay
+           00A : 2803;  -- 	JUMP Main
+           00B : 9802;  -- 	OUT    Timer
+           00C : 9002;  -- 	IN     Timer
+           00D : 6FFE;  -- 	ADDI   -2
+           00E : 300C;  -- 	JNEG   WaitingLoop
+           00F : 8800;  -- 	RETURN
+           010 : 2000;  -- DirectButton:	   DW 8192
+           011 : 0000;  -- Zero:	   DW 0
+           012 : 0106;  -- freq:	   DW 262
+  END;

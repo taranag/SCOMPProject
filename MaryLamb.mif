@@ -1,0 +1,161 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 0892;  -- 	LOAD 	E4
+           001 : 9840;  -- 	OUT		Beep
+           002 : 8085;  -- 	CALL	Delay
+           003 : 0892;  -- 	LOAD 	E4
+           004 : 9840;  -- 	OUT		Beep
+           005 : 8085;  -- 	CALL	Delay
+           006 : 0891;  -- 	LOAD 	D4
+           007 : 9840;  -- 	OUT		Beep
+           008 : 8085;  -- 	CALL	Delay
+           009 : 0890;  -- 	LOAD 	C4
+           00A : 9840;  -- 	OUT		Beep
+           00B : 8085;  -- 	CALL	Delay
+           00C : 0891;  -- 	LOAD 	D4
+           00D : 9840;  -- 	OUT		Beep
+           00E : 8085;  -- 	CALL	Delay
+           00F : 0892;  -- 	LOAD 	E4
+           010 : 9840;  -- 	OUT		Beep
+           011 : 8085;  -- 	CALL	Delay
+           012 : 088F;  -- 	LOAD 	Zero
+           013 : 9840;  -- 	OUT		Beep
+           014 : 8085;  -- 	CALL	Delay
+           015 : 0892;  -- 	LOAD 	E4
+           016 : 9840;  -- 	OUT		Beep
+           017 : 808A;  -- 	CALL	DelaySame
+           018 : 088F;  -- 	LOAD 	Zero
+           019 : 9840;  -- 	OUT		Beep
+           01A : 8085;  -- 	CALL	Delay
+           01B : 0892;  -- 	LOAD 	E4
+           01C : 9840;  -- 	OUT		Beep
+           01D : 808A;  -- 	CALL	DelaySame
+           01E : 0892;  -- 	LOAD 	E4
+           01F : 9840;  -- 	OUT		Beep
+           020 : 8085;  -- 	CALL	Delay
+           021 : 0891;  -- 	LOAD 	D4
+           022 : 9840;  -- 	OUT		Beep
+           023 : 8085;  -- 	CALL	Delay
+           024 : 088F;  -- 	LOAD 	Zero
+           025 : 9840;  -- 	OUT		Beep
+           026 : 808A;  -- 	CALL	DelaySame
+           027 : 0891;  -- 	LOAD 	D4
+           028 : 9840;  -- 	OUT		Beep
+           029 : 8085;  -- 	CALL	Delay
+           02A : 088F;  -- 	LOAD 	Zero
+           02B : 9840;  -- 	OUT		Beep
+           02C : 808A;  -- 	CALL	DelaySame
+           02D : 0891;  -- 	LOAD 	D4
+           02E : 9840;  -- 	OUT		Beep
+           02F : 8085;  -- 	CALL	Delay
+           030 : 0891;  -- 	LOAD 	D4
+           031 : 9840;  -- 	OUT		Beep
+           032 : 8085;  -- 	CALL	Delay
+           033 : 0892;  -- 	LOAD 	E4
+           034 : 9840;  -- 	OUT		Beep
+           035 : 8085;  -- 	CALL	Delay
+           036 : 088F;  -- 	LOAD 	Zero
+           037 : 9840;  -- 	OUT		Beep
+           038 : 808A;  -- 	CALL	DelaySame
+           039 : 0893;  -- 	LOAD 	G4
+           03A : 9840;  -- 	OUT		Beep
+           03B : 8085;  -- 	CALL	Delay
+           03C : 088F;  -- 	LOAD 	Zero
+           03D : 9840;  -- 	OUT		Beep
+           03E : 808A;  -- 	CALL	DelaySame
+           03F : 0893;  -- 	LOAD 	G4
+           040 : 9840;  -- 	OUT		Beep
+           041 : 8085;  -- 	CALL	Delay
+           042 : 0893;  -- 	LOAD 	G4
+           043 : 9840;  -- 	OUT		Beep
+           044 : 8085;  -- 	CALL	Delay
+           045 : 088F;  -- 	LOAD 	Zero
+           046 : 9840;  -- 	OUT		Beep
+           047 : 8085;  -- 	CALL	Delay
+           048 : 0892;  -- 	LOAD 	E4
+           049 : 9840;  -- 	OUT		Beep
+           04A : 8085;  -- 	CALL	Delay
+           04B : 0891;  -- 	LOAD 	D4
+           04C : 9840;  -- 	OUT		Beep
+           04D : 8085;  -- 	CALL	Delay
+           04E : 0890;  -- 	LOAD 	C4
+           04F : 9840;  -- 	OUT		Beep
+           050 : 8085;  -- 	CALL	Delay
+           051 : 0891;  -- 	LOAD 	D4
+           052 : 9840;  -- 	OUT		Beep
+           053 : 8085;  -- 	CALL	Delay
+           054 : 0892;  -- 	LOAD 	E4
+           055 : 9840;  -- 	OUT		Beep
+           056 : 8085;  -- 	CALL	Delay
+           057 : 088F;  -- 	LOAD 	Zero
+           058 : 9840;  -- 	OUT		Beep
+           059 : 808A;  -- 	CALL	DelaySame
+           05A : 0892;  -- 	LOAD 	E4
+           05B : 9840;  -- 	OUT		Beep
+           05C : 8085;  -- 	CALL	Delay
+           05D : 088F;  -- 	LOAD 	Zero
+           05E : 9840;  -- 	OUT		Beep
+           05F : 808A;  -- 	CALL	DelaySame
+           060 : 0892;  -- 	LOAD 	E4
+           061 : 9840;  -- 	OUT		Beep
+           062 : 8085;  -- 	CALL	Delay
+           063 : 088F;  -- 	LOAD 	Zero
+           064 : 9840;  -- 	OUT		Beep
+           065 : 808A;  -- 	CALL	DelaySame
+           066 : 0892;  -- 	LOAD 	E4
+           067 : 9840;  -- 	OUT		Beep
+           068 : 8085;  -- 	CALL	Delay
+           069 : 0891;  -- 	LOAD 	D4
+           06A : 9840;  -- 	OUT		Beep
+           06B : 8085;  -- 	CALL	Delay
+           06C : 088F;  -- 	LOAD 	Zero
+           06D : 9840;  -- 	OUT		Beep
+           06E : 808A;  -- 	CALL	DelaySame
+           06F : 0891;  -- 	LOAD 	D4
+           070 : 9840;  -- 	OUT		Beep
+           071 : 8085;  -- 	CALL	Delay
+           072 : 0892;  -- 	LOAD 	E4
+           073 : 9840;  -- 	OUT		Beep
+           074 : 8085;  -- 	CALL	Delay
+           075 : 0891;  -- 	LOAD 	D4
+           076 : 9840;  -- 	OUT		Beep
+           077 : 8085;  -- 	CALL	Delay
+           078 : 0890;  -- 	LOAD 	C4
+           079 : 9840;  -- 	OUT		Beep
+           07A : 8085;  -- 	CALL	Delay
+           07B : 0890;  -- 	LOAD 	C4
+           07C : 9840;  -- 	OUT		Beep
+           07D : 8085;  -- 	CALL	Delay
+           07E : 0890;  -- 	LOAD 	C4
+           07F : 9840;  -- 	OUT		Beep
+           080 : 8085;  -- 	CALL	Delay
+           081 : 0890;  -- 	LOAD 	C4
+           082 : 9840;  -- 	OUT		Beep
+           083 : 8085;  -- 	CALL	Delay
+           084 : 2800;  -- 	JUMP   0
+           085 : 9802;  -- 	OUT    Timer
+           086 : 9002;  -- 	IN     Timer
+           087 : 6FF6;  -- 	ADDI   -10
+           088 : 3086;  -- 	JNEG   WaitingLoop
+           089 : 8800;  -- 	RETURN
+           08A : 9802;  -- 	OUT    Timer
+           08B : 9002;  -- 	IN     Timer
+           08C : 6FFE;  -- 	ADDI   -2
+           08D : 308B;  -- 	JNEG   WaitingLoopSame
+           08E : 8800;  -- 	RETURN
+           08F : 0000;  -- Zero:	   DW	0
+           090 : 0443;  -- C4:		   DW &H0443
+           091 : 0444;  -- D4:		   DW &H0444
+           092 : 0445;  -- E4:		   DW &H0445
+           093 : 0447;  -- G4:		   DW &H0447
+  END;

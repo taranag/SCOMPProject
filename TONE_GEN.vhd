@@ -36,6 +36,12 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL sounddata      : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL switchdata		 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	SIGNAL temp				 : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL division		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL division3		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL someTemp		 : integer;
+
 	
 	CONSTANT baseA			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010010110001";
 	CONSTANT baseB			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010101000101";
@@ -54,6 +60,7 @@ ARCHITECTURE gen OF TONE_GEN IS
 	
 	
 BEGIN
+	
 
 	-- Bases for Notes
 --	baseA <= "00000000010010110001";
@@ -69,7 +76,10 @@ BEGIN
 --	baseDsharp <= "00000000011010100011";
 --	baseFsharp <= "00000000011111100101";
 --	baseGsharp <= "00000000100011011100";
-
+	division <= "0000000000000000000" & CMD(12 DOWNTO 0);
+	division2 <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(division), 13));
+	someTemp <= to_integer(IEEE.NUMERIC_STD.unsigned(division2)) / 375;
+	division3 <= std_logic_vector(to_unsigned(someTemp, 32));
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
 	GENERIC MAP (
@@ -127,9 +137,15 @@ BEGIN
 			HEX_DATA <= "000000000000000000000010";
 		ELSIF RISING_EDGE(CS) THEN
 		
+		
+			
+		
 			if (CMD(10) = '1') then
 	--			tuning_word <= CMD(9 DOWNTO 0);
-				octavedata <= CMD(7 DOWNTO 5) - "010" + ("00" & CMD(4));
+--				octavedata <= CMD(7 DOWNTO 5) - "010" + ("00" & CMD(4));
+				temp <= CMD(7 DOWNTO 4) - "0010";
+				octavedata <= temp(2 DOWNTO 0);
+				
 				switchdata <= "00" & CMD(8) & CMD(3 DOWNTO 0);
 				
 				
@@ -191,6 +207,9 @@ BEGIN
 					when others =>
 						tuning_word <= "00000000000000000000";   -- invalid opcodes default to nop
 				end case;
+			elsif (CMD(14) = '0') then
+				
+				tuning_word <= division3(19 DOWNTO 0);
 				
 			else
 				octavedata <= CMD(9 DOWNTO 7);
