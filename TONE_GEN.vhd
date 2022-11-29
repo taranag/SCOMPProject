@@ -36,6 +36,7 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL sounddata      : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL switchdata		 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	SIGNAL directOctave   : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL temp				 : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL division		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -109,7 +110,7 @@ BEGIN
 	L_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	
 	-- Right channel is the same.
-	R_DATA(15 DOWNTO 13) <= sounddata(7)&sounddata(7)&sounddata(7); -- sign extend
+	R_DATA(15 DOWNTO 13) <= sounddata(7); -- sign extend
 	R_DATA(12 DOWNTO 5) <= sounddata;
 	R_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	
@@ -140,13 +141,17 @@ BEGIN
 		
 			
 		
-			if (CMD(10) = '1' AND CMD(14) = '0') then
-	--			tuning_word <= CMD(9 DOWNTO 0);
---				octavedata <= CMD(7 DOWNTO 5) - "010" + ("00" & CMD(4));
+			if (CMD(10) = '1') then
 				temp <= CMD(7 DOWNTO 4) - "0010";
-				octavedata <= temp(2 DOWNTO 0);
-				
+--				
+--				octavedata <= temp(2 DOWNTO 0);
+
+--
+----				
+--				directOctave <= CMD(7 DOWNTO 4);
 				switchdata <= "00" & CMD(8) & CMD(3 DOWNTO 0);
+				
+				
 				
 				
 				HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
@@ -157,59 +162,59 @@ BEGIN
 						
 					when "00001" =>       -- A
 						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata+"010"))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(temp + "001"))));
 						
 					when "10001" =>		-- A sharp
 						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata+"010"))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp +"001"))));
 						
 					when "00010" =>       -- B
 						HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(temp +"001"))));
 						
 					when "00011" =>       -- C
 						HEX_DATa(23 DOWNTO 20) <= "1100";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseC), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 
 					when "10011" =>       -- C sharp
 						HEX_DATa(23 DOWNTO 20) <= "1100";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseCsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 						
 					when "00100" =>       -- D
 						HEX_DATa(23 DOWNTO 20) <= "1101";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseD), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 									
 					when "10100" =>       -- D sharp
 						HEX_DATa(23 DOWNTO 20) <= "1101";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseDsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 							
 					when "00101" =>       -- E
 						HEX_DATa(23 DOWNTO 20) <= "1110";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseE), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 				
 						
 					when "00110" =>       -- F
 						HEX_DATa(23 DOWNTO 20) <= "1111";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseF), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 						
 					when "10110" =>       -- F sharp
 						HEX_DATa(23 DOWNTO 20) <= "1111";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseFsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 						
 					when "00111" =>       -- G
 						HEX_DATa(23 DOWNTO 20) <= "0001";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseG), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 						
 					when "10111" =>       -- G sharp
 						HEX_DATa(23 DOWNTO 20) <= "0001";
-						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(octavedata))));
+						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseGsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp))));
 						
 					when others =>
 						tuning_word <= "00000000000000000000";   -- invalid opcodes default to nop
 				end case;
-			elsif (CMD(14) = '0') then
-				
-				tuning_word <= division3(19 DOWNTO 0);
+--			elsif (CMD(14) = '0') then
+--				
+--				tuning_word <= division3(19 DOWNTO 0);
 				
 			else
 				octavedata <= CMD(9 DOWNTO 7);

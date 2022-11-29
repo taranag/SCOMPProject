@@ -80,10 +80,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BT[1]",
-					"strict" : false
-				},
-				{
 					"name" : "SW[7]",
 					"strict" : false
 				},
@@ -129,6 +125,10 @@
 				},
 				{
 					"name" : "BT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BT[1]",
 					"strict" : false
 				}
 			]

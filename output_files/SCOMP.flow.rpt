@@ -1,5 +1,5 @@
 Flow report for SCOMP
-Mon Nov 28 15:06:04 2022
+Tue Nov 29 16:28:55 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Nov 28 15:06:04 2022       ;
+; Flow Status                     ; Successful - Tue Nov 29 16:28:55 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 744 / 41,910 ( 2 % )                        ;
-; Total registers                 ; 413                                         ;
+; Logic utilization (in ALMs)     ; 599 / 41,910 ( 1 % )                        ;
+; Total registers                 ; 410                                         ;
 ; Total pins                      ; 63 / 499 ( 13 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 34,816 / 5,662,720 ( < 1 % )                ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/28/2022 15:03:02 ;
+; Start date & time ; 11/29/2022 16:25:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SCOMP               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 84440850159288.166966578201320         ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 49410870941793.166975712837808         ; --            ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
@@ -114,12 +114,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 4893 MB             ; 00:00:41                           ;
-; Fitter               ; 00:02:12     ; 1.1                     ; 6739 MB             ; 00:03:32                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4848 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.5                     ; 5213 MB             ; 00:00:13                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4842 MB             ; 00:00:02                           ;
-; Total                ; 00:02:56     ; --                      ; --                  ; 00:04:35                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4907 MB             ; 00:00:38                           ;
+; Fitter               ; 00:02:44     ; 1.1                     ; 6857 MB             ; 00:06:44                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4852 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.9                     ; 5237 MB             ; 00:00:14                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4843 MB             ; 00:00:02                           ;
+; Total                ; 00:03:23     ; --                      ; --                  ; 00:07:45                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,11 +128,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-RMV78RR  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-RMV78RR  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-RMV78RR  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-RMV78RR  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-RMV78RR  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
