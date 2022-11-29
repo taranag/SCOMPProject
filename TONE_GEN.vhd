@@ -21,8 +21,6 @@ ENTITY TONE_GEN IS
 		CS         : IN  STD_LOGIC;
 		SAMPLE_CLK : IN  STD_LOGIC;
 		RESETN     : IN  STD_LOGIC;
---		switchdata : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
---		octavedata : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 		L_DATA     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		R_DATA     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		HEX_DATA	  : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
@@ -42,9 +40,11 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL division3		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL someTemp		 : integer;
---	SIGNAL ROMaddress     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL ROMaddress     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL enSquare		 : STD_LOGIC;
 
 	
+	-- Bases for notes and sharps
 	CONSTANT baseA			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010010110001";
 	CONSTANT baseB			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010101000101";
 	CONSTANT baseC			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010110010101";
@@ -62,26 +62,12 @@ ARCHITECTURE gen OF TONE_GEN IS
 	
 	
 BEGIN
-	
 
-	-- Bases for Notes
---	baseA <= "00000000010010110001";
---	baseB <= "00000000010101000101";
---	baseC <= "00000000010110010101";
---	baseD <= "00000000011001000100";
---	baseE <= "00000000011100001000";
---	baseF <= "00000000011101110011";
---	baseG <= "00000000100001011101";
---	
---	baseAsharp <= "00000000010011111001";
---	baseCsharp <= "00000000010111101010";
---	baseDsharp <= "00000000011010100011";
---	baseFsharp <= "00000000011111100101";
---	baseGsharp <= "00000000100011011100";
 	division <= "0000000000000000000" & CMD(12 DOWNTO 0);
 	division2 <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(division), 13));
 	someTemp <= to_integer(IEEE.NUMERIC_STD.unsigned(division2)) / 375;
 	division3 <= std_logic_vector(to_unsigned(someTemp, 32));
+	
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
 	GENERIC MAP (
@@ -100,7 +86,7 @@ BEGIN
 	PORT MAP (
 		clock0 => NOT(SAMPLE_CLK),
 		-- In this design, one bit of the phase register is a fractional bit
-		address_a => phase_register(19 downto 12),
+		address_a => ROMaddress,
 		q_a => sounddata -- output is amplitude
 	);
 	
@@ -115,7 +101,6 @@ BEGIN
 	R_DATA(12 DOWNTO 5) <= sounddata;
 	R_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	
-	
 	-- process to perform DDS
 	PROCESS(RESETN, SAMPLE_CLK) BEGIN
 		IF RESETN = '0' THEN
@@ -123,9 +108,14 @@ BEGIN
 		ELSIF RISING_EDGE(SAMPLE_CLK) THEN
 			IF tuning_word = "00000000000000000000" THEN  -- if command is 0, return to 0 output.
 				phase_register <= "00000000000000000000";
+				ROMaddress <= "00000000";
 			ELSE
 				-- Increment the phase register by the tuning word.
 				phase_register <= phase_register + tuning_word;
+				ROMaddress <= phase_register(19 downto 12);
+				IF (enSquare = '1') THEN
+					ROMAddress <= phase_register(19) & "1000010";
+				END IF;
 			END IF;
 		END IF;
 	END PROCESS;
@@ -137,19 +127,11 @@ BEGIN
 			switchdata <= "0000000";
 			octavedata <= "000";
 			HEX_DATA <= "000000000000000000000010";
+			enSquare <= '0';
 		ELSIF RISING_EDGE(CS) THEN
-		
-		
-			
-		
+			enSquare <= CMD(14);
 			if (CMD(10) = '1') then
 				temp <= CMD(7 DOWNTO 4) - "0010";
---				
---				octavedata <= temp(2 DOWNTO 0);
-
---
-----				
---				directOctave <= CMD(7 DOWNTO 4);
 				switchdata <= "00" & CMD(8) & CMD(3 DOWNTO 0);
 				
 				
@@ -213,9 +195,6 @@ BEGIN
 					when others =>
 						tuning_word <= "00000000000000000000";   -- invalid opcodes default to nop
 				end case;
---			elsif (CMD(14) = '0') then
---				
---				tuning_word <= division3(19 DOWNTO 0);
 				
 			else
 				octavedata <= CMD(9 DOWNTO 7);

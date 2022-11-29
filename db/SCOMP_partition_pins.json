@@ -72,11 +72,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_BCLK",
+					"name" : "AUD_DACLR",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACLR",
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
@@ -120,15 +120,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "BT[1]",
+					"strict" : false
+				},
+				{
 					"name" : "BT[2]",
 					"strict" : false
 				},
 				{
 					"name" : "BT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "BT[1]",
 					"strict" : false
 				}
 			]

@@ -160,11 +160,11 @@ ZeroWaitingLoop:
 	RETURN
 
 ; IO address constants
-C4:		   DW &H0443
-D4:		   DW &H0444
-E4:		   DW &H0445
-G4:		   DW &H0400
-Zero:      DW 0
+C4:		   DW &H4443
+D4:		   DW &H4444
+E4:		   DW &H4445
+G4:		   DW &H4400
+Zero:      DW &H4440
 Timer:     EQU 002
 Beep:      EQU &H40
 ALLIO:     EQU &H41
