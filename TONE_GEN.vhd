@@ -42,6 +42,7 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL division3		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL someTemp		 : integer;
+--	SIGNAL ROMaddress     : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 	
 	CONSTANT baseA			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010010110001";
@@ -110,7 +111,7 @@ BEGIN
 	L_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	
 	-- Right channel is the same.
-	R_DATA(15 DOWNTO 13) <= sounddata(7); -- sign extend
+	R_DATA(15 DOWNTO 13) <= sounddata(7)&sounddata(7)&sounddata(7); -- sign extend
 	R_DATA(12 DOWNTO 5) <= sounddata;
 	R_DATA(4 DOWNTO 0) <= "00000"; -- pad right side with 0s
 	

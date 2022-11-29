@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Tue Nov 29 16:25:51 2022
+Tue Nov 29 16:59:35 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -26,7 +26,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  18. Inverted Register Statistics
  19. Multiplexer Restructuring Statistics (Restructuring Performed)
  20. Source assignments for TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated
- 21. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated
+ 21. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_2p24:auto_generated
  22. Source assignments for PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
  23. Source assignments for PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_pll_dps_lcell_comb:lcell_cntsel_int_0
  24. Source assignments for PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_pll_dps_lcell_comb:lcell_cntsel_int_1
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 29 16:25:50 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 29 16:59:35 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
@@ -239,8 +239,8 @@ https://fpgasoftware.intel.com/eula.
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                ;          ;
 ; db/altsyncram_5h04.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5h04.tdf                      ;          ;
 ; sound_sine.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/ECE 2031/ActualProject/SCOMPProject/sound_sine.mif                              ;          ;
-; db/altsyncram_5p24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5p24.tdf                      ;          ;
-; demo_sound.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/ECE 2031/ActualProject/SCOMPProject/demo_sound.mif                              ;          ;
+; db/altsyncram_2p24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_2p24.tdf                      ;          ;
+; littlelamb.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/ECE 2031/ActualProject/SCOMPProject/littlelamb.mif                              ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf             ;          ;
 ; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/lpm_clshift_fuc.tdf                      ;          ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf              ;          ;
@@ -257,12 +257,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 611                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
-; Combinational ALUT usage for logic          ; 793                                                                                                                 ;
+; Combinational ALUT usage for logic          ; 791                                                                                                                 ;
 ;     -- 7 input functions                    ; 12                                                                                                                  ;
 ;     -- 6 input functions                    ; 290                                                                                                                 ;
 ;     -- 5 input functions                    ; 179                                                                                                                 ;
 ;     -- 4 input functions                    ; 63                                                                                                                  ;
-;     -- <=3 input functions                  ; 249                                                                                                                 ;
+;     -- <=3 input functions                  ; 247                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
 ; Dedicated logic registers                   ; 387                                                                                                                 ;
 ;                                             ;                                                                                                                     ;
@@ -287,10 +287,10 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name              ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |SCOMP_System                                    ; 793 (20)            ; 387 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
+; |SCOMP_System                                    ; 791 (20)            ; 387 (0)                   ; 34816             ; 0          ; 63   ; 0            ; |SCOMP_System                                                                                                                                     ; SCOMP_System             ; work         ;
 ;    |ALL_IN:inst11|                               ; 0 (0)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|ALL_IN:inst11                                                                                                                       ; ALL_IN                   ; work         ;
-;    |DAC_INTERFACE:inst35|                        ; 12 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35                                                                                                                ; DAC_INTERFACE            ; work         ;
-;       |lpm_shiftreg:serialize|                   ; 12 (12)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35|lpm_shiftreg:serialize                                                                                         ; lpm_shiftreg             ; work         ;
+;    |DAC_INTERFACE:inst35|                        ; 10 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35                                                                                                                ; DAC_INTERFACE            ; work         ;
+;       |lpm_shiftreg:serialize|                   ; 10 (10)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DAC_INTERFACE:inst35|lpm_shiftreg:serialize                                                                                         ; lpm_shiftreg             ; work         ;
 ;    |DIG_IN:inst7|                                ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                                                                        ; DIG_IN                   ; work         ;
 ;    |HEX_DISPV2_6:inst9|                          ; 15 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISPV2_6:inst9                                                                                                                  ; HEX_DISPV2_6             ; work         ;
 ;       |HEX_DISP2:inst6|                          ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISPV2_6:inst9|HEX_DISP2:inst6                                                                                                  ; HEX_DISP2                ; work         ;
@@ -303,7 +303,7 @@ https://fpgasoftware.intel.com/eula.
 ;                |altera_cyclonev_pll_base:fpll_0| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0 ; altera_cyclonev_pll_base ; work         ;
 ;    |SCOMP:inst|                                  ; 286 (245)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                          ; SCOMP                    ; work         ;
 ;       |altsyncram:altsyncram_component|          ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                                                                          ; altsyncram               ; work         ;
-;          |altsyncram_5p24:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated                                                           ; altsyncram_5p24          ; work         ;
+;          |altsyncram_2p24:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_2p24:auto_generated                                                           ; altsyncram_2p24          ; work         ;
 ;       |lpm_clshift:shifter|                      ; 41 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                      ; lpm_clshift              ; work         ;
 ;          |lpm_clshift_fuc:auto_generated|        ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                       ; lpm_clshift_fuc          ; work         ;
 ;    |TIMER:inst4|                                 ; 34 (34)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                         ; TIMER                    ; work         ;
@@ -323,7 +323,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
 ; Name                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF            ;
 +--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
-; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; demo_sound.mif ;
+; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_2p24:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; LittleLamb.mif ;
 ; TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated|ALTSYNCRAM        ; AUTO ; ROM         ; 256          ; 8            ; --           ; --           ; 2048  ; SOUND_SINE.mif ;
 +--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------+
 
@@ -536,7 +536,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Total registers                              ; 387   ;
 ; Number of registers using Synchronous Clear  ; 51    ;
-; Number of registers using Synchronous Load   ; 119   ;
+; Number of registers using Synchronous Load   ; 121   ;
 ; Number of registers using Asynchronous Clear ; 135   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 180   ;
@@ -570,16 +570,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |SCOMP_System|TONE_GEN:inst6|HEX_DATA[22]                          ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[2] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|addr_rw[2]        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[3]        ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[6] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[8]                                     ;
-; 12:1               ; 13 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[6]                                     ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[1] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|data_tx[1]        ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[5] ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[6]                                     ;
+; 12:1               ; 13 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[10]                                    ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|tx_byte[3] ;
 ; 15:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[13]                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[1]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|bit_cnt[0]        ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|oneshot_i2c:inst12|i2c_master:inst|count             ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[4]                                           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[3]                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
@@ -593,7 +593,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +--------------------------------------------------------------------------------------------------+
-; Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated ;
+; Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_2p24:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                 ;
 +---------------------------------+--------------------+------+------------------------------------+
@@ -803,7 +803,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
-; INIT_FILE                          ; demo_sound.mif       ; Untyped                     ;
+; INIT_FILE                          ; LittleLamb.mif       ; Untyped                     ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer              ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
@@ -816,7 +816,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer              ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
-; CBXI_PARAMETER                     ; altsyncram_5p24      ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_2p24      ; Untyped                     ;
 +------------------------------------+----------------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1189,19 +1189,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR                ; 11                    ;
 ;     ENA SLD                 ; 99                    ;
 ;     SCLR                    ; 20                    ;
-;     SLD                     ; 20                    ;
-;     plain                   ; 38                    ;
+;     SLD                     ; 22                    ;
+;     plain                   ; 36                    ;
 ; arriav_io_obuf              ; 2                     ;
-; arriav_lcell_comb           ; 797                   ;
+; arriav_lcell_comb           ; 795                   ;
 ;     arith                   ; 98                    ;
 ;         1 data inputs       ; 45                    ;
 ;         2 data inputs       ; 53                    ;
 ;     extend                  ; 12                    ;
 ;         7 data inputs       ; 12                    ;
-;     normal                  ; 671                   ;
+;     normal                  ; 669                   ;
 ;         0 data inputs       ; 2                     ;
 ;         1 data inputs       ; 9                     ;
-;         2 data inputs       ; 57                    ;
+;         2 data inputs       ; 55                    ;
 ;         3 data inputs       ; 71                    ;
 ;         4 data inputs       ; 63                    ;
 ;         5 data inputs       ; 179                   ;
@@ -1225,7 +1225,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -1235,7 +1235,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 29 16:25:28 2022
+    Info: Processing started: Tue Nov 29 16:59:10 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tone_gen.vhd
@@ -1305,9 +1305,9 @@ Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:seria
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TONE_GEN" for hierarchy "TONE_GEN:inst6"
 Warning (10036): Verilog HDL or VHDL warning at TONE_GEN.vhd(43): object "division3" assigned a value but never read File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 43
-Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 85
-Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 85
-Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 86
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 86
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 86
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1386,7 +1386,7 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "demo_sound.mif"
+    Info (12134): Parameter "init_file" = "LittleLamb.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "2048"
@@ -1416,9 +1416,9 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5p24.tdf
-    Info (12023): Found entity 1: altsyncram_5p24 File: C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5p24.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_5p24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2p24.tdf
+    Info (12023): Found entity 1: altsyncram_2p24 File: C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_2p24.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_2p24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_2p24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
 Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
 Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
@@ -1717,16 +1717,16 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
     Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
     Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 37
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
     Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 37
     Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 37
     Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 134
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 135
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[6]" is stuck at VCC
     Warning (13410): Pin "HEX1[5]" is stuck at GND
@@ -1770,9 +1770,9 @@ Info (21057): Implemented 1089 device resources after synthesis - the final reso
     Info (21061): Implemented 996 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Tue Nov 29 16:25:51 2022
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 4909 megabytes
+    Info: Processing ended: Tue Nov 29 16:59:35 2022
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:41
 
 
