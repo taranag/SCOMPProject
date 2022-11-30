@@ -3,88 +3,88 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -15.558
-TNS   : -570.744
-
-Type  : Slow 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : -12.553
-TNS   : -186.239
-
-Type  : Slow 1100mV 85C Model Setup 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : -9.027
-TNS   : -144.464
+Slack : -11.485
+TNS   : -432.573
 
 Type  : Slow 1100mV 85C Model Setup 'AUD_DACLR'
-Slack : -8.870
-TNS   : -234.586
+Slack : -9.458
+TNS   : -227.796
 
-Type  : Slow 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -6.974
-TNS   : -81.181
+Type  : Slow 1100mV 85C Model Setup 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
+Slack : -8.958
+TNS   : -147.452
 
 Type  : Slow 1100mV 85C Model Setup 'AUD_BCLK'
-Slack : -6.967
-TNS   : -208.707
+Slack : -6.237
+TNS   : -172.025
+
+Type  : Slow 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
+Slack : -4.066
+TNS   : -4.066
+
+Type  : Slow 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -3.468
+TNS   : -22.330
 
 Type  : Slow 1100mV 85C Model Setup 'clk_div:inst5|clock_10Hz'
-Slack : -1.842
-TNS   : -56.581
-
-Type  : Slow 1100mV 85C Model Hold 'AUD_DACLR'
-Slack : -5.260
-TNS   : -103.205
-
-Type  : Slow 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -5.036
-TNS   : -44.605
-
-Type  : Slow 1100mV 85C Model Hold 'AUD_BCLK'
-Slack : -1.413
-TNS   : -11.247
-
-Type  : Slow 1100mV 85C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : -1.395
-TNS   : -13.214
+Slack : -2.474
+TNS   : -54.090
 
 Type  : Slow 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 0.374
-TNS   : 0.000
+Slack : -7.212
+TNS   : -112.425
+
+Type  : Slow 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -5.679
+TNS   : -79.718
+
+Type  : Slow 1100mV 85C Model Hold 'AUD_BCLK'
+Slack : -5.265
+TNS   : -40.162
+
+Type  : Slow 1100mV 85C Model Hold 'AUD_DACLR'
+Slack : -4.745
+TNS   : -117.896
+
+Type  : Slow 1100mV 85C Model Hold 'SCOMP:inst|IO_CYCLE'
+Slack : -1.552
+TNS   : -32.172
 
 Type  : Slow 1100mV 85C Model Hold 'clk_div:inst5|clock_10Hz'
-Slack : 0.414
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.754
+Slack : 0.511
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clk_div:inst5|clock_10Hz'
-Slack : -9.817
-TNS   : -274.801
+Slack : -9.658
+TNS   : -231.736
 
 Type  : Slow 1100mV 85C Model Removal 'clk_div:inst5|clock_10Hz'
-Slack : 0.961
+Slack : 1.038
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AUD_DACLR'
 Slack : -2.174
-TNS   : -55.235
+TNS   : -54.280
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
-Slack : -0.427
-TNS   : -46.318
+Slack : -0.570
+TNS   : -56.184
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AUD_BCLK'
 Slack : -0.394
-TNS   : -22.939
+TNS   : -23.004
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_div:inst5|clock_10Hz'
 Slack : -0.394
-TNS   : -22.803
+TNS   : -18.602
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
 Slack : -0.394
-TNS   : -13.426
+TNS   : -13.977
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
 Slack : 1.666
@@ -95,7 +95,7 @@ Slack : 9.670
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 40.437
+Slack : 40.433
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout'
@@ -103,92 +103,92 @@ Slack : 416.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 1249.310
+Slack : 1249.306
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -15.295
-TNS   : -565.955
-
-Type  : Slow 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : -11.528
-TNS   : -168.143
+Slack : -11.482
+TNS   : -431.000
 
 Type  : Slow 1100mV 0C Model Setup 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : -9.235
-TNS   : -146.695
+Slack : -9.161
+TNS   : -149.244
 
 Type  : Slow 1100mV 0C Model Setup 'AUD_DACLR'
-Slack : -8.415
-TNS   : -219.863
+Slack : -8.931
+TNS   : -216.591
 
 Type  : Slow 1100mV 0C Model Setup 'AUD_BCLK'
-Slack : -6.540
-TNS   : -195.679
+Slack : -5.867
+TNS   : -160.797
+
+Type  : Slow 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
+Slack : -3.403
+TNS   : -3.403
 
 Type  : Slow 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -6.291
-TNS   : -71.724
+Slack : -3.056
+TNS   : -19.001
 
 Type  : Slow 1100mV 0C Model Setup 'clk_div:inst5|clock_10Hz'
-Slack : -1.851
-TNS   : -57.854
-
-Type  : Slow 1100mV 0C Model Hold 'AUD_DACLR'
-Slack : -5.243
-TNS   : -104.012
-
-Type  : Slow 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -5.066
-TNS   : -47.888
-
-Type  : Slow 1100mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : -1.433
-TNS   : -13.768
-
-Type  : Slow 1100mV 0C Model Hold 'AUD_BCLK'
-Slack : -1.293
-TNS   : -10.129
+Slack : -2.447
+TNS   : -55.449
 
 Type  : Slow 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 0.391
-TNS   : 0.000
+Slack : -7.474
+TNS   : -117.697
+
+Type  : Slow 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -5.729
+TNS   : -81.162
+
+Type  : Slow 1100mV 0C Model Hold 'AUD_BCLK'
+Slack : -5.157
+TNS   : -37.845
+
+Type  : Slow 1100mV 0C Model Hold 'AUD_DACLR'
+Slack : -4.670
+TNS   : -116.483
+
+Type  : Slow 1100mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
+Slack : -1.589
+TNS   : -32.246
 
 Type  : Slow 1100mV 0C Model Hold 'clk_div:inst5|clock_10Hz'
-Slack : 0.396
+Slack : 0.365
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.728
+Slack : 0.493
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clk_div:inst5|clock_10Hz'
-Slack : -9.830
-TNS   : -275.173
+Slack : -9.672
+TNS   : -232.082
 
 Type  : Slow 1100mV 0C Model Removal 'clk_div:inst5|clock_10Hz'
-Slack : 0.945
+Slack : 1.020
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AUD_DACLR'
 Slack : -2.174
-TNS   : -54.779
+TNS   : -54.145
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
-Slack : -0.399
-TNS   : -44.089
+Slack : -0.541
+TNS   : -53.772
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AUD_BCLK'
 Slack : -0.394
-TNS   : -24.087
+TNS   : -24.172
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_div:inst5|clock_10Hz'
 Slack : -0.394
-TNS   : -21.914
+TNS   : -18.386
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
 Slack : -0.394
-TNS   : -13.364
+TNS   : -14.046
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
 Slack : 1.666
@@ -199,7 +199,7 @@ Slack : 9.673
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 40.422
+Slack : 40.423
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout'
@@ -207,91 +207,91 @@ Slack : 416.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 1249.256
+Slack : 1249.254
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -9.714
-TNS   : -341.220
-
-Type  : Fast 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : -9.217
-TNS   : -134.316
+Slack : -6.772
+TNS   : -255.953
 
 Type  : Fast 1100mV 85C Model Setup 'AUD_DACLR'
-Slack : -6.489
-TNS   : -164.425
+Slack : -6.730
+TNS   : -153.344
 
 Type  : Fast 1100mV 85C Model Setup 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : -6.218
-TNS   : -95.926
-
-Type  : Fast 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -5.438
-TNS   : -67.172
+Slack : -6.246
+TNS   : -97.159
 
 Type  : Fast 1100mV 85C Model Setup 'AUD_BCLK'
-Slack : -4.861
-TNS   : -147.030
+Slack : -4.450
+TNS   : -119.630
+
+Type  : Fast 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -2.953
+TNS   : -19.282
+
+Type  : Fast 1100mV 85C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
+Slack : -2.892
+TNS   : -2.892
 
 Type  : Fast 1100mV 85C Model Setup 'clk_div:inst5|clock_10Hz'
-Slack : -0.839
-TNS   : -20.870
-
-Type  : Fast 1100mV 85C Model Hold 'AUD_DACLR'
-Slack : -2.868
-TNS   : -52.868
-
-Type  : Fast 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -2.831
-TNS   : -24.073
-
-Type  : Fast 1100mV 85C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : -0.952
-TNS   : -9.039
-
-Type  : Fast 1100mV 85C Model Hold 'AUD_BCLK'
-Slack : -0.678
-TNS   : -2.619
-
-Type  : Fast 1100mV 85C Model Hold 'clk_div:inst5|clock_10Hz'
-Slack : 0.160
-TNS   : 0.000
+Slack : -1.065
+TNS   : -19.937
 
 Type  : Fast 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 0.182
+Slack : -5.671
+TNS   : -90.543
+
+Type  : Fast 1100mV 85C Model Hold 'AUD_BCLK'
+Slack : -3.212
+TNS   : -20.867
+
+Type  : Fast 1100mV 85C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -3.169
+TNS   : -44.542
+
+Type  : Fast 1100mV 85C Model Hold 'AUD_DACLR'
+Slack : -2.655
+TNS   : -65.424
+
+Type  : Fast 1100mV 85C Model Hold 'SCOMP:inst|IO_CYCLE'
+Slack : -1.035
+TNS   : -18.142
+
+Type  : Fast 1100mV 85C Model Hold 'clk_div:inst5|clock_10Hz'
+Slack : 0.154
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.349
+Slack : 0.270
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clk_div:inst5|clock_10Hz'
-Slack : -5.608
-TNS   : -156.996
+Slack : -5.441
+TNS   : -130.561
 
 Type  : Fast 1100mV 85C Model Removal 'clk_div:inst5|clock_10Hz'
-Slack : 0.387
+Slack : 0.394
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AUD_DACLR'
 Slack : -2.174
-TNS   : -58.789
+TNS   : -57.058
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AUD_BCLK'
-Slack : -0.575
-TNS   : -27.238
+Slack : -0.579
+TNS   : -27.246
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
-Slack : -0.235
-TNS   : -7.886
+Slack : -0.293
+TNS   : -11.196
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_div:inst5|clock_10Hz'
-Slack : -0.003
-TNS   : -0.012
+Slack : 0.044
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.137
+Slack : 0.084
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
@@ -311,91 +311,91 @@ Slack : 416.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 1249.558
+Slack : 1249.555
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -8.941
-TNS   : -317.724
-
-Type  : Fast 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : -7.474
-TNS   : -107.461
+Slack : -6.410
+TNS   : -242.173
 
 Type  : Fast 1100mV 0C Model Setup 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : -6.265
-TNS   : -95.633
+Slack : -6.262
+TNS   : -96.472
 
 Type  : Fast 1100mV 0C Model Setup 'AUD_DACLR'
-Slack : -5.391
-TNS   : -134.123
-
-Type  : Fast 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -4.475
-TNS   : -54.013
+Slack : -5.555
+TNS   : -126.783
 
 Type  : Fast 1100mV 0C Model Setup 'AUD_BCLK'
-Slack : -4.017
-TNS   : -120.870
+Slack : -3.630
+TNS   : -97.500
+
+Type  : Fast 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -2.319
+TNS   : -14.661
+
+Type  : Fast 1100mV 0C Model Setup 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
+Slack : -1.980
+TNS   : -1.980
 
 Type  : Fast 1100mV 0C Model Setup 'clk_div:inst5|clock_10Hz'
-Slack : -0.696
-TNS   : -18.299
-
-Type  : Fast 1100mV 0C Model Hold 'AUD_DACLR'
-Slack : -2.875
-TNS   : -54.750
-
-Type  : Fast 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : -2.824
-TNS   : -26.316
-
-Type  : Fast 1100mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : -0.912
-TNS   : -8.808
-
-Type  : Fast 1100mV 0C Model Hold 'AUD_BCLK'
-Slack : -0.668
-TNS   : -4.187
+Slack : -0.938
+TNS   : -17.546
 
 Type  : Fast 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : -0.107
-TNS   : -0.239
+Slack : -5.838
+TNS   : -94.095
+
+Type  : Fast 1100mV 0C Model Hold 'AUD_BCLK'
+Slack : -3.166
+TNS   : -21.602
+
+Type  : Fast 1100mV 0C Model Hold 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -3.145
+TNS   : -44.885
+
+Type  : Fast 1100mV 0C Model Hold 'AUD_DACLR'
+Slack : -2.660
+TNS   : -66.438
+
+Type  : Fast 1100mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
+Slack : -0.983
+TNS   : -17.143
 
 Type  : Fast 1100mV 0C Model Hold 'clk_div:inst5|clock_10Hz'
-Slack : 0.141
+Slack : 0.127
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.316
+Slack : 0.239
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clk_div:inst5|clock_10Hz'
-Slack : -5.365
-TNS   : -150.192
+Slack : -5.237
+TNS   : -125.660
 
 Type  : Fast 1100mV 0C Model Removal 'clk_div:inst5|clock_10Hz'
-Slack : 0.327
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AUD_DACLR'
 Slack : -2.174
-TNS   : -61.566
+TNS   : -60.062
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AUD_BCLK'
-Slack : -0.625
-TNS   : -30.451
+Slack : -0.629
+TNS   : -30.521
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
-Slack : -0.151
-TNS   : -3.809
+Slack : -0.212
+TNS   : -7.149
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_div:inst5|clock_10Hz'
-Slack : 0.037
+Slack : 0.068
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'oneshot_i2c:inst12|i2c_master:inst|data_clk'
-Slack : 0.154
+Slack : 0.093
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
@@ -415,7 +415,7 @@ Slack : 416.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk'
-Slack : 1249.546
+Slack : 1249.544
 TNS   : 0.000
 
 ------------------------------------------------------------

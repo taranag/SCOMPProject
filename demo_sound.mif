@@ -10,407 +10,520 @@ CONTENT
   BEGIN
     [000..7FF] : 0000;  -- Default to NOP
 
-           000 : 9000;  -- 	IN Switches 
-           001 : 4932;  -- 	AND Button3
-           002 : 3129;  --     jneg Switchmode
-           003 : 0933;  -- 	LOAD    A1
+           000 : 9041;  -- 	IN ALLIO 
+           001 : 499F;  -- 	AND Button3
+           002 : 413E;  --     jzero SwitchMode
+           003 : 09A0;  -- 	LOAD    A1
            004 : 9840;  --     OUT     Beep
-           005 : 8124;  --     Call    Delay
-           006 : 093B;  -- 	LOAD    As1
+           005 : 8139;  --     Call    Delay
+           006 : 09A8;  -- 	LOAD    As1
            007 : 9840;  --     OUT     Beep
-           008 : 8124;  --     Call    Delay
-           009 : 0943;  -- 	LOAD    B1
+           008 : 8139;  --     Call    Delay
+           009 : 09B0;  -- 	LOAD    B1
            00A : 9840;  --     OUT     Beep
-           00B : 8124;  --     Call    Delay
-           00C : 094B;  -- 	LOAD    C2
+           00B : 8139;  --     Call    Delay
+           00C : 09B8;  -- 	LOAD    C2
            00D : 9840;  --     OUT     Beep
-           00E : 8124;  --     Call    Delay
-           00F : 0953;  -- 	LOAD    Cs2
+           00E : 8139;  --     Call    Delay
+           00F : 09C0;  -- 	LOAD    Cs2
            010 : 9840;  --     OUT     Beep
-           011 : 8124;  --     Call    Delay
-           012 : 095B;  -- 	LOAD    D2
+           011 : 8139;  --     Call    Delay
+           012 : 09C8;  -- 	LOAD    D2
            013 : 9840;  --     OUT     Beep
-           014 : 8124;  --     Call    Delay
-           015 : 0963;  -- 	LOAD    Ds2
+           014 : 8139;  --     Call    Delay
+           015 : 09D0;  -- 	LOAD    Ds2
            016 : 9840;  --     OUT     Beep
-           017 : 8124;  --     Call    Delay
-           018 : 096B;  -- 	LOAD    E2
+           017 : 8139;  --     Call    Delay
+           018 : 09D8;  -- 	LOAD    E2
            019 : 9840;  --     OUT     Beep
-           01A : 8124;  --     Call    Delay
-           01B : 0973;  -- 	LOAD    F2
+           01A : 8139;  --     Call    Delay
+           01B : 09E0;  -- 	LOAD    F2
            01C : 9840;  --     OUT     Beep
-           01D : 8124;  --     Call    Delay
-           01E : 097B;  -- 	LOAD    Fs2
+           01D : 8139;  --     Call    Delay
+           01E : 09E8;  -- 	LOAD    Fs2
            01F : 9840;  --     OUT     Beep
-           020 : 8124;  --     Call    Delay
-           021 : 0983;  -- 	LOAD    G2
+           020 : 8139;  --     Call    Delay
+           021 : 09F0;  -- 	LOAD    G2
            022 : 9840;  --     OUT     Beep
-           023 : 8124;  --     Call    Delay
-           024 : 098B;  -- 	LOAD    Gs2
+           023 : 8139;  --     Call    Delay
+           024 : 09F8;  -- 	LOAD    Gs2
            025 : 9840;  --     OUT     Beep
-           026 : 8124;  --     Call    Delay
-           027 : 0934;  -- 	LOAD    A2
-           028 : 9840;  --     OUT     Beep
-           029 : 8124;  --     Call    Delay
-           02A : 093C;  -- 	LOAD    As2
+           026 : 8139;  --     Call    Delay
+           027 : 9041;  -- 	IN ALLIO 
+           028 : 499F;  -- 	AND Button3
+           029 : 413E;  --     jzero SwitchMode
+           02A : 09A1;  -- 	LOAD    A2
            02B : 9840;  --     OUT     Beep
-           02C : 8124;  --     Call    Delay
-           02D : 0944;  -- 	LOAD    B2
+           02C : 8139;  --     Call    Delay
+           02D : 09A9;  -- 	LOAD    As2
            02E : 9840;  --     OUT     Beep
-           02F : 8124;  --     Call    Delay
-           030 : 094C;  -- 	LOAD    C3
+           02F : 8139;  --     Call    Delay
+           030 : 09B1;  -- 	LOAD    B2
            031 : 9840;  --     OUT     Beep
-           032 : 8124;  --     Call    Delay
-           033 : 0954;  -- 	LOAD    Cs3
+           032 : 8139;  --     Call    Delay
+           033 : 09B9;  -- 	LOAD    C3
            034 : 9840;  --     OUT     Beep
-           035 : 8124;  --     Call    Delay
-           036 : 095C;  -- 	LOAD    D3
+           035 : 8139;  --     Call    Delay
+           036 : 09C1;  -- 	LOAD    Cs3
            037 : 9840;  --     OUT     Beep
-           038 : 8124;  --     Call    Delay
-           039 : 0964;  -- 	LOAD    Ds3
+           038 : 8139;  --     Call    Delay
+           039 : 09C9;  -- 	LOAD    D3
            03A : 9840;  --     OUT     Beep
-           03B : 8124;  --     Call    Delay
-           03C : 096C;  -- 	LOAD    E3
+           03B : 8139;  --     Call    Delay
+           03C : 09D1;  -- 	LOAD    Ds3
            03D : 9840;  --     OUT     Beep
-           03E : 8124;  --     Call    Delay
-           03F : 0974;  -- 	LOAD    F3
+           03E : 8139;  --     Call    Delay
+           03F : 09D9;  -- 	LOAD    E3
            040 : 9840;  --     OUT     Beep
-           041 : 8124;  --     Call    Delay
-           042 : 097C;  -- 	LOAD    Fs3
+           041 : 8139;  --     Call    Delay
+           042 : 09E1;  -- 	LOAD    F3
            043 : 9840;  --     OUT     Beep
-           044 : 8124;  --     Call    Delay
-           045 : 0984;  -- 	LOAD    G3
+           044 : 8139;  --     Call    Delay
+           045 : 09E9;  -- 	LOAD    Fs3
            046 : 9840;  --     OUT     Beep
-           047 : 8124;  --     Call    Delay
-           048 : 098C;  -- 	LOAD    Gs3
+           047 : 8139;  --     Call    Delay
+           048 : 09F1;  -- 	LOAD    G3
            049 : 9840;  --     OUT     Beep
-           04A : 8124;  --     Call    Delay
-           04B : 0935;  -- 	LOAD    A3
+           04A : 8139;  --     Call    Delay
+           04B : 09F9;  -- 	LOAD    Gs3
            04C : 9840;  --     OUT     Beep
-           04D : 8124;  --     Call    Delay
-           04E : 093D;  -- 	LOAD    As3
-           04F : 9840;  --     OUT     Beep
-           050 : 8124;  --     Call    Delay
-           051 : 0945;  -- 	LOAD    B3
+           04D : 8139;  --     Call    Delay
+           04E : 9041;  -- 	IN ALLIO 
+           04F : 499F;  -- 	AND Button3
+           050 : 413E;  --     jzero SwitchMode
+           051 : 09A2;  -- 	LOAD    A3
            052 : 9840;  --     OUT     Beep
-           053 : 8124;  --     Call    Delay
-           054 : 094D;  -- 	LOAD    C4
+           053 : 8139;  --     Call    Delay
+           054 : 09AA;  -- 	LOAD    As3
            055 : 9840;  --     OUT     Beep
-           056 : 8124;  --     Call    Delay
-           057 : 0955;  -- 	LOAD    Cs4
+           056 : 8139;  --     Call    Delay
+           057 : 09B2;  -- 	LOAD    B3
            058 : 9840;  --     OUT     Beep
-           059 : 8124;  --     Call    Delay
-           05A : 095D;  -- 	LOAD    D4
+           059 : 8139;  --     Call    Delay
+           05A : 09BA;  -- 	LOAD    C4
            05B : 9840;  --     OUT     Beep
-           05C : 8124;  --     Call    Delay
-           05D : 0965;  -- 	LOAD    Ds4
+           05C : 8139;  --     Call    Delay
+           05D : 09C2;  -- 	LOAD    Cs4
            05E : 9840;  --     OUT     Beep
-           05F : 8124;  --     Call    Delay
-           060 : 096D;  -- 	LOAD    E4
+           05F : 8139;  --     Call    Delay
+           060 : 09CA;  -- 	LOAD    D4
            061 : 9840;  --     OUT     Beep
-           062 : 8124;  --     Call    Delay
-           063 : 0975;  -- 	LOAD    F4
+           062 : 8139;  --     Call    Delay
+           063 : 09D2;  -- 	LOAD    Ds4
            064 : 9840;  --     OUT     Beep
-           065 : 8124;  --     Call    Delay
-           066 : 097D;  -- 	LOAD    Fs4
+           065 : 8139;  --     Call    Delay
+           066 : 09DA;  -- 	LOAD    E4
            067 : 9840;  --     OUT     Beep
-           068 : 8124;  --     Call    Delay
-           069 : 0985;  -- 	LOAD    G4
+           068 : 8139;  --     Call    Delay
+           069 : 09E2;  -- 	LOAD    F4
            06A : 9840;  --     OUT     Beep
-           06B : 8124;  --     Call    Delay
-           06C : 098D;  -- 	LOAD    Gs4
+           06B : 8139;  --     Call    Delay
+           06C : 09EA;  -- 	LOAD    Fs4
            06D : 9840;  --     OUT     Beep
-           06E : 8124;  --     Call    Delay
-           06F : 0936;  -- 	LOAD    A4
+           06E : 8139;  --     Call    Delay
+           06F : 09F2;  -- 	LOAD    G4
            070 : 9840;  --     OUT     Beep
-           071 : 8124;  --     Call    Delay
-           072 : 093E;  -- 	LOAD    As4
+           071 : 8139;  --     Call    Delay
+           072 : 09FA;  -- 	LOAD    Gs4
            073 : 9840;  --     OUT     Beep
-           074 : 8124;  --     Call    Delay
-           075 : 0946;  -- 	LOAD    B4
-           076 : 9840;  --     OUT     Beep
-           077 : 8124;  --     Call    Delay
-           078 : 094E;  -- 	LOAD    C5
+           074 : 8139;  --     Call    Delay
+           075 : 9041;  -- 	IN ALLIO 
+           076 : 499F;  -- 	AND Button3
+           077 : 413E;  --     jzero SwitchMode
+           078 : 09A3;  -- 	LOAD    A4
            079 : 9840;  --     OUT     Beep
-           07A : 8124;  --     Call    Delay
-           07B : 0956;  -- 	LOAD    Cs5
+           07A : 8139;  --     Call    Delay
+           07B : 09AB;  -- 	LOAD    As4
            07C : 9840;  --     OUT     Beep
-           07D : 8124;  --     Call    Delay
-           07E : 095E;  -- 	LOAD    D5
+           07D : 8139;  --     Call    Delay
+           07E : 09B3;  -- 	LOAD    B4
            07F : 9840;  --     OUT     Beep
-           080 : 8124;  --     Call    Delay
-           081 : 0966;  -- 	LOAD    Ds5
+           080 : 8139;  --     Call    Delay
+           081 : 09BB;  -- 	LOAD    C5
            082 : 9840;  --     OUT     Beep
-           083 : 8124;  --     Call    Delay
-           084 : 096E;  -- 	LOAD    E5
+           083 : 8139;  --     Call    Delay
+           084 : 09C3;  -- 	LOAD    Cs5
            085 : 9840;  --     OUT     Beep
-           086 : 8124;  --     Call    Delay
-           087 : 0976;  -- 	LOAD    F5
+           086 : 8139;  --     Call    Delay
+           087 : 09CB;  -- 	LOAD    D5
            088 : 9840;  --     OUT     Beep
-           089 : 8124;  --     Call    Delay
-           08A : 097E;  -- 	LOAD    Fs5
+           089 : 8139;  --     Call    Delay
+           08A : 09D3;  -- 	LOAD    Ds5
            08B : 9840;  --     OUT     Beep
-           08C : 8124;  --     Call    Delay
-           08D : 0986;  -- 	LOAD    G5
+           08C : 8139;  --     Call    Delay
+           08D : 09DB;  -- 	LOAD    E5
            08E : 9840;  --     OUT     Beep
-           08F : 8124;  --     Call    Delay
-           090 : 098E;  -- 	LOAD    Gs5
+           08F : 8139;  --     Call    Delay
+           090 : 09E3;  -- 	LOAD    F5
            091 : 9840;  --     OUT     Beep
-           092 : 8124;  --     Call    Delay
-           093 : 0937;  -- 	LOAD    A5
+           092 : 8139;  --     Call    Delay
+           093 : 09EB;  -- 	LOAD    Fs5
            094 : 9840;  --     OUT     Beep
-           095 : 8124;  --     Call    Delay
-           096 : 093F;  -- 	LOAD    As5
+           095 : 8139;  --     Call    Delay
+           096 : 09F3;  -- 	LOAD    G5
            097 : 9840;  --     OUT     Beep
-           098 : 8124;  --     Call    Delay
-           099 : 0947;  -- 	LOAD    B5
+           098 : 8139;  --     Call    Delay
+           099 : 09FB;  -- 	LOAD    Gs5
            09A : 9840;  --     OUT     Beep
-           09B : 8124;  --     Call    Delay
-           09C : 094F;  -- 	LOAD    C6
-           09D : 9840;  --     OUT     Beep
-           09E : 8124;  --     Call    Delay
-           09F : 0957;  -- 	LOAD    Cs6
+           09B : 8139;  --     Call    Delay
+           09C : 9041;  -- 	IN ALLIO 
+           09D : 499F;  -- 	AND Button3
+           09E : 413E;  --     jzero SwitchMode
+           09F : 09A4;  -- 	LOAD    A5
            0A0 : 9840;  --     OUT     Beep
-           0A1 : 8124;  --     Call    Delay
-           0A2 : 095F;  -- 	LOAD    D6
+           0A1 : 8139;  --     Call    Delay
+           0A2 : 09AC;  -- 	LOAD    As5
            0A3 : 9840;  --     OUT     Beep
-           0A4 : 8124;  --     Call    Delay
-           0A5 : 0967;  -- 	LOAD    Ds6
+           0A4 : 8139;  --     Call    Delay
+           0A5 : 09B4;  -- 	LOAD    B5
            0A6 : 9840;  --     OUT     Beep
-           0A7 : 8124;  --     Call    Delay
-           0A8 : 096F;  -- 	LOAD    E6
+           0A7 : 8139;  --     Call    Delay
+           0A8 : 09BC;  -- 	LOAD    C6
            0A9 : 9840;  --     OUT     Beep
-           0AA : 8124;  --     Call    Delay
-           0AB : 0977;  -- 	LOAD    F6
+           0AA : 8139;  --     Call    Delay
+           0AB : 09C4;  -- 	LOAD    Cs6
            0AC : 9840;  --     OUT     Beep
-           0AD : 8124;  --     Call    Delay
-           0AE : 097F;  -- 	LOAD    Fs6
+           0AD : 8139;  --     Call    Delay
+           0AE : 09CC;  -- 	LOAD    D6
            0AF : 9840;  --     OUT     Beep
-           0B0 : 8124;  --     Call    Delay
-           0B1 : 0987;  -- 	LOAD    G6
+           0B0 : 8139;  --     Call    Delay
+           0B1 : 09D4;  -- 	LOAD    Ds6
            0B2 : 9840;  --     OUT     Beep
-           0B3 : 8124;  --     Call    Delay
-           0B4 : 098F;  -- 	LOAD    Gs6
+           0B3 : 8139;  --     Call    Delay
+           0B4 : 09DC;  -- 	LOAD    E6
            0B5 : 9840;  --     OUT     Beep
-           0B6 : 8124;  --     Call    Delay
-           0B7 : 0938;  -- 	LOAD    A6
+           0B6 : 8139;  --     Call    Delay
+           0B7 : 09E4;  -- 	LOAD    F6
            0B8 : 9840;  --     OUT     Beep
-           0B9 : 8124;  --     Call    Delay
-           0BA : 0940;  -- 	LOAD    As6
+           0B9 : 8139;  --     Call    Delay
+           0BA : 09EC;  -- 	LOAD    Fs6
            0BB : 9840;  --     OUT     Beep
-           0BC : 8124;  --     Call    Delay
-           0BD : 0948;  -- 	LOAD    B6
+           0BC : 8139;  --     Call    Delay
+           0BD : 09F4;  -- 	LOAD    G6
            0BE : 9840;  --     OUT     Beep
-           0BF : 8124;  --     Call    Delay
-           0C0 : 0950;  -- 	LOAD    C7
+           0BF : 8139;  --     Call    Delay
+           0C0 : 09FC;  -- 	LOAD    Gs6
            0C1 : 9840;  --     OUT     Beep
-           0C2 : 8124;  --     Call    Delay
-           0C3 : 0958;  -- 	LOAD    Cs7
-           0C4 : 9840;  --     OUT     Beep
-           0C5 : 8124;  --     Call    Delay
-           0C6 : 0960;  -- 	LOAD    D7
+           0C2 : 8139;  --     Call    Delay
+           0C3 : 9041;  -- 	IN ALLIO 
+           0C4 : 499F;  -- 	AND Button3
+           0C5 : 413E;  --     jzero SwitchMode
+           0C6 : 09A5;  -- 	LOAD    A6
            0C7 : 9840;  --     OUT     Beep
-           0C8 : 8124;  --     Call    Delay
-           0C9 : 0968;  -- 	LOAD    Ds7
+           0C8 : 8139;  --     Call    Delay
+           0C9 : 09AD;  -- 	LOAD    As6
            0CA : 9840;  --     OUT     Beep
-           0CB : 8124;  --     Call    Delay
-           0CC : 0970;  -- 	LOAD    E7
+           0CB : 8139;  --     Call    Delay
+           0CC : 09B5;  -- 	LOAD    B6
            0CD : 9840;  --     OUT     Beep
-           0CE : 8124;  --     Call    Delay
-           0CF : 0978;  -- 	LOAD    F7
+           0CE : 8139;  --     Call    Delay
+           0CF : 09BD;  -- 	LOAD    C7
            0D0 : 9840;  --     OUT     Beep
-           0D1 : 8124;  --     Call    Delay
-           0D2 : 0980;  -- 	LOAD    Fs7
+           0D1 : 8139;  --     Call    Delay
+           0D2 : 09C5;  -- 	LOAD    Cs7
            0D3 : 9840;  --     OUT     Beep
-           0D4 : 8124;  --     Call    Delay
-           0D5 : 0988;  -- 	LOAD    G7
+           0D4 : 8139;  --     Call    Delay
+           0D5 : 09CD;  -- 	LOAD    D7
            0D6 : 9840;  --     OUT     Beep
-           0D7 : 8124;  --     Call    Delay
-           0D8 : 0990;  -- 	LOAD    Gs7
+           0D7 : 8139;  --     Call    Delay
+           0D8 : 09D5;  -- 	LOAD    Ds7
            0D9 : 9840;  --     OUT     Beep
-           0DA : 8124;  --     Call    Delay
-           0DB : 0939;  -- 	LOAD    A7
+           0DA : 8139;  --     Call    Delay
+           0DB : 09DD;  -- 	LOAD    E7
            0DC : 9840;  --     OUT     Beep
-           0DD : 8124;  --     Call    Delay
-           0DE : 0941;  -- 	LOAD    As7
+           0DD : 8139;  --     Call    Delay
+           0DE : 09E5;  -- 	LOAD    F7
            0DF : 9840;  --     OUT     Beep
-           0E0 : 8124;  --     Call    Delay
-           0E1 : 0949;  -- 	LOAD    B7
+           0E0 : 8139;  --     Call    Delay
+           0E1 : 09ED;  -- 	LOAD    Fs7
            0E2 : 9840;  --     OUT     Beep
-           0E3 : 8124;  --     Call    Delay
-           0E4 : 0951;  -- 	LOAD    C8
+           0E3 : 8139;  --     Call    Delay
+           0E4 : 09F5;  -- 	LOAD    G7
            0E5 : 9840;  --     OUT     Beep
-           0E6 : 8124;  --     Call    Delay
-           0E7 : 0959;  -- 	LOAD    Cs8
+           0E6 : 8139;  --     Call    Delay
+           0E7 : 09FD;  -- 	LOAD    Gs7
            0E8 : 9840;  --     OUT     Beep
-           0E9 : 8124;  --     Call    Delay
-           0EA : 0961;  -- 	LOAD    D8
-           0EB : 9840;  --     OUT     Beep
-           0EC : 8124;  --     Call    Delay
-           0ED : 0969;  -- 	LOAD    Ds8
+           0E9 : 8139;  --     Call    Delay
+           0EA : 9041;  -- 	IN ALLIO 
+           0EB : 499F;  -- 	AND Button3
+           0EC : 413E;  --     jzero SwitchMode
+           0ED : 09A6;  -- 	LOAD    A7
            0EE : 9840;  --     OUT     Beep
-           0EF : 8124;  --     Call    Delay
-           0F0 : 0971;  -- 	LOAD    E8
+           0EF : 8139;  --     Call    Delay
+           0F0 : 09AE;  -- 	LOAD    As7
            0F1 : 9840;  --     OUT     Beep
-           0F2 : 8124;  --     Call    Delay
-           0F3 : 0979;  -- 	LOAD    F8
+           0F2 : 8139;  --     Call    Delay
+           0F3 : 09B6;  -- 	LOAD    B7
            0F4 : 9840;  --     OUT     Beep
-           0F5 : 8124;  --     Call    Delay
-           0F6 : 0981;  -- 	LOAD    Fs8
+           0F5 : 8139;  --     Call    Delay
+           0F6 : 09BE;  -- 	LOAD    C8
            0F7 : 9840;  --     OUT     Beep
-           0F8 : 8124;  --     Call    Delay
-           0F9 : 0989;  -- 	LOAD    G8
+           0F8 : 8139;  --     Call    Delay
+           0F9 : 09C6;  -- 	LOAD    Cs8
            0FA : 9840;  --     OUT     Beep
-           0FB : 8124;  --     Call    Delay
-           0FC : 0991;  -- 	LOAD    Gs8
+           0FB : 8139;  --     Call    Delay
+           0FC : 09CE;  -- 	LOAD    D8
            0FD : 9840;  --     OUT     Beep
-           0FE : 8124;  --     Call    Delay
-           0FF : 093A;  -- 	LOAD    A8
+           0FE : 8139;  --     Call    Delay
+           0FF : 09D6;  -- 	LOAD    Ds8
            100 : 9840;  --     OUT     Beep
-           101 : 8124;  --     Call    Delay
-           102 : 0942;  -- 	LOAD    As8
+           101 : 8139;  --     Call    Delay
+           102 : 09DE;  -- 	LOAD    E8
            103 : 9840;  --     OUT     Beep
-           104 : 8124;  --     Call    Delay
-           105 : 094A;  -- 	LOAD    B8
+           104 : 8139;  --     Call    Delay
+           105 : 09E6;  -- 	LOAD    F8
            106 : 9840;  --     OUT     Beep
-           107 : 8124;  --     Call    Delay
-           108 : 0952;  -- 	LOAD    C9
+           107 : 8139;  --     Call    Delay
+           108 : 09EE;  -- 	LOAD    Fs8
            109 : 9840;  --     OUT     Beep
-           10A : 8124;  --     Call    Delay
-           10B : 095A;  -- 	LOAD    Cs9
+           10A : 8139;  --     Call    Delay
+           10B : 09F6;  -- 	LOAD    G8
            10C : 9840;  --     OUT     Beep
-           10D : 8124;  --     Call    Delay
-           10E : 0962;  -- 	LOAD    D9
+           10D : 8139;  --     Call    Delay
+           10E : 09FE;  -- 	LOAD    Gs8
            10F : 9840;  --     OUT     Beep
-           110 : 8124;  --     Call    Delay
-           111 : 096A;  -- 	LOAD    Ds9
-           112 : 9840;  --     OUT     Beep
-           113 : 8124;  --     Call    Delay
-           114 : 0972;  -- 	LOAD    E9
+           110 : 8139;  --     Call    Delay
+           111 : 9041;  -- 	IN ALLIO 
+           112 : 499F;  -- 	AND Button3
+           113 : 413E;  --     jzero SwitchMode
+           114 : 09A7;  -- 	LOAD    A8
            115 : 9840;  --     OUT     Beep
-           116 : 8124;  --     Call    Delay
-           117 : 097A;  -- 	LOAD    F9
+           116 : 8139;  --     Call    Delay
+           117 : 09AF;  -- 	LOAD    As8
            118 : 9840;  --     OUT     Beep
-           119 : 8124;  --     Call    Delay
-           11A : 0982;  -- 	LOAD    Fs9
+           119 : 8139;  --     Call    Delay
+           11A : 09B7;  -- 	LOAD    B8
            11B : 9840;  --     OUT     Beep
-           11C : 8124;  --     Call    Delay
-           11D : 098A;  -- 	LOAD    G9
+           11C : 8139;  --     Call    Delay
+           11D : 09BF;  -- 	LOAD    C9
            11E : 9840;  --     OUT     Beep
-           11F : 8124;  --     Call    Delay
-           120 : 0992;  -- 	LOAD    Gs9
+           11F : 8139;  --     Call    Delay
+           120 : 09C7;  -- 	LOAD    Cs9
            121 : 9840;  --     OUT     Beep
-           122 : 8124;  --     Call    Delay
-           123 : 2800;  -- 	JUMP 0
-           124 : 9802;  -- 	OUT    Timer
-           125 : 9002;  -- 	IN     Timer
-           126 : 6FEC;  -- 	ADDI   -20
-           127 : 3125;  -- 	JNEG   WaitingLoop
-           128 : 8800;  -- 	RETURN
-           129 : 9000;  --     IN     Switches    
-           12A : 9840;  -- 	OUT    Beep
-           12B : 812D;  -- 	CALL   Delay2
-           12C : 2929;  --     JUMP   SwitchMode
-           12D : 9802;  -- 	OUT    Timer
-           12E : 9002;  -- 	IN     Timer
-           12F : 6FFE;  -- 	ADDI   -2
-           130 : 312E;  -- 	JNEG   WaitingLoop2
-           131 : 8800;  -- 	RETURN
-           132 : 8000;  -- Button3:   DW &H8000
-           133 : 0411;  -- A1: DW &H0411
-           134 : 0421;  -- A2: DW &H0421
-           135 : 0431;  -- A3: DW &H0431
-           136 : 0441;  -- A4: DW &H0441
-           137 : 0451;  -- A5: DW &H0451
-           138 : 0461;  -- A6: DW &H0461
-           139 : 0471;  -- A7: DW &H0471
-           13A : 0481;  -- A8: DW &H0481
-           13B : 0511;  -- As1: DW &H0511
-           13C : 0521;  -- As2: DW &H0521
-           13D : 0531;  -- As3: DW &H0531
-           13E : 0541;  -- As4: DW &H0541
-           13F : 0551;  -- As5: DW &H0551
-           140 : 0561;  -- As6: DW &H0561
-           141 : 0571;  -- As7: DW &H0571
-           142 : 0581;  -- As8: DW &H0581
-           143 : 0412;  -- B1: DW &H0412
-           144 : 0422;  -- B2: DW &H0422
-           145 : 0432;  -- B3: DW &H0432
-           146 : 0442;  -- B4: DW &H0442
-           147 : 0452;  -- B5: DW &H0452
-           148 : 0462;  -- B6: DW &H0462
-           149 : 0472;  -- B7: DW &H0472
-           14A : 0482;  -- B8: DW &H0482
-           14B : 0423;  -- C2: DW &H0423
-           14C : 0433;  -- C3: DW &H0433
-           14D : 0443;  -- C4: DW &H0443
-           14E : 0453;  -- C5: DW &H0453
-           14F : 0463;  -- C6: DW &H0463
-           150 : 0473;  -- C7: DW &H0473
-           151 : 0483;  -- C8: DW &H0483
-           152 : 0493;  -- C9: DW &H0493
-           153 : 0523;  -- Cs2: DW &H0523
-           154 : 0533;  -- Cs3: DW &H0533
-           155 : 0543;  -- Cs4: DW &H0543
-           156 : 0553;  -- Cs5: DW &H0553
-           157 : 0563;  -- Cs6: DW &H0563
-           158 : 0573;  -- Cs7: DW &H0573
-           159 : 0583;  -- Cs8: DW &H0583
-           15A : 0593;  -- Cs9: DW &H0593
-           15B : 0424;  -- D2: DW &H0424
-           15C : 0434;  -- D3: DW &H0434
-           15D : 0444;  -- D4: DW &H0444
-           15E : 0454;  -- D5: DW &H0454
-           15F : 0464;  -- D6: DW &H0464
-           160 : 0474;  -- D7: DW &H0474
-           161 : 0484;  -- D8: DW &H0484
-           162 : 0494;  -- D9: DW &H0494
-           163 : 0524;  -- Ds2: DW &H0524
-           164 : 0534;  -- Ds3: DW &H0534
-           165 : 0544;  -- Ds4: DW &H0544
-           166 : 0554;  -- Ds5: DW &H0554
-           167 : 0564;  -- Ds6: DW &H0564
-           168 : 0574;  -- Ds7: DW &H0574
-           169 : 0584;  -- Ds8: DW &H0584
-           16A : 0594;  -- Ds9: DW &H0594
-           16B : 0425;  -- E2: DW &H0425
-           16C : 0435;  -- E3: DW &H0435
-           16D : 0445;  -- E4: DW &H0445
-           16E : 0455;  -- E5: DW &H0455
-           16F : 0465;  -- E6: DW &H0465
-           170 : 0475;  -- E7: DW &H0475
-           171 : 0485;  -- E8: DW &H0485
-           172 : 0495;  -- E9: DW &H0495
-           173 : 0426;  -- F2: DW &H0426
-           174 : 0436;  -- F3: DW &H0436
-           175 : 0446;  -- F4: DW &H0446
-           176 : 0456;  -- F5: DW &H0456
-           177 : 0466;  -- F6: DW &H0466
-           178 : 0476;  -- F7: DW &H0476
-           179 : 0486;  -- F8: DW &H0486
-           17A : 0496;  -- F9: DW &H0496
-           17B : 0526;  -- Fs2: DW &H0526
-           17C : 0536;  -- Fs3: DW &H0536
-           17D : 0546;  -- Fs4: DW &H0546
-           17E : 0556;  -- Fs5: DW &H0556
-           17F : 0566;  -- Fs6: DW &H0566
-           180 : 0576;  -- Fs7: DW &H0576
-           181 : 0586;  -- Fs8: DW &H0586
-           182 : 0596;  -- Fs9: DW &H0596
-           183 : 0427;  -- G2: DW &H0427
-           184 : 0437;  -- G3: DW &H0437
-           185 : 0447;  -- G4: DW &H0447
-           186 : 0457;  -- G5: DW &H0457
-           187 : 0467;  -- G6: DW &H0467
-           188 : 0477;  -- G7: DW &H0477
-           189 : 0487;  -- G8: DW &H0487
-           18A : 0497;  -- G9: DW &H0497
-           18B : 0527;  -- Gs2: DW &H0527
-           18C : 0537;  -- Gs3: DW &H0537
-           18D : 0547;  -- Gs4: DW &H0547
-           18E : 0557;  -- Gs5: DW &H0557
-           18F : 0567;  -- Gs6: DW &H0567
-           190 : 0577;  -- Gs7: DW &H0577
-           191 : 0587;  -- Gs8: DW &H0587
-           192 : 0597;  -- Gs9: DW &H0597
+           122 : 8139;  --     Call    Delay
+           123 : 09CF;  -- 	LOAD    D9
+           124 : 9840;  --     OUT     Beep
+           125 : 8139;  --     Call    Delay
+           126 : 09D7;  -- 	LOAD    Ds9
+           127 : 9840;  --     OUT     Beep
+           128 : 8139;  --     Call    Delay
+           129 : 09DF;  -- 	LOAD    E9
+           12A : 9840;  --     OUT     Beep
+           12B : 8139;  --     Call    Delay
+           12C : 09E7;  -- 	LOAD    F9
+           12D : 9840;  --     OUT     Beep
+           12E : 8139;  --     Call    Delay
+           12F : 09EF;  -- 	LOAD    Fs9
+           130 : 9840;  --     OUT     Beep
+           131 : 8139;  --     Call    Delay
+           132 : 09F7;  -- 	LOAD    G9
+           133 : 9840;  --     OUT     Beep
+           134 : 8139;  --     Call    Delay
+           135 : 09FF;  -- 	LOAD    Gs9
+           136 : 9840;  --     OUT     Beep
+           137 : 8139;  --     Call    Delay
+           138 : 2800;  -- 	JUMP 0
+           139 : 9802;  -- 	OUT    Timer
+           13A : 9002;  -- 	IN     Timer
+           13B : 6FF6;  -- 	ADDI   -10
+           13C : 313A;  -- 	JNEG   WaitingLoop
+           13D : 8800;  -- 	RETURN
+           13E : 819A;  --     CALL    DelaySong
+           13F : 819A;  --     CALL    DelaySong
+           140 : 819A;  --     CALL    DelaySong
+           141 : 0A02;  -- 	LOAD    E4square
+           142 : 9840;  --     OUT     Beep
+           143 : 819A;  --     Call    DelaySong
+           144 : 0A01;  --     LOAD    D4square
+           145 : 9840;  --     OUT     Beep
+           146 : 819A;  --     Call    DelaySong
+           147 : 0A00;  --     LOAD    C4square
+           148 : 9840;  --     OUT     Beep
+           149 : 819A;  --     Call    DelaySong
+           14A : 0A02;  --     LOAD    E4square
+           14B : 9840;  --     OUT     Beep
+           14C : 819A;  --     Call    DelaySong
+           14D : 0A01;  --     LOAD    D4square
+           14E : 9840;  --     OUT     Beep
+           14F : 819A;  --     Call    DelaySong
+           150 : 0A00;  --     LOAD    C4square
+           151 : 9840;  --     OUT     Beep
+           152 : 819A;  --     Call    DelaySong
+           153 : 0A03;  --     LOAD    Zero
+           154 : 9840;  --     OUT     Beep
+           155 : 819A;  --     Call    DelaySong
+           156 : 0A00;  --     LOAD    C4square
+           157 : 9840;  --     OUT     Beep
+           158 : 8195;  --     Call    ZeroDelay
+           159 : 0A03;  --     LOAD    Zero
+           15A : 9840;  --     OUT     Beep
+           15B : 819A;  --     Call    DelaySong
+           15C : 0A00;  --     LOAD    C4square
+           15D : 9840;  --     OUT     Beep
+           15E : 8195;  --     Call    ZeroDelay
+           15F : 0A03;  --     LOAD    Zero
+           160 : 9840;  --     OUT     Beep
+           161 : 819A;  --     Call    DelaySong
+           162 : 0A00;  --     LOAD    C4square
+           163 : 9840;  --     OUT     Beep
+           164 : 8195;  --     Call    ZeroDelay
+           165 : 0A03;  --     LOAD    Zero
+           166 : 9840;  --     OUT     Beep
+           167 : 819A;  --     Call    DelaySong
+           168 : 0A00;  --     LOAD    C4square
+           169 : 9840;  --     OUT     Beep
+           16A : 8195;  --     Call    ZeroDelay
+           16B : 0A01;  --     LOAD    D4square
+           16C : 9840;  --     OUT     Beep
+           16D : 819A;  --     Call    DelaySong
+           16E : 0A03;  --     LOAD    Zero
+           16F : 9840;  --     OUT     Beep
+           170 : 819A;  --     Call    DelaySong
+           171 : 0A01;  --     LOAD    D4square
+           172 : 9840;  --     OUT     Beep
+           173 : 8195;  --     Call    ZeroDelay
+           174 : 0A03;  --     LOAD    Zero
+           175 : 9840;  --     OUT     Beep
+           176 : 819A;  --     Call    DelaySong
+           177 : 0A01;  --     LOAD    D4square
+           178 : 9840;  --     OUT     Beep
+           179 : 8195;  --     Call    ZeroDelay
+           17A : 0A03;  --     LOAD    Zero
+           17B : 9840;  --     OUT     Beep
+           17C : 819A;  --     Call    DelaySong
+           17D : 0A01;  --     LOAD    D4square
+           17E : 9840;  --     OUT     Beep
+           17F : 8195;  --     Call    ZeroDelay
+           180 : 0A02;  --     LOAD    E4square
+           181 : 9840;  --     OUT     Beep
+           182 : 819A;  --     Call    DelaySong
+           183 : 0A01;  --     LOAD    D4square
+           184 : 9840;  --     OUT     Beep
+           185 : 819A;  --     Call    DelaySong
+           186 : 0A00;  --     LOAD    C4square
+           187 : 9840;  --     OUT     Beep
+           188 : 819A;  --     Call    DelaySong
+           189 : 0A03;  --     LOAD    Zero
+           18A : 9840;  --     OUT     Beep
+           18B : 819A;  --     Call    DelaySong
+           18C : 9041;  --     IN     ALLIO    
+           18D : 9840;  -- 	OUT    Beep
+           18E : 8190;  -- 	CALL   Delay2
+           18F : 298C;  --     JUMP   BeepTest
+           190 : 9802;  -- 	OUT    Timer
+           191 : 9002;  -- 	IN     Timer
+           192 : 6FFE;  -- 	ADDI   -2
+           193 : 3191;  -- 	JNEG   WaitingLoop2
+           194 : 8800;  -- 	RETURN
+           195 : 9802;  -- 	OUT    Timer
+           196 : 9002;  -- 	IN     Timer
+           197 : 6FFF;  -- 	ADDI   -1
+           198 : 3196;  -- 	JNEG   ZeroWaitingLoop
+           199 : 8800;  -- 	RETURN
+           19A : 9802;  -- 	OUT    Timer
+           19B : 9002;  -- 	IN     Timer
+           19C : 6FFB;  -- 	ADDI   -5
+           19D : 319B;  -- 	JNEG   WaitingLoopSong
+           19E : 8800;  -- 	RETURN
+           19F : 8000;  -- Button3:   DW &H8000
+           1A0 : 0411;  -- A1: DW &H0411
+           1A1 : 0421;  -- A2: DW &H0421
+           1A2 : 0431;  -- A3: DW &H0431
+           1A3 : 0441;  -- A4: DW &H0441
+           1A4 : 0451;  -- A5: DW &H0451
+           1A5 : 0461;  -- A6: DW &H0461
+           1A6 : 0471;  -- A7: DW &H0471
+           1A7 : 0481;  -- A8: DW &H0481
+           1A8 : 0511;  -- As1: DW &H0511
+           1A9 : 0521;  -- As2: DW &H0521
+           1AA : 0531;  -- As3: DW &H0531
+           1AB : 0541;  -- As4: DW &H0541
+           1AC : 0551;  -- As5: DW &H0551
+           1AD : 0561;  -- As6: DW &H0561
+           1AE : 0571;  -- As7: DW &H0571
+           1AF : 0581;  -- As8: DW &H0581
+           1B0 : 0412;  -- B1: DW &H0412
+           1B1 : 0422;  -- B2: DW &H0422
+           1B2 : 0432;  -- B3: DW &H0432
+           1B3 : 0442;  -- B4: DW &H0442
+           1B4 : 0452;  -- B5: DW &H0452
+           1B5 : 0462;  -- B6: DW &H0462
+           1B6 : 0472;  -- B7: DW &H0472
+           1B7 : 0482;  -- B8: DW &H0482
+           1B8 : 0423;  -- C2: DW &H0423
+           1B9 : 0433;  -- C3: DW &H0433
+           1BA : 0443;  -- C4: DW &H0443
+           1BB : 0453;  -- C5: DW &H0453
+           1BC : 0463;  -- C6: DW &H0463
+           1BD : 0473;  -- C7: DW &H0473
+           1BE : 0483;  -- C8: DW &H0483
+           1BF : 0493;  -- C9: DW &H0493
+           1C0 : 0523;  -- Cs2: DW &H0523
+           1C1 : 0533;  -- Cs3: DW &H0533
+           1C2 : 0543;  -- Cs4: DW &H0543
+           1C3 : 0553;  -- Cs5: DW &H0553
+           1C4 : 0563;  -- Cs6: DW &H0563
+           1C5 : 0573;  -- Cs7: DW &H0573
+           1C6 : 0583;  -- Cs8: DW &H0583
+           1C7 : 0593;  -- Cs9: DW &H0593
+           1C8 : 0424;  -- D2: DW &H0424
+           1C9 : 0434;  -- D3: DW &H0434
+           1CA : 0444;  -- D4: DW &H0444
+           1CB : 0454;  -- D5: DW &H0454
+           1CC : 0464;  -- D6: DW &H0464
+           1CD : 0474;  -- D7: DW &H0474
+           1CE : 0484;  -- D8: DW &H0484
+           1CF : 0494;  -- D9: DW &H0494
+           1D0 : 0524;  -- Ds2: DW &H0524
+           1D1 : 0534;  -- Ds3: DW &H0534
+           1D2 : 0544;  -- Ds4: DW &H0544
+           1D3 : 0554;  -- Ds5: DW &H0554
+           1D4 : 0564;  -- Ds6: DW &H0564
+           1D5 : 0574;  -- Ds7: DW &H0574
+           1D6 : 0584;  -- Ds8: DW &H0584
+           1D7 : 0594;  -- Ds9: DW &H0594
+           1D8 : 0425;  -- E2: DW &H0425
+           1D9 : 0435;  -- E3: DW &H0435
+           1DA : 0445;  -- E4: DW &H0445
+           1DB : 0455;  -- E5: DW &H0455
+           1DC : 0465;  -- E6: DW &H0465
+           1DD : 0475;  -- E7: DW &H0475
+           1DE : 0485;  -- E8: DW &H0485
+           1DF : 0495;  -- E9: DW &H0495
+           1E0 : 0426;  -- F2: DW &H0426
+           1E1 : 0436;  -- F3: DW &H0436
+           1E2 : 0446;  -- F4: DW &H0446
+           1E3 : 0456;  -- F5: DW &H0456
+           1E4 : 0466;  -- F6: DW &H0466
+           1E5 : 0476;  -- F7: DW &H0476
+           1E6 : 0486;  -- F8: DW &H0486
+           1E7 : 0496;  -- F9: DW &H0496
+           1E8 : 0526;  -- Fs2: DW &H0526
+           1E9 : 0536;  -- Fs3: DW &H0536
+           1EA : 0546;  -- Fs4: DW &H0546
+           1EB : 0556;  -- Fs5: DW &H0556
+           1EC : 0566;  -- Fs6: DW &H0566
+           1ED : 0576;  -- Fs7: DW &H0576
+           1EE : 0586;  -- Fs8: DW &H0586
+           1EF : 0596;  -- Fs9: DW &H0596
+           1F0 : 0427;  -- G2: DW &H0427
+           1F1 : 0437;  -- G3: DW &H0437
+           1F2 : 0447;  -- G4: DW &H0447
+           1F3 : 0457;  -- G5: DW &H0457
+           1F4 : 0467;  -- G6: DW &H0467
+           1F5 : 0477;  -- G7: DW &H0477
+           1F6 : 0487;  -- G8: DW &H0487
+           1F7 : 0497;  -- G9: DW &H0497
+           1F8 : 0527;  -- Gs2: DW &H0527
+           1F9 : 0537;  -- Gs3: DW &H0537
+           1FA : 0547;  -- Gs4: DW &H0547
+           1FB : 0557;  -- Gs5: DW &H0557
+           1FC : 0567;  -- Gs6: DW &H0567
+           1FD : 0577;  -- Gs7: DW &H0577
+           1FE : 0587;  -- Gs8: DW &H0587
+           1FF : 0597;  -- Gs9: DW &H0597
+           200 : 4443;  -- C4square:		   DW &H4443
+           201 : 4444;  -- D4square:		   DW &H4444
+           202 : 4445;  -- E4square:		   DW &H4445
+           203 : 4440;  -- Zero:		       DW &H4440
   END;

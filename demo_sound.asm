@@ -8,9 +8,9 @@ ORG 0
 	;CALL   Delay
 	; Do it again
 	;JUMP   0
-	IN Switches 
+	IN ALLIO 
 	AND Button3
-    jneg Switchmode
+    jzero SwitchMode
 
 	LOAD    A1
     OUT     Beep
@@ -60,7 +60,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	
@@ -112,7 +114,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	
@@ -164,7 +168,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	LOAD    A4
@@ -215,7 +221,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	LOAD    A5
@@ -266,7 +274,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	LOAD    A6
@@ -317,7 +327,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	LOAD    A7
@@ -368,7 +380,9 @@ ORG 0
     OUT     Beep
     Call    Delay
 	
-	
+	IN ALLIO 
+	AND Button3
+    jzero SwitchMode
 	
 	
 	
@@ -433,7 +447,7 @@ Delay:
 	OUT    Timer
 WaitingLoop:
 	IN     Timer
-	ADDI   -20
+	ADDI   -10
 	JNEG   WaitingLoop
 	RETURN
 	
@@ -441,13 +455,123 @@ WaitingLoop:
 	
 	
 SwitchMode:
-    IN     Switches    
+    CALL    DelaySong
+    CALL    DelaySong
+    CALL    DelaySong
+
+    ; EDC
+	LOAD    E4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    DelaySong
+
+    ; EDC
+    LOAD    E4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    ; C C C C
+    LOAD    C4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    ZeroDelay
+    
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    ; D D D D
+    LOAD    D4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    ZeroDelay
+
+    ; EDC
+    LOAD    E4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    D4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    C4square
+    OUT     Beep
+    Call    DelaySong
+
+    LOAD    Zero
+    OUT     Beep
+    Call    DelaySong
+
+BeepTest:
+    IN     ALLIO    
 	; Send to the peripheral
 	OUT    Beep
 	; Delay for 1 second
 	CALL   Delay2
 	; Do it again
-    JUMP   SwitchMode
+    JUMP   BeepTest
 	
 	
 Delay2:
@@ -458,6 +582,22 @@ WaitingLoop2:
 	JNEG   WaitingLoop2
 	RETURN
 
+ZeroDelay:
+	OUT    Timer
+ZeroWaitingLoop:
+	IN     Timer
+	ADDI   -1
+	JNEG   ZeroWaitingLoop
+	RETURN
+
+DelaySong:
+	OUT    Timer
+WaitingLoopSong:
+	IN     Timer
+	ADDI   -5
+	JNEG   WaitingLoopSong
+	RETURN
+
 ; IO address constants
 Switches:  EQU 000
 LEDs:      EQU 001
@@ -466,14 +606,7 @@ Hex0:      EQU 004
 Hex1:      EQU 005
 Beep:      EQU &H40
 Button3:   DW &H8000
-
-; All notes are displayed as hexadecimal numbers
-; The first digit of the hexadecimal represents the base note change. Ex; A = 1, B = 2, C = 3 etc.
-; The second digit represents the octave changes, and has a max value of 9, which means the peripheral can go upto 9 octaves of notes.
-; The third digit toggles the sharps. If the digit is 4, it is not a sharp. If it's a 5, it is a sharp.
-; In this way we can get any note from A1 to G9 by following this.
-; Ex C sharp in the 5th octave -> sharp = 5, 5th octave = 5, C = 3 => Cs5 = &H0553
-; Note: A, A sharp, and B start from an octave lower. Ex. A1 will have the octave hex digit set to 2.
+ALLIO:     EQU &H41
 
 A1: DW &H0411
 A2: DW &H0421
@@ -588,3 +721,9 @@ Gs6: DW &H0567
 Gs7: DW &H0577
 Gs8: DW &H0587
 Gs9: DW &H0597
+
+C4square:		   DW &H4443
+D4square:		   DW &H4444
+E4square:		   DW &H4445
+Zero:		       DW &H4440
+

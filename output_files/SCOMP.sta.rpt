@@ -1,5 +1,5 @@
 Timing Analyzer report for SCOMP
-Tue Nov 29 18:53:48 2022
+Tue Nov 29 19:53:53 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -103,14 +103,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.48        ;
+; Average used               ; 1.44        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.0%      ;
-;     Processor 3            ;  15.8%      ;
-;     Processor 4            ;  15.7%      ;
+;     Processor 2            ;  14.8%      ;
+;     Processor 3            ;  14.6%      ;
+;     Processor 4            ;  14.5%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +119,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; SCOMP.sdc     ; OK     ; Tue Nov 29 18:53:41 2022 ;
+; SCOMP.sdc     ; OK     ; Tue Nov 29 19:53:47 2022 ;
 +---------------+--------+--------------------------+
 
 
@@ -146,13 +146,13 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                     ; Note                                                  ;
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
-; 61.72 MHz  ; 61.72 MHz       ; SCOMP:inst|IO_CYCLE                                                            ;                                                       ;
-; 76.1 MHz   ; 76.1 MHz        ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;                                                       ;
-; 94.03 MHz  ; 94.03 MHz       ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ;                                                       ;
-; 208.07 MHz ; 208.07 MHz      ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ;                                                       ;
-; 228.73 MHz ; 228.73 MHz      ; AUD_DACLR                                                                      ;                                                       ;
-; 365.36 MHz ; 365.36 MHz      ; clk_div:inst5|clock_10Hz                                                       ;                                                       ;
-; 621.12 MHz ; 606.06 MHz      ; AUD_BCLK                                                                       ; limit due to high minimum pulse width violation (tch) ;
+; 88.99 MHz  ; 88.99 MHz       ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ;                                                       ;
+; 107.65 MHz ; 107.65 MHz      ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;                                                       ;
+; 110.79 MHz ; 110.79 MHz      ; SCOMP:inst|IO_CYCLE                                                            ;                                                       ;
+; 225.94 MHz ; 225.94 MHz      ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ;                                                       ;
+; 234.63 MHz ; 234.63 MHz      ; AUD_DACLR                                                                      ;                                                       ;
+; 361.79 MHz ; 361.79 MHz      ; clk_div:inst5|clock_10Hz                                                       ;                                                       ;
+; 629.33 MHz ; 598.8 MHz       ; AUD_BCLK                                                                       ; limit due to high minimum pulse width violation (tch) ;
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -168,13 +168,13 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                          ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------+---------+---------------+
-; SCOMP:inst|IO_CYCLE                                                            ; -15.558 ; -570.744      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -12.553 ; -186.239      ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -9.027  ; -144.464      ;
-; AUD_DACLR                                                                      ; -8.870  ; -234.586      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -6.974  ; -81.181       ;
-; AUD_BCLK                                                                       ; -6.967  ; -208.707      ;
-; clk_div:inst5|clock_10Hz                                                       ; -1.842  ; -56.581       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -11.485 ; -432.573      ;
+; AUD_DACLR                                                                      ; -9.458  ; -227.796      ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -8.958  ; -147.452      ;
+; AUD_BCLK                                                                       ; -6.237  ; -172.025      ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -4.066  ; -4.066        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.468  ; -22.330       ;
+; clk_div:inst5|clock_10Hz                                                       ; -2.474  ; -54.090       ;
 +--------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -183,13 +183,13 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; AUD_DACLR                                                                      ; -5.260 ; -103.205      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -5.036 ; -44.605       ;
-; AUD_BCLK                                                                       ; -1.413 ; -11.247       ;
-; SCOMP:inst|IO_CYCLE                                                            ; -1.395 ; -13.214       ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 0.374  ; 0.000         ;
-; clk_div:inst5|clock_10Hz                                                       ; 0.414  ; 0.000         ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.754  ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -7.212 ; -112.425      ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -5.679 ; -79.718       ;
+; AUD_BCLK                                                                       ; -5.265 ; -40.162       ;
+; AUD_DACLR                                                                      ; -4.745 ; -117.896      ;
+; SCOMP:inst|IO_CYCLE                                                            ; -1.552 ; -32.172       ;
+; clk_div:inst5|clock_10Hz                                                       ; 0.387  ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.511  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -198,7 +198,7 @@ HTML report is unavailable in plain text report export.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_div:inst5|clock_10Hz ; -9.817 ; -274.801      ;
+; clk_div:inst5|clock_10Hz ; -9.658 ; -231.736      ;
 +--------------------------+--------+---------------+
 
 
@@ -207,7 +207,7 @@ HTML report is unavailable in plain text report export.
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
-; clk_div:inst5|clock_10Hz ; 0.961 ; 0.000         ;
+; clk_div:inst5|clock_10Hz ; 1.038 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -216,16 +216,16 @@ HTML report is unavailable in plain text report export.
 +------------------------------------------------------------------------------------+----------+---------------+
 ; Clock                                                                              ; Slack    ; End Point TNS ;
 +------------------------------------------------------------------------------------+----------+---------------+
-; AUD_DACLR                                                                          ; -2.174   ; -55.235       ;
-; SCOMP:inst|IO_CYCLE                                                                ; -0.427   ; -46.318       ;
-; AUD_BCLK                                                                           ; -0.394   ; -22.939       ;
-; clk_div:inst5|clock_10Hz                                                           ; -0.394   ; -22.803       ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -0.394   ; -13.426       ;
+; AUD_DACLR                                                                          ; -2.174   ; -54.280       ;
+; SCOMP:inst|IO_CYCLE                                                                ; -0.570   ; -56.184       ;
+; AUD_BCLK                                                                           ; -0.394   ; -23.004       ;
+; clk_div:inst5|clock_10Hz                                                           ; -0.394   ; -18.602       ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -0.394   ; -13.977       ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; 1.666    ; 0.000         ;
 ; clock_50                                                                           ; 9.670    ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.437   ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.433   ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; 416.666  ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.310 ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.306 ; 0.000         ;
 +------------------------------------------------------------------------------------+----------+---------------+
 
 
@@ -241,13 +241,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                     ; Note                                                  ;
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
-; 64.08 MHz  ; 64.08 MHz       ; SCOMP:inst|IO_CYCLE                                                            ;                                                       ;
-; 79.09 MHz  ; 79.09 MHz       ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;                                                       ;
-; 99.2 MHz   ; 99.2 MHz        ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ;                                                       ;
-; 217.11 MHz ; 217.11 MHz      ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ;                                                       ;
-; 238.55 MHz ; 238.55 MHz      ; AUD_DACLR                                                                      ;                                                       ;
-; 350.75 MHz ; 350.75 MHz      ; clk_div:inst5|clock_10Hz                                                       ;                                                       ;
-; 645.16 MHz ; 582.07 MHz      ; AUD_BCLK                                                                       ; limit due to high minimum pulse width violation (tch) ;
+; 92.58 MHz  ; 92.58 MHz       ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ;                                                       ;
+; 107.82 MHz ; 107.82 MHz      ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;                                                       ;
+; 112.16 MHz ; 112.16 MHz      ; SCOMP:inst|IO_CYCLE                                                            ;                                                       ;
+; 241.2 MHz  ; 241.2 MHz       ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ;                                                       ;
+; 242.37 MHz ; 242.37 MHz      ; AUD_DACLR                                                                      ;                                                       ;
+; 349.04 MHz ; 349.04 MHz      ; clk_div:inst5|clock_10Hz                                                       ;                                                       ;
+; 652.74 MHz ; 575.37 MHz      ; AUD_BCLK                                                                       ; limit due to high minimum pulse width violation (tch) ;
 +------------+-----------------+--------------------------------------------------------------------------------+-------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -257,13 +257,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                          ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------+---------+---------------+
-; SCOMP:inst|IO_CYCLE                                                            ; -15.295 ; -565.955      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -11.528 ; -168.143      ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -9.235  ; -146.695      ;
-; AUD_DACLR                                                                      ; -8.415  ; -219.863      ;
-; AUD_BCLK                                                                       ; -6.540  ; -195.679      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -6.291  ; -71.724       ;
-; clk_div:inst5|clock_10Hz                                                       ; -1.851  ; -57.854       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -11.482 ; -431.000      ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -9.161  ; -149.244      ;
+; AUD_DACLR                                                                      ; -8.931  ; -216.591      ;
+; AUD_BCLK                                                                       ; -5.867  ; -160.797      ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -3.403  ; -3.403        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.056  ; -19.001       ;
+; clk_div:inst5|clock_10Hz                                                       ; -2.447  ; -55.449       ;
 +--------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -272,13 +272,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; AUD_DACLR                                                                      ; -5.243 ; -104.012      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -5.066 ; -47.888       ;
-; SCOMP:inst|IO_CYCLE                                                            ; -1.433 ; -13.768       ;
-; AUD_BCLK                                                                       ; -1.293 ; -10.129       ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 0.391  ; 0.000         ;
-; clk_div:inst5|clock_10Hz                                                       ; 0.396  ; 0.000         ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.728  ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -7.474 ; -117.697      ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -5.729 ; -81.162       ;
+; AUD_BCLK                                                                       ; -5.157 ; -37.845       ;
+; AUD_DACLR                                                                      ; -4.670 ; -116.483      ;
+; SCOMP:inst|IO_CYCLE                                                            ; -1.589 ; -32.246       ;
+; clk_div:inst5|clock_10Hz                                                       ; 0.365  ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.493  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -287,7 +287,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_div:inst5|clock_10Hz ; -9.830 ; -275.173      ;
+; clk_div:inst5|clock_10Hz ; -9.672 ; -232.082      ;
 +--------------------------+--------+---------------+
 
 
@@ -296,7 +296,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
-; clk_div:inst5|clock_10Hz ; 0.945 ; 0.000         ;
+; clk_div:inst5|clock_10Hz ; 1.020 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -305,16 +305,16 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------------+----------+---------------+
 ; Clock                                                                              ; Slack    ; End Point TNS ;
 +------------------------------------------------------------------------------------+----------+---------------+
-; AUD_DACLR                                                                          ; -2.174   ; -54.779       ;
-; SCOMP:inst|IO_CYCLE                                                                ; -0.399   ; -44.089       ;
-; AUD_BCLK                                                                           ; -0.394   ; -24.087       ;
-; clk_div:inst5|clock_10Hz                                                           ; -0.394   ; -21.914       ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -0.394   ; -13.364       ;
+; AUD_DACLR                                                                          ; -2.174   ; -54.145       ;
+; SCOMP:inst|IO_CYCLE                                                                ; -0.541   ; -53.772       ;
+; AUD_BCLK                                                                           ; -0.394   ; -24.172       ;
+; clk_div:inst5|clock_10Hz                                                           ; -0.394   ; -18.386       ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -0.394   ; -14.046       ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; 1.666    ; 0.000         ;
 ; clock_50                                                                           ; 9.673    ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.422   ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.423   ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; 416.666  ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.256 ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.254 ; 0.000         ;
 +------------------------------------------------------------------------------------+----------+---------------+
 
 
@@ -330,13 +330,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; SCOMP:inst|IO_CYCLE                                                            ; -9.714 ; -341.220      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -9.217 ; -134.316      ;
-; AUD_DACLR                                                                      ; -6.489 ; -164.425      ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -6.218 ; -95.926       ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -5.438 ; -67.172       ;
-; AUD_BCLK                                                                       ; -4.861 ; -147.030      ;
-; clk_div:inst5|clock_10Hz                                                       ; -0.839 ; -20.870       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -6.772 ; -255.953      ;
+; AUD_DACLR                                                                      ; -6.730 ; -153.344      ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -6.246 ; -97.159       ;
+; AUD_BCLK                                                                       ; -4.450 ; -119.630      ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -2.953 ; -19.282       ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -2.892 ; -2.892        ;
+; clk_div:inst5|clock_10Hz                                                       ; -1.065 ; -19.937       ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -345,13 +345,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; AUD_DACLR                                                                      ; -2.868 ; -52.868       ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -2.831 ; -24.073       ;
-; SCOMP:inst|IO_CYCLE                                                            ; -0.952 ; -9.039        ;
-; AUD_BCLK                                                                       ; -0.678 ; -2.619        ;
-; clk_div:inst5|clock_10Hz                                                       ; 0.160  ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 0.182  ; 0.000         ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.349  ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -5.671 ; -90.543       ;
+; AUD_BCLK                                                                       ; -3.212 ; -20.867       ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.169 ; -44.542       ;
+; AUD_DACLR                                                                      ; -2.655 ; -65.424       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -1.035 ; -18.142       ;
+; clk_div:inst5|clock_10Hz                                                       ; 0.154  ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.270  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -360,7 +360,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_div:inst5|clock_10Hz ; -5.608 ; -156.996      ;
+; clk_div:inst5|clock_10Hz ; -5.441 ; -130.561      ;
 +--------------------------+--------+---------------+
 
 
@@ -369,7 +369,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
-; clk_div:inst5|clock_10Hz ; 0.387 ; 0.000         ;
+; clk_div:inst5|clock_10Hz ; 0.394 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -378,16 +378,16 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------------------------------------------------------------------+----------+---------------+
 ; Clock                                                                              ; Slack    ; End Point TNS ;
 +------------------------------------------------------------------------------------+----------+---------------+
-; AUD_DACLR                                                                          ; -2.174   ; -58.789       ;
-; AUD_BCLK                                                                           ; -0.575   ; -27.238       ;
-; SCOMP:inst|IO_CYCLE                                                                ; -0.235   ; -7.886        ;
-; clk_div:inst5|clock_10Hz                                                           ; -0.003   ; -0.012        ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; 0.137    ; 0.000         ;
+; AUD_DACLR                                                                          ; -2.174   ; -57.058       ;
+; AUD_BCLK                                                                           ; -0.579   ; -27.246       ;
+; SCOMP:inst|IO_CYCLE                                                                ; -0.293   ; -11.196       ;
+; clk_div:inst5|clock_10Hz                                                           ; 0.044    ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; 0.084    ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; 1.666    ; 0.000         ;
 ; clock_50                                                                           ; 9.336    ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.552   ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; 416.666  ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.558 ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.555 ; 0.000         ;
 +------------------------------------------------------------------------------------+----------+---------------+
 
 
@@ -403,13 +403,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; SCOMP:inst|IO_CYCLE                                                            ; -8.941 ; -317.724      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -7.474 ; -107.461      ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -6.265 ; -95.633       ;
-; AUD_DACLR                                                                      ; -5.391 ; -134.123      ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -4.475 ; -54.013       ;
-; AUD_BCLK                                                                       ; -4.017 ; -120.870      ;
-; clk_div:inst5|clock_10Hz                                                       ; -0.696 ; -18.299       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -6.410 ; -242.173      ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; -6.262 ; -96.472       ;
+; AUD_DACLR                                                                      ; -5.555 ; -126.783      ;
+; AUD_BCLK                                                                       ; -3.630 ; -97.500       ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -2.319 ; -14.661       ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -1.980 ; -1.980        ;
+; clk_div:inst5|clock_10Hz                                                       ; -0.938 ; -17.546       ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -418,13 +418,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; AUD_DACLR                                                                      ; -2.875 ; -54.750       ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -2.824 ; -26.316       ;
-; SCOMP:inst|IO_CYCLE                                                            ; -0.912 ; -8.808        ;
-; AUD_BCLK                                                                       ; -0.668 ; -4.187        ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -0.107 ; -0.239        ;
-; clk_div:inst5|clock_10Hz                                                       ; 0.141  ; 0.000         ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.316  ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; -5.838 ; -94.095       ;
+; AUD_BCLK                                                                       ; -3.166 ; -21.602       ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.145 ; -44.885       ;
+; AUD_DACLR                                                                      ; -2.660 ; -66.438       ;
+; SCOMP:inst|IO_CYCLE                                                            ; -0.983 ; -17.143       ;
+; clk_div:inst5|clock_10Hz                                                       ; 0.127  ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 0.239  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -433,7 +433,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_div:inst5|clock_10Hz ; -5.365 ; -150.192      ;
+; clk_div:inst5|clock_10Hz ; -5.237 ; -125.660      ;
 +--------------------------+--------+---------------+
 
 
@@ -442,7 +442,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
-; clk_div:inst5|clock_10Hz ; 0.327 ; 0.000         ;
+; clk_div:inst5|clock_10Hz ; 0.339 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -451,16 +451,16 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------------------------------------------------------------------------------+----------+---------------+
 ; Clock                                                                              ; Slack    ; End Point TNS ;
 +------------------------------------------------------------------------------------+----------+---------------+
-; AUD_DACLR                                                                          ; -2.174   ; -61.566       ;
-; AUD_BCLK                                                                           ; -0.625   ; -30.451       ;
-; SCOMP:inst|IO_CYCLE                                                                ; -0.151   ; -3.809        ;
-; clk_div:inst5|clock_10Hz                                                           ; 0.037    ; 0.000         ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; 0.154    ; 0.000         ;
+; AUD_DACLR                                                                          ; -2.174   ; -60.062       ;
+; AUD_BCLK                                                                           ; -0.629   ; -30.521       ;
+; SCOMP:inst|IO_CYCLE                                                                ; -0.212   ; -7.149        ;
+; clk_div:inst5|clock_10Hz                                                           ; 0.068    ; 0.000         ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; 0.093    ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; 1.666    ; 0.000         ;
 ; clock_50                                                                           ; 9.286    ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; 40.552   ; 0.000         ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; 416.666  ; 0.000         ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.546 ; 0.000         ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; 1249.544 ; 0.000         ;
 +------------------------------------------------------------------------------------+----------+---------------+
 
 
@@ -476,28 +476,28 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
 ; Clock                                                                               ; Setup     ; Hold     ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
-; Worst-case Slack                                                                    ; -15.558   ; -5.260   ; -9.830   ; 0.327   ; -2.174              ;
-;  AUD_BCLK                                                                           ; -6.967    ; -1.413   ; N/A      ; N/A     ; -0.625              ;
-;  AUD_DACLR                                                                          ; -8.870    ; -5.260   ; N/A      ; N/A     ; -2.174              ;
-;  SCOMP:inst|IO_CYCLE                                                                ; -15.558   ; -1.433   ; N/A      ; N/A     ; -0.427              ;
-;  clk_div:inst5|clock_10Hz                                                           ; -1.851    ; 0.141    ; -9.830   ; 0.327   ; -0.394              ;
+; Worst-case Slack                                                                    ; -11.485   ; -7.474   ; -9.672   ; 0.339   ; -2.174              ;
+;  AUD_BCLK                                                                           ; -6.237    ; -5.265   ; N/A      ; N/A     ; -0.629              ;
+;  AUD_DACLR                                                                          ; -9.458    ; -4.745   ; N/A      ; N/A     ; -2.174              ;
+;  SCOMP:inst|IO_CYCLE                                                                ; -11.485   ; -1.589   ; N/A      ; N/A     ; -0.570              ;
+;  clk_div:inst5|clock_10Hz                                                           ; -2.474    ; 0.127    ; -9.672   ; 0.339   ; -0.394              ;
 ;  clock_50                                                                           ; N/A       ; N/A      ; N/A      ; N/A     ; 9.286               ;
-;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; -6.974    ; -5.066   ; N/A      ; N/A     ; 40.422              ;
+;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; -3.468    ; -5.729   ; N/A      ; N/A     ; 40.423              ;
 ;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; N/A       ; N/A      ; N/A      ; N/A     ; 416.666             ;
-;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; -12.553   ; -0.107   ; N/A      ; N/A     ; 1249.256            ;
+;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; -4.066    ; -7.474   ; N/A      ; N/A     ; 1249.254            ;
 ;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; N/A       ; N/A      ; N/A      ; N/A     ; 1.666               ;
-;  oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -9.235    ; 0.316    ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS                                                                     ; -1482.502 ; -175.797 ; -275.173 ; 0.0     ; -160.721            ;
-;  AUD_BCLK                                                                           ; -208.707  ; -11.247  ; N/A      ; N/A     ; -30.451             ;
-;  AUD_DACLR                                                                          ; -234.586  ; -104.012 ; N/A      ; N/A     ; -61.566             ;
-;  SCOMP:inst|IO_CYCLE                                                                ; -570.744  ; -13.768  ; N/A      ; N/A     ; -46.318             ;
-;  clk_div:inst5|clock_10Hz                                                           ; -57.854   ; 0.000    ; -275.173 ; 0.000   ; -22.803             ;
+;  oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -9.161    ; 0.239    ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                                                                     ; -1060.332 ; -385.433 ; -232.082 ; 0.0     ; -166.047            ;
+;  AUD_BCLK                                                                           ; -172.025  ; -40.162  ; N/A      ; N/A     ; -30.521             ;
+;  AUD_DACLR                                                                          ; -227.796  ; -117.896 ; N/A      ; N/A     ; -60.062             ;
+;  SCOMP:inst|IO_CYCLE                                                                ; -432.573  ; -32.246  ; N/A      ; N/A     ; -56.184             ;
+;  clk_div:inst5|clock_10Hz                                                           ; -55.449   ; 0.000    ; -232.082 ; 0.000   ; -18.602             ;
 ;  clock_50                                                                           ; N/A       ; N/A      ; N/A      ; N/A     ; 0.000               ;
-;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; -81.181   ; -47.888  ; N/A      ; N/A     ; 0.000               ;
+;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk     ; -22.330   ; -81.162  ; N/A      ; N/A     ; 0.000               ;
 ;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout ; N/A       ; N/A      ; N/A      ; N/A     ; 0.000               ;
-;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; -186.239  ; -0.239   ; N/A      ; N/A     ; 0.000               ;
+;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk     ; -4.066    ; -117.697 ; N/A      ; N/A     ; 0.000               ;
 ;  inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                 ; N/A       ; N/A      ; N/A      ; N/A     ; 0.000               ;
-;  oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -146.695  ; 0.000    ; N/A      ; N/A     ; -13.426             ;
+;  oneshot_i2c:inst12|i2c_master:inst|data_clk                                        ; -149.244  ; 0.000    ; N/A      ; N/A     ; -14.046             ;
 +-------------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
 
 
@@ -566,16 +566,16 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; AUD_DACLR ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY0      ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; clock_50  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[4]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[6]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[5]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[4]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[3]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[0]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[1]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[2]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[8]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[9]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[3]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[2]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[1]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[0]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; BT[1]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; BT[2]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; BT[0]     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -807,17 +807,17 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; AUD_DACLR                                                                      ; AUD_BCLK                                                                       ; 0        ; 0        ; 32       ; 54       ;
 ; AUD_DACLR                                                                      ; AUD_DACLR                                                                      ; 218      ; 0        ; 8        ; 0        ;
 ; SCOMP:inst|IO_CYCLE                                                            ; AUD_DACLR                                                                      ; 777      ; 0        ; 0        ; 0        ;
-; clk_div:inst5|clock_10Hz                                                       ; clk_div:inst5|clock_10Hz                                                       ; 232      ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz                                                       ; 9        ; 0        ; 0        ; 0        ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 5679     ; 0        ; 0        ; 0        ;
+; clk_div:inst5|clock_10Hz                                                       ; clk_div:inst5|clock_10Hz                                                       ; 203      ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz                                                       ; 8        ; 0        ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 5901     ; 0        ; 0        ; 0        ;
 ; SCOMP:inst|IO_CYCLE                                                            ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 79       ; 40       ; 0        ; 0        ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 184      ; 0        ; 0        ; 0        ;
 ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 17       ; 0        ; 0        ; 0        ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 34       ; 0        ; 0        ; 0        ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 132      ; 15       ; 4        ; 1        ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 135      ; 15       ; 4        ; 1        ;
 ; clk_div:inst5|clock_10Hz                                                       ; SCOMP:inst|IO_CYCLE                                                            ; 16       ; 0        ; 0        ; 0        ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; SCOMP:inst|IO_CYCLE                                                            ; 3421     ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; SCOMP:inst|IO_CYCLE                                                            ; 1825     ; 269      ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; SCOMP:inst|IO_CYCLE                                                            ; 3294     ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; SCOMP:inst|IO_CYCLE                                                            ; 1743     ; 259      ; 0        ; 0        ;
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -831,17 +831,17 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; AUD_DACLR                                                                      ; AUD_BCLK                                                                       ; 0        ; 0        ; 32       ; 54       ;
 ; AUD_DACLR                                                                      ; AUD_DACLR                                                                      ; 218      ; 0        ; 8        ; 0        ;
 ; SCOMP:inst|IO_CYCLE                                                            ; AUD_DACLR                                                                      ; 777      ; 0        ; 0        ; 0        ;
-; clk_div:inst5|clock_10Hz                                                       ; clk_div:inst5|clock_10Hz                                                       ; 232      ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz                                                       ; 9        ; 0        ; 0        ; 0        ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 5679     ; 0        ; 0        ; 0        ;
+; clk_div:inst5|clock_10Hz                                                       ; clk_div:inst5|clock_10Hz                                                       ; 203      ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz                                                       ; 8        ; 0        ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 5901     ; 0        ; 0        ; 0        ;
 ; SCOMP:inst|IO_CYCLE                                                            ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 79       ; 40       ; 0        ; 0        ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 184      ; 0        ; 0        ; 0        ;
 ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; 17       ; 0        ; 0        ; 0        ;
 ; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 34       ; 0        ; 0        ; 0        ;
-; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 132      ; 15       ; 4        ; 1        ;
+; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; oneshot_i2c:inst12|i2c_master:inst|data_clk                                    ; 135      ; 15       ; 4        ; 1        ;
 ; clk_div:inst5|clock_10Hz                                                       ; SCOMP:inst|IO_CYCLE                                                            ; 16       ; 0        ; 0        ; 0        ;
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; SCOMP:inst|IO_CYCLE                                                            ; 3421     ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; SCOMP:inst|IO_CYCLE                                                            ; 1825     ; 269      ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; SCOMP:inst|IO_CYCLE                                                            ; 3294     ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; SCOMP:inst|IO_CYCLE                                                            ; 1743     ; 259      ; 0        ; 0        ;
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -851,8 +851,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
 ; From Clock                                                                     ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; clk_div:inst5|clock_10Hz ; 336      ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz ; 28       ; 28       ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; clk_div:inst5|clock_10Hz ; 288      ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz ; 24       ; 24       ; 0        ; 0        ;
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -862,8 +862,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
 ; From Clock                                                                     ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
-; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; clk_div:inst5|clock_10Hz ; 336      ; 0        ; 0        ; 0        ;
-; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz ; 28       ; 28       ; 0        ; 0        ;
+; inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; clk_div:inst5|clock_10Hz ; 288      ; 0        ; 0        ; 0        ;
+; SCOMP:inst|IO_CYCLE                                                            ; clk_div:inst5|clock_10Hz ; 24       ; 24       ; 0        ; 0        ;
 +--------------------------------------------------------------------------------+--------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -889,8 +889,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 15    ; 15   ;
 ; Unconstrained Input Port Paths  ; 25    ; 25   ;
-; Unconstrained Output Ports      ; 22    ; 22   ;
-; Unconstrained Output Port Paths ; 67    ; 67   ;
+; Unconstrained Output Ports      ; 18    ; 18   ;
+; Unconstrained Output Port Paths ; 63    ; 63   ;
 +---------------------------------+-------+------+
 
 
@@ -949,10 +949,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1002,10 +998,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1024,7 +1016,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 29 18:53:38 2022
+    Info: Processing started: Tue Nov 29 19:53:45 2022
 Info: Command: quartus_sta SCOMP -c SCOMP
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1057,47 +1049,47 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -15.558
+Info (332146): Worst-case setup slack is -11.485
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -15.558            -570.744 SCOMP:inst|IO_CYCLE 
-    Info (332119):   -12.553            -186.239 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):    -9.027            -144.464 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-    Info (332119):    -8.870            -234.586 AUD_DACLR 
-    Info (332119):    -6.974             -81.181 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -6.967            -208.707 AUD_BCLK 
-    Info (332119):    -1.842             -56.581 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case hold slack is -5.260
+    Info (332119):   -11.485            -432.573 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -9.458            -227.796 AUD_DACLR 
+    Info (332119):    -8.958            -147.452 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -6.237            -172.025 AUD_BCLK 
+    Info (332119):    -4.066              -4.066 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -3.468             -22.330 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -2.474             -54.090 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case hold slack is -7.212
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.260            -103.205 AUD_DACLR 
-    Info (332119):    -5.036             -44.605 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -1.413             -11.247 AUD_BCLK 
-    Info (332119):    -1.395             -13.214 SCOMP:inst|IO_CYCLE 
-    Info (332119):     0.374               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):     0.414               0.000 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.754               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-Info (332146): Worst-case recovery slack is -9.817
+    Info (332119):    -7.212            -112.425 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -5.679             -79.718 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -5.265             -40.162 AUD_BCLK 
+    Info (332119):    -4.745            -117.896 AUD_DACLR 
+    Info (332119):    -1.552             -32.172 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.387               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.511               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+Info (332146): Worst-case recovery slack is -9.658
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.817            -274.801 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case removal slack is 0.961
+    Info (332119):    -9.658            -231.736 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case removal slack is 1.038
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.961               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     1.038               0.000 clk_div:inst5|clock_10Hz 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174             -55.235 AUD_DACLR 
-    Info (332119):    -0.427             -46.318 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -0.394             -22.939 AUD_BCLK 
-    Info (332119):    -0.394             -22.803 clk_div:inst5|clock_10Hz 
-    Info (332119):    -0.394             -13.426 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -2.174             -54.280 AUD_DACLR 
+    Info (332119):    -0.570             -56.184 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -0.394             -23.004 AUD_BCLK 
+    Info (332119):    -0.394             -18.602 clk_div:inst5|clock_10Hz 
+    Info (332119):    -0.394             -13.977 oneshot_i2c:inst12|i2c_master:inst|data_clk 
     Info (332119):     1.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     9.670               0.000 clock_50 
-    Info (332119):    40.437               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    40.433               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):   416.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout 
-    Info (332119):  1249.310               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):  1249.306               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
 Info (332114): Report Metastability: Found 8 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
@@ -1111,47 +1103,47 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -15.295
+Info (332146): Worst-case setup slack is -11.482
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -15.295            -565.955 SCOMP:inst|IO_CYCLE 
-    Info (332119):   -11.528            -168.143 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):    -9.235            -146.695 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-    Info (332119):    -8.415            -219.863 AUD_DACLR 
-    Info (332119):    -6.540            -195.679 AUD_BCLK 
-    Info (332119):    -6.291             -71.724 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -1.851             -57.854 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case hold slack is -5.243
+    Info (332119):   -11.482            -431.000 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -9.161            -149.244 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -8.931            -216.591 AUD_DACLR 
+    Info (332119):    -5.867            -160.797 AUD_BCLK 
+    Info (332119):    -3.403              -3.403 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -3.056             -19.001 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -2.447             -55.449 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case hold slack is -7.474
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.243            -104.012 AUD_DACLR 
-    Info (332119):    -5.066             -47.888 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -1.433             -13.768 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -1.293             -10.129 AUD_BCLK 
-    Info (332119):     0.391               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):     0.396               0.000 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.728               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-Info (332146): Worst-case recovery slack is -9.830
+    Info (332119):    -7.474            -117.697 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -5.729             -81.162 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -5.157             -37.845 AUD_BCLK 
+    Info (332119):    -4.670            -116.483 AUD_DACLR 
+    Info (332119):    -1.589             -32.246 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.365               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.493               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+Info (332146): Worst-case recovery slack is -9.672
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.830            -275.173 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case removal slack is 0.945
+    Info (332119):    -9.672            -232.082 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case removal slack is 1.020
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.945               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     1.020               0.000 clk_div:inst5|clock_10Hz 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174             -54.779 AUD_DACLR 
-    Info (332119):    -0.399             -44.089 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -0.394             -24.087 AUD_BCLK 
-    Info (332119):    -0.394             -21.914 clk_div:inst5|clock_10Hz 
-    Info (332119):    -0.394             -13.364 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -2.174             -54.145 AUD_DACLR 
+    Info (332119):    -0.541             -53.772 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -0.394             -24.172 AUD_BCLK 
+    Info (332119):    -0.394             -18.386 clk_div:inst5|clock_10Hz 
+    Info (332119):    -0.394             -14.046 oneshot_i2c:inst12|i2c_master:inst|data_clk 
     Info (332119):     1.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     9.673               0.000 clock_50 
-    Info (332119):    40.422               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    40.423               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):   416.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout 
-    Info (332119):  1249.256               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):  1249.254               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
 Info (332114): Report Metastability: Found 8 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
@@ -1165,47 +1157,47 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.714
+Info (332146): Worst-case setup slack is -6.772
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.714            -341.220 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -9.217            -134.316 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):    -6.489            -164.425 AUD_DACLR 
-    Info (332119):    -6.218             -95.926 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-    Info (332119):    -5.438             -67.172 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -4.861            -147.030 AUD_BCLK 
-    Info (332119):    -0.839             -20.870 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case hold slack is -2.868
+    Info (332119):    -6.772            -255.953 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -6.730            -153.344 AUD_DACLR 
+    Info (332119):    -6.246             -97.159 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -4.450            -119.630 AUD_BCLK 
+    Info (332119):    -2.953             -19.282 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -2.892              -2.892 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -1.065             -19.937 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case hold slack is -5.671
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.868             -52.868 AUD_DACLR 
-    Info (332119):    -2.831             -24.073 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -0.952              -9.039 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -0.678              -2.619 AUD_BCLK 
-    Info (332119):     0.160               0.000 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.182               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):     0.349               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-Info (332146): Worst-case recovery slack is -5.608
+    Info (332119):    -5.671             -90.543 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -3.212             -20.867 AUD_BCLK 
+    Info (332119):    -3.169             -44.542 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -2.655             -65.424 AUD_DACLR 
+    Info (332119):    -1.035             -18.142 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.154               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.270               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+Info (332146): Worst-case recovery slack is -5.441
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.608            -156.996 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case removal slack is 0.387
+    Info (332119):    -5.441            -130.561 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case removal slack is 0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.387               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.394               0.000 clk_div:inst5|clock_10Hz 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174             -58.789 AUD_DACLR 
-    Info (332119):    -0.575             -27.238 AUD_BCLK 
-    Info (332119):    -0.235              -7.886 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -0.003              -0.012 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.137               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -2.174             -57.058 AUD_DACLR 
+    Info (332119):    -0.579             -27.246 AUD_BCLK 
+    Info (332119):    -0.293             -11.196 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.044               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.084               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
     Info (332119):     1.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     9.336               0.000 clock_50 
     Info (332119):    40.552               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):   416.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout 
-    Info (332119):  1249.558               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):  1249.555               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
 Info (332114): Report Metastability: Found 8 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
@@ -1217,55 +1209,55 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.941
+Info (332146): Worst-case setup slack is -6.410
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.941            -317.724 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -7.474            -107.461 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):    -6.265             -95.633 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-    Info (332119):    -5.391            -134.123 AUD_DACLR 
-    Info (332119):    -4.475             -54.013 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -4.017            -120.870 AUD_BCLK 
-    Info (332119):    -0.696             -18.299 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case hold slack is -2.875
+    Info (332119):    -6.410            -242.173 SCOMP:inst|IO_CYCLE 
+    Info (332119):    -6.262             -96.472 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -5.555            -126.783 AUD_DACLR 
+    Info (332119):    -3.630             -97.500 AUD_BCLK 
+    Info (332119):    -2.319             -14.661 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -1.980              -1.980 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -0.938             -17.546 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case hold slack is -5.838
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.875             -54.750 AUD_DACLR 
-    Info (332119):    -2.824             -26.316 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    -0.912              -8.808 SCOMP:inst|IO_CYCLE 
-    Info (332119):    -0.668              -4.187 AUD_BCLK 
-    Info (332119):    -0.107              -0.239 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
-    Info (332119):     0.141               0.000 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.316               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
-Info (332146): Worst-case recovery slack is -5.365
+    Info (332119):    -5.838             -94.095 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):    -3.166             -21.602 AUD_BCLK 
+    Info (332119):    -3.145             -44.885 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    -2.660             -66.438 AUD_DACLR 
+    Info (332119):    -0.983             -17.143 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.127               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.239               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+Info (332146): Worst-case recovery slack is -5.237
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.365            -150.192 clk_div:inst5|clock_10Hz 
-Info (332146): Worst-case removal slack is 0.327
+    Info (332119):    -5.237            -125.660 clk_div:inst5|clock_10Hz 
+Info (332146): Worst-case removal slack is 0.339
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.327               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.339               0.000 clk_div:inst5|clock_10Hz 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174             -61.566 AUD_DACLR 
-    Info (332119):    -0.625             -30.451 AUD_BCLK 
-    Info (332119):    -0.151              -3.809 SCOMP:inst|IO_CYCLE 
-    Info (332119):     0.037               0.000 clk_div:inst5|clock_10Hz 
-    Info (332119):     0.154               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
+    Info (332119):    -2.174             -60.062 AUD_DACLR 
+    Info (332119):    -0.629             -30.521 AUD_BCLK 
+    Info (332119):    -0.212              -7.149 SCOMP:inst|IO_CYCLE 
+    Info (332119):     0.068               0.000 clk_div:inst5|clock_10Hz 
+    Info (332119):     0.093               0.000 oneshot_i2c:inst12|i2c_master:inst|data_clk 
     Info (332119):     1.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     9.286               0.000 clock_50 
     Info (332119):    40.552               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):   416.666               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|cascadeout 
-    Info (332119):  1249.546               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
+    Info (332119):  1249.544               0.000 inst1|pll_main_inst|altera_pll_i|cyclonev_pll|counter[2].output_counter|divclk 
 Info (332114): Report Metastability: Found 8 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5207 megabytes
-    Info: Processing ended: Tue Nov 29 18:53:48 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 5209 megabytes
+    Info: Processing ended: Tue Nov 29 19:53:53 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:11
 
 
