@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Tue Nov 29 19:51:43 2022
+Tue Nov 29 23:22:31 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 29 19:51:43 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 29 23:22:31 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
@@ -187,17 +187,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -206,23 +208,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+----------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                       ; Library  ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+----------+
-; TONE_GEN.vhd                     ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd              ;          ;
-; oneshot_i2c.bdf                  ; yes             ; User Block Diagram/Schematic File      ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/oneshot_i2c.bdf           ;          ;
-; i2c_oneshot_ctrl.vhd             ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_oneshot_ctrl.vhd      ;          ;
-; i2c_master.vhd                   ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_master.vhd            ;          ;
-; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISP.vhd              ;          ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/DIG_IN.vhd                ;          ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/clk_div.vhd               ;          ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd                 ;          ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/IO_DECODER.vhd            ;          ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd                 ;          ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP_System.bdf          ;          ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main.vhd              ; PLL_main ;
-; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v  ; PLL_main ;
-; HEX_DISPV2_6.bdf                 ; yes             ; User Block Diagram/Schematic File      ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISPV2_6.bdf          ;          ;
-; HEX_DISPV2.vhd                   ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISPV2.vhd            ;          ;
-; ALL_IN.vhd                       ; yes             ; User VHDL File                         ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ALL_IN.vhd                ;          ;
-; dac_interface.vhd                ; yes             ; Auto-Found VHDL File                   ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd         ;          ;
+; TONE_GEN.vhd                     ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd                                ;          ;
+; oneshot_i2c.bdf                  ; yes             ; User Block Diagram/Schematic File      ; C:/ECE 2031/ActualProject/SCOMPProject/oneshot_i2c.bdf                             ;          ;
+; i2c_oneshot_ctrl.vhd             ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/i2c_oneshot_ctrl.vhd                        ;          ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/i2c_master.vhd                              ;          ;
+; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISP.vhd                                ;          ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/DIG_IN.vhd                                  ;          ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/clk_div.vhd                                 ;          ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd                                   ;          ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/IO_DECODER.vhd                              ;          ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd                                   ;          ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/ECE 2031/ActualProject/SCOMPProject/SCOMP_System.bdf                            ;          ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/ECE 2031/ActualProject/SCOMPProject/PLL_main.vhd                                ; PLL_main ;
+; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v                    ; PLL_main ;
+; HEX_DISPV2_6.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISPV2_6.bdf                            ;          ;
+; HEX_DISPV2.vhd                   ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISPV2.vhd                              ;          ;
+; ALL_IN.vhd                       ; yes             ; User VHDL File                         ; C:/ECE 2031/ActualProject/SCOMPProject/ALL_IN.vhd                                  ;          ;
+; dac_interface.vhd                ; yes             ; Auto-Found VHDL File                   ; C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd                           ;          ;
 ; lpm_shiftreg.tdf                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf            ;          ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_constant.inc            ;          ;
 ; dffeea.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/dffeea.inc                  ;          ;
@@ -235,12 +237,12 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                  ;          ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                  ;          ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                ;          ;
-; db/altsyncram_5h04.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/altsyncram_5h04.tdf    ;          ;
-; sound_sine.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/sound_sine.mif            ;          ;
-; db/altsyncram_5p24.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/altsyncram_5p24.tdf    ;          ;
-; demo_sound.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/demo_sound.mif            ;          ;
+; db/altsyncram_5h04.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5h04.tdf                      ;          ;
+; sound_sine.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/ECE 2031/ActualProject/SCOMPProject/sound_sine.mif                              ;          ;
+; db/altsyncram_5p24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5p24.tdf                      ;          ;
+; demo_sound.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/ECE 2031/ActualProject/SCOMPProject/demo_sound.mif                              ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf             ;          ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/lpm_clshift_fuc.tdf    ;          ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/ECE 2031/ActualProject/SCOMPProject/db/lpm_clshift_fuc.tdf                      ;          ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf              ;          ;
 ; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                ;          ;
 ; altera_pll_dps_lcell_comb.v      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll_dps_lcell_comb.v ;          ;
@@ -1223,7 +1225,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:13     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -1233,67 +1235,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 29 19:51:19 2022
+    Info: Processing started: Tue Nov 29 23:22:03 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tone_gen.vhd
-    Info (12022): Found design unit 1: TONE_GEN-gen File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 30
-    Info (12023): Found entity 1: TONE_GEN File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 17
+    Info (12022): Found design unit 1: TONE_GEN-gen File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 30
+    Info (12023): Found entity 1: TONE_GEN File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file oneshot_i2c.bdf
     Info (12023): Found entity 1: oneshot_i2c
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_oneshot_ctrl.vhd
-    Info (12022): Found design unit 1: i2c_oneshot_ctrl-main File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 24
-    Info (12023): Found entity 1: i2c_oneshot_ctrl File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 11
+    Info (12022): Found design unit 1: i2c_oneshot_ctrl-main File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 24
+    Info (12023): Found entity 1: i2c_oneshot_ctrl File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_master.vhd Line: 49
-    Info (12023): Found entity 1: i2c_master File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_master.vhd Line: 31
+    Info (12022): Found design unit 1: i2c_master-logic File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_master.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/ECE 2031/ActualProject/SCOMPProject/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/ECE 2031/ActualProject/SCOMPProject/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/DIG_IN.vhd Line: 19
-    Info (12023): Found entity 1: DIG_IN File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/ECE 2031/ActualProject/SCOMPProject/DIG_IN.vhd Line: 19
+    Info (12023): Found entity 1: DIG_IN File: C:/ECE 2031/ActualProject/SCOMPProject/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/ECE 2031/ActualProject/SCOMPProject/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/ECE 2031/ActualProject/SCOMPProject/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/IO_DECODER.vhd Line: 26
-    Info (12023): Found entity 1: IO_DECODER File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/IO_DECODER.vhd Line: 9
+    Info (12022): Found design unit 1: IO_DECODER-a File: C:/ECE 2031/ActualProject/SCOMPProject/IO_DECODER.vhd Line: 26
+    Info (12023): Found entity 1: IO_DECODER File: C:/ECE 2031/ActualProject/SCOMPProject/IO_DECODER.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: PLL_main-rtl File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main.vhd Line: 21
-    Info (12023): Found entity 1: PLL_main File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main.vhd Line: 11
+    Info (12022): Found design unit 1: PLL_main-rtl File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main.vhd Line: 21
+    Info (12023): Found entity 1: PLL_main File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pll_main/pll_main_0002.v
-    Info (12023): Found entity 1: PLL_main_0002 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v Line: 2
+    Info (12023): Found entity 1: PLL_main_0002 File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file hex_dispv2_6.bdf
     Info (12023): Found entity 1: HEX_DISPV2_6
 Info (12021): Found 2 design units, including 1 entities, in source file hex_dispv2.vhd
-    Info (12022): Found design unit 1: HEX_DISP2-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISPV2.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP2 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/HEX_DISPV2.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP2-a File: C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISPV2.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP2 File: C:/ECE 2031/ActualProject/SCOMPProject/HEX_DISPV2.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file all_in.vhd
-    Info (12022): Found design unit 1: ALL_IN-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ALL_IN.vhd Line: 19
-    Info (12023): Found entity 1: ALL_IN File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ALL_IN.vhd Line: 10
+    Info (12022): Found design unit 1: ALL_IN-a File: C:/ECE 2031/ActualProject/SCOMPProject/ALL_IN.vhd Line: 19
+    Info (12023): Found entity 1: ALL_IN File: C:/ECE 2031/ActualProject/SCOMPProject/ALL_IN.vhd Line: 10
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Warning (275008): Primitive "NOT" of instance "inst10" not used
 Warning (12125): Using design file dac_interface.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: DAC_INTERFACE-a File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd Line: 19
-    Info (12023): Found entity 1: DAC_INTERFACE File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd Line: 9
+    Info (12022): Found design unit 1: DAC_INTERFACE-a File: C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd Line: 19
+    Info (12023): Found entity 1: DAC_INTERFACE File: C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd Line: 9
 Info (12128): Elaborating entity "DAC_INTERFACE" for hierarchy "DAC_INTERFACE:inst35"
-Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd Line: 24
-Info (12130): Elaborated megafunction instantiation "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd Line: 24
-Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/dac_interface.vhd Line: 24
+Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" File: C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd Line: 24
+Info (12130): Elaborated megafunction instantiation "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" File: C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd Line: 24
+Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:serialize" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/dac_interface.vhd Line: 24
     Info (12134): Parameter "LPM_WIDTH" = "32"
     Info (12134): Parameter "LPM_AVALUE" = "UNUSED"
     Info (12134): Parameter "LPM_SVALUE" = "UNUSED"
@@ -1302,10 +1304,9 @@ Info (12133): Instantiated megafunction "DAC_INTERFACE:inst35|LPM_SHIFTREG:seria
     Info (12134): Parameter "LPM_TYPE" = "LPM_SHIFTREG"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TONE_GEN" for hierarchy "TONE_GEN:inst6"
-Warning (10036): Verilog HDL or VHDL warning at TONE_GEN.vhd(41): object "division3" assigned a value but never read File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 41
-Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 72
-Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 72
-Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 72
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 72
+Info (12130): Elaborated megafunction instantiation "TONE_GEN:inst6|altsyncram:SOUND_LUT" File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 72
+Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 72
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1357,13 +1358,13 @@ Info (12133): Instantiated megafunction "TONE_GEN:inst6|altsyncram:SOUND_LUT" wi
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5h04.tdf
-    Info (12023): Found entity 1: altsyncram_5h04 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/altsyncram_5h04.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_5h04 File: C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5h04.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_5h04" for hierarchy "TONE_GEN:inst6|altsyncram:SOUND_LUT|altsyncram_5h04:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 61
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1415,46 +1416,46 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5p24.tdf
-    Info (12023): Found entity 1: altsyncram_5p24 File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/altsyncram_5p24.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_5p24 File: C:/ECE 2031/ActualProject/SCOMPProject/db/altsyncram_5p24.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_5p24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5p24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 514 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 514 warnings found, and 10 warnings are reported. File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/demo_sound.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/ Line: 22
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 88
+Warning (113031): 516 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 516 warnings found, and 10 warnings are reported. File: C:/ECE 2031/ActualProject/SCOMPProject/demo_sound.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 13
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 14
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 15
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 16
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 17
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 18
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 19
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 20
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 21
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/ECE 2031/ActualProject/SCOMPProject/ Line: 22
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 88
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/db/lpm_clshift_fuc.tdf Line: 23
+    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/ECE 2031/ActualProject/SCOMPProject/db/lpm_clshift_fuc.tdf Line: 23
 Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 115
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main.vhd Line: 35
-Warning (10034): Output port "outclk_1" at PLL_main_0002.v(14) has no driver File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v Line: 14
-Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
+Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main.vhd Line: 35
+Warning (10034): Output port "outclk_1" at PLL_main_0002.v(14) has no driver File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v Line: 14
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
 Warning (10034): Output port "lvds_clk" at altera_pll.v(320) has no driver File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 320
 Warning (10034): Output port "loaden" at altera_pll.v(321) has no driver File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 321
 Warning (10034): Output port "extclk_out" at altera_pll.v(322) has no driver File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 322
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
-Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
+Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/ECE 2031/ActualProject/SCOMPProject/PLL_main/PLL_main_0002.v Line: 238
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "pll_fractional_cout" = "32"
@@ -1684,23 +1685,23 @@ Info (12131): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_000
 Info (12128): Elaborating entity "altera_cyclonev_pll_base" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1153
 Info (12131): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0", which is child of megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1153
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: C:/ECE 2031/ActualProject/SCOMPProject/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "ALL_IN" for hierarchy "ALL_IN:inst11"
@@ -1720,22 +1721,22 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|cntsel_temp[0]" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 425
         Warning (14320): Synthesized away node "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|gnd" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 427
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 33
-    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 44
-    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 35
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 35
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 35
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/SCOMP.vhd Line: 133
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/TONE_GEN.vhd Line: 127
+    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 33
+    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 44
+    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 35
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 35
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 35
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/SCOMP.vhd Line: 133
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/ECE 2031/ActualProject/SCOMPProject/TONE_GEN.vhd Line: 128
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[6]" is stuck at VCC
     Warning (13410): Pin "HEX1[5]" is stuck at GND
@@ -1767,8 +1768,8 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX4[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] will power up to High File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 63
-    Critical Warning (18010): Register oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] will power up to High File: D:/Users/Taran Agnihotri/Desktop/ECE2031/V2/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 63
+    Critical Warning (18010): Register oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[3] will power up to High File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 63
+    Critical Warning (18010): Register oneshot_i2c:inst12|i2c_oneshot_ctrl:inst3|cmd_num[0] will power up to High File: C:/ECE 2031/ActualProject/SCOMPProject/i2c_oneshot_ctrl.vhd Line: 63
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 12 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -1778,10 +1779,10 @@ Info (21057): Implemented 1099 device resources after synthesis - the final reso
     Info (21060): Implemented 2 bidirectional pins
     Info (21061): Implemented 1006 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Tue Nov 29 19:51:43 2022
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:38
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Tue Nov 29 23:22:31 2022
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:48
 
 

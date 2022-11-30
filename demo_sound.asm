@@ -1,13 +1,14 @@
 ORG 0
 
-	; Get the switch values
-	;IN     Switches
-	; Send to the peripheral
-	;OUT    Beep
-	; Delay for 1 second
-	;CALL   Delay
-	; Do it again
-	;JUMP   0
+	; To play any note using the map given at the bottom of the program, follow these 3 lines:
+	; Load (Note)
+	; OUT Beep
+	; Call Delay
+	
+	;Ex. Load A1
+	;	 OUT BeeP
+	;	 Call Delay
+	; Program to play and loop over all the notes possible
 	IN ALLIO 
 	AND Button3
     jzero SwitchMode
@@ -453,7 +454,7 @@ WaitingLoop:
 	
 	
 	
-	
+; Program to play HotCrossBuns nursery rhyme
 SwitchMode:
     CALL    DelaySong
     CALL    DelaySong
@@ -563,6 +564,9 @@ SwitchMode:
     LOAD    Zero
     OUT     Beep
     Call    DelaySong
+	
+
+; Program to switch to manual addressing mode through the DE-10 board
 
 BeepTest:
     IN     ALLIO    
@@ -573,7 +577,7 @@ BeepTest:
 	; Do it again
     JUMP   BeepTest
 	
-	
+; Different delays must be implemented to adjust the duration of note being played
 Delay2:
 	OUT    Timer
 WaitingLoop2:
@@ -606,7 +610,16 @@ Hex0:      EQU 004
 Hex1:      EQU 005
 Beep:      EQU &H40
 Button3:   DW &H8000
+; Address corresponding to button mode
 ALLIO:     EQU &H41
+
+; Values corresponding to a particular note
+; A particular note value can be calculated accordingly: 
+; The 3rd hex digit corresponds to initializing the assembly addressing mode and controls the sharp value. A value of 4 is a base note and the value 5 is the sharp.
+; Note: the 3rd hex digit has to be a 4 or a 5 as the 10th bit is set in both cases
+; The 2nd hex digit corresponds to the octave value between 1 to 9. The peripheral uses this in order to adjust the base frequencies accordingly.
+; The 1st hex digit corresponds to the base note. Ex. 1 is A and 7 is G
+; The 4th hex digit represents the toggle between sine wave and square wave. If the digit is a 0, it is a sine wave. If it is a 4, then it's a square wave.
 
 A1: DW &H0411
 A2: DW &H0421
@@ -721,6 +734,8 @@ Gs6: DW &H0567
 Gs7: DW &H0577
 Gs8: DW &H0587
 Gs9: DW &H0597
+
+; Square wave notes examples according to the map description above
 
 C4square:		   DW &H4443
 D4square:		   DW &H4444

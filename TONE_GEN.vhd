@@ -36,15 +36,15 @@ ARCHITECTURE gen OF TONE_GEN IS
 	SIGNAL octavedata		 : STD_LOGIC_VECTOR(2 DOWNTO 0);
 	SIGNAL directOctave   : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL temp				 : STD_LOGIC_VECTOR(3 DOWNTO 0);
-	SIGNAL division		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL division3		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL someTemp		 : integer;
+--	SIGNAL division		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+--	SIGNAL division2		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+--	SIGNAL division3		 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+--	SIGNAL someTemp		 : integer;
 	SIGNAL ROMaddress     : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL enSquare		 : STD_LOGIC;
 
 	
-	-- Bases for notes and sharps
+	-- Bases for notes and sharps -> formula: (base frequency * 2^20 / 48000)
 	CONSTANT baseA			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010010110001";
 	CONSTANT baseB			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010101000101";
 	CONSTANT baseC			 : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000010110010101";
@@ -62,11 +62,11 @@ ARCHITECTURE gen OF TONE_GEN IS
 	
 	
 BEGIN
-
-	division <= "0000000000000000000" & CMD(12 DOWNTO 0);
-	division2 <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(division), 13));
-	someTemp <= to_integer(IEEE.NUMERIC_STD.unsigned(division2)) / 375;
-	division3 <= std_logic_vector(to_unsigned(someTemp, 32));
+--
+--	division <= "0000000000000000000" & CMD(12 DOWNTO 0);
+--	division2 <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(division), 13));
+--	someTemp <= to_integer(IEEE.NUMERIC_STD.unsigned(division2)) / 375;
+--	division3 <= std_logic_vector(to_unsigned(someTemp, 32));
 	
 	-- ROM to hold the waveform
 	SOUND_LUT : altsyncram
@@ -106,15 +106,16 @@ BEGIN
 		IF RESETN = '0' THEN
 			phase_register <= "00000000000000000000";
 		ELSIF RISING_EDGE(SAMPLE_CLK) THEN
-			IF tuning_word = "00000000000000000000" THEN  -- if command is 0, return to 0 output.
+			IF tuning_word = "00000000000000000000" THEN  -- if tuning word is 0, return to 0 output.
 				phase_register <= "00000000000000000000";
 				ROMaddress <= "00000000";
 			ELSE
-				-- Increment the phase register by the tuning word.
+				-- Increment the phase register by the tuning word, this allows for different frequencies.
 				phase_register <= phase_register + tuning_word;
 				-- Set ROMaddress to phase register
 				ROMaddress <= phase_register(19 downto 12);
 				-- If square wave is enabled, add 66 to 0 or 128 to produce 127 or -127 output
+				-- The 66th value of the mif file represents a value of 127 and the 128th value of the mif file represnts -127 
 				IF (enSquare = '1') THEN
 					ROMAddress <= phase_register(19) & "1000000";
 				END IF;
@@ -131,15 +132,27 @@ BEGIN
 			HEX_DATA <= "000000000000000000000010";
 			enSquare <= '0';
 		ELSIF RISING_EDGE(CS) THEN
+		-- square enable is assigned the 14th bit of the input. This allows toggling between sine wave and square wave
 			enSquare <= CMD(14);
+		
+		-- 10th bit controls the addressing mode, if the 10th bit is set, the addressing mode is through the assembly file
 			if (CMD(10) = '1') then
+			
+				-- temp currently holds the value of the ocatve. Which is decreased by 2 in order to incorporate all the possible octaves
 				temp <= CMD(7 DOWNTO 4) - "0010";
+				-- switchdata corresponds to the note that is supposed to be played.
+				-- CMD(8) is the sharp/half-note toggle
+				-- CMD(3 DOWNTO 0) corresponds to the base note
+				-- left padded with 2 zeros to fit the signal size
 				switchdata <= "00" & CMD(8) & CMD(3 DOWNTO 0);
 				
 				
 				
 				
 				HEX_DATA <= "00000000000000000000" & (temp + "0010");
+				
+				--mapping of the switchdata with the necessary base value, if the last 5 bits of the switch data corresponds to a value,
+				-- the tuning word is assigned that particular note base intitialized at the start, which is adjusted by the octave value (temp)
 				
 				case switchdata(4 downto 0) is -- opcode is top 5 bits of instruction
 					when "00000" =>       -- no operation (nop)
@@ -198,13 +211,20 @@ BEGIN
 						tuning_word <= "00000000000000000000";   -- invalid opcodes default to nop
 				end case;
 				
+			-- when bit 10 of the input is not set, the peripheral goes to a manual addressing mode (controlled by the DE-10)
+				
 			else
+				-- octave value is represented by bits 7 to 9, toggled by their corresponding switches
 				octavedata <= CMD(9 DOWNTO 7);
+				-- the base value corresponds to bits 0 to 6 where each base is represented and mapped by each bit from 0 to 6.
+				-- If bit 15 (CM(15)) is set (when key 3 is pressed), the base's corresponding sharp value will be played
 				switchdata <= CMD(6 DOWNTO 0);
 				
 				
 				HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
 			
+				-- the tuning word is set accordingly, based on the set base note bit and/or sharp. 
+				-- The bases initialized in the beginning are left shifted by the octave value in order to get the same note at a higher frequency
 				
 				if (switchdata(6) = '1') then
 				
@@ -270,7 +290,8 @@ BEGIN
 					
 					
 				else
-				
+					
+					--in case any other event happens, the tuning word is set to 0.
 					tuning_word <= "00000000000000000000";
 					
 					
