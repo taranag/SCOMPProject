@@ -38,34 +38,38 @@ ORG 0
     OUT     Beep
     Call    Delay
 
+    LOAD    Zero
+    OUT     Beep
+    Call    Delay
+
     ; C C C C
     LOAD    C4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
 
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    C4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
 
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    C4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
     
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    C4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
 
     ; D D D D
     LOAD    D4
@@ -74,35 +78,27 @@ ORG 0
 
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    D4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
 
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    D4
     OUT     Beep
-    Call    Delay
+    Call    ZeroDelay
 
     LOAD    Zero
     OUT     Beep
-    Call    ZeroDelay
+    Call    Delay
 
     LOAD    D4
     OUT     Beep
-    Call    Delay
-
-    LOAD    Zero
-    OUT     Beep
     Call    ZeroDelay
-
-    LOAD    D4
-    OUT     Beep
-    Call    Delay
 
     ; EDC
     LOAD    E4
@@ -116,7 +112,6 @@ ORG 0
     LOAD    C4
     OUT     Beep
     Call    Delay
-    
 
     LOAD    Zero
     OUT     Beep
@@ -160,11 +155,11 @@ ZeroWaitingLoop:
 	RETURN
 
 ; IO address constants
-C4:		   DW &H4443
-D4:		   DW &H4444
-E4:		   DW &H4445
-G4:		   DW &H4400
-Zero:      DW &H4440
+C4:		   DW &H0443
+D4:		   DW &H0444
+E4:		   DW &H0445
+G4:		   DW &H0400
+Zero:      DW &H0440
 Timer:     EQU 002
 Beep:      EQU &H40
 ALLIO:     EQU &H41

@@ -36,6 +36,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX5[6]",
 					"strict" : false
 				},
@@ -72,11 +88,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACLR",
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_BCLK",
+					"name" : "AUD_DACLR",
 					"strict" : false
 				},
 				{
@@ -89,6 +105,10 @@
 				},
 				{
 					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
@@ -109,10 +129,6 @@
 				},
 				{
 					"name" : "SW[8]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[4]",
 					"strict" : false
 				},
 				{

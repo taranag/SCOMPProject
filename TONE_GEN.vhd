@@ -1,6 +1,6 @@
 -- Simple DDS tone generator.
--- 5-bit tuning word
--- 9-bit phase register
+-- 20-bit tuning word
+-- 20-bit phase register
 -- 256 x 8-bit ROM.
 
 LIBRARY IEEE;
@@ -112,9 +112,11 @@ BEGIN
 			ELSE
 				-- Increment the phase register by the tuning word.
 				phase_register <= phase_register + tuning_word;
+				-- Set ROMaddress to phase register
 				ROMaddress <= phase_register(19 downto 12);
+				-- If square wave is enabled, add 66 to 0 or 128 to produce 127 or -127 output
 				IF (enSquare = '1') THEN
-					ROMAddress <= phase_register(19) & "1000010";
+					ROMAddress <= phase_register(19) & "1000000";
 				END IF;
 			END IF;
 		END IF;
@@ -137,22 +139,22 @@ BEGIN
 				
 				
 				
-				HEX_DATA <= ("000000000000000000000" & octavedata) + "000000000000000000010";
+				HEX_DATA <= ("00000000000000000000" & temp) + "000000000000000000010";
 				
 				case switchdata(4 downto 0) is -- opcode is top 5 bits of instruction
 					when "00000" =>       -- no operation (nop)
 						tuning_word <= "00000000000000000000";
 						
 					when "00001" =>       -- A
-						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
+						HEX_DATA <= ("10100000000000000000" & temp) + "000000000000000000001";
 						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseA), to_integer(IEEE.NUMERIC_STD.unsigned(temp + "001"))));
 						
 					when "10001" =>		-- A sharp
-						HEX_DATA <= ("101000000000000000000" & octavedata) + "000000000000000000001";
+						HEX_DATA <= ("10100000000000000000" & temp) + "000000000000000000001";
 						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseAsharp), to_integer(IEEE.NUMERIC_STD.unsigned(temp +"001"))));
 						
 					when "00010" =>       -- B
-						HEX_DATA <= ("101100000000000000000" & octavedata) + "000000000000000000001";
+						HEX_DATA <= ("10110000000000000000" & temp) + "000000000000000000001";
 						tuning_word <= std_logic_vector(shift_left(IEEE.NUMERIC_STD.unsigned(baseB), to_integer(IEEE.NUMERIC_STD.unsigned(temp +"001"))));
 						
 					when "00011" =>       -- C
